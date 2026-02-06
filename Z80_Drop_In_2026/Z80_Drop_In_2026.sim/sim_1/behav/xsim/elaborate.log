@@ -1,0 +1,29 @@
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/user/Xilinx/Vivado/2023.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_6 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot z80_memory_tb_behav xil_defaultlib.z80_memory_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 4 for port 'addra' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v:20]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clk_delay
+Compiling module xil_defaultlib.pla_decode
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.ALU_Core
+Compiling module xil_defaultlib.condition_check
+Compiling module xil_defaultlib.execute
+Compiling module xil_defaultlib.sequencer
+Compiling module xil_defaultlib.z80_top
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_output_stage(...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_6.blk_mem_gen_v8_4_6(C_FAMILY="spa...
+Compiling module xil_defaultlib.blk_mem_gen_0
+Compiling module xil_defaultlib.memory
+Compiling module xil_defaultlib.z80_memory_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot z80_memory_tb_behav
