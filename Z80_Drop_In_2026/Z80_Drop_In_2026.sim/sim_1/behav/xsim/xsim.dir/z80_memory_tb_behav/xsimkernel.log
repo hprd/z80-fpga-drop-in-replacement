@@ -1,7 +1,7 @@
-Running: xsim.dir/z80_memory_tb_behav/xsimk -simmode gui -wdb z80_memory_tb_behav.wdb -simrunnum 0 -socket 44837
+Running: xsim.dir/z80_memory_tb_behav/xsimk -simmode gui -wdb z80_memory_tb_behav.wdb -simrunnum 0 -socket 46869
 Design successfully loaded
-Design Loading Memory Usage: 262700 KB (Peak: 262700 KB)
-Design Loading CPU Usage: 90 ms
+Design Loading Memory Usage: 262656 KB (Peak: 262656 KB)
+Design Loading CPU Usage: 70 ms
 Simulation completed
-Simulation Memory Usage: 358516 KB (Peak: 401976 KB)
+Simulation Memory Usage: 358436 KB (Peak: 401936 KB)
 Simulation CPU Usage: 180 ms

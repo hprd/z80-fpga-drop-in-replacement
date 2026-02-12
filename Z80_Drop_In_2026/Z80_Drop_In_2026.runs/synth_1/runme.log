@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log clk_delay.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_delay.tcl
+    with args -log z80_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top.tcl
 
 
 ****** Vivado v2023.1 (64-bit)
@@ -10,34 +10,257 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source clk_delay.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1676.148 ; gain = 52.148 ; free physical = 123 ; free virtual = 1448
+source z80_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1676.148 ; gain = 52.160 ; free physical = 78 ; free virtual = 2127
 Command: read_checkpoint -auto_incremental -incremental /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/utils_1/imports/synth_1/ALU.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/utils_1/imports/synth_1/ALU.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top clk_delay -part xc7s50csga324-1
+Command: synth_design -top z80_top -part xc7s50csga324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Vivado_Tcl 4-1810] synth_design options have changed between reference and incremental; A full resynthesis will be run
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11832
-INFO: [Synth 8-11241] undeclared symbol 'a1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:21]
-INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:35]
-INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:47]
-INFO: [Synth 8-11241] undeclared symbol 'clk_pos', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:73]
-INFO: [Synth 8-11241] undeclared symbol 'clk_neg', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:74]
+INFO: [Synth 8-7075] Helper process launched with PID 21059
+INFO: [Synth 8-11241] undeclared symbol 'a1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:31]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:45]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:57]
+WARNING: [Synth 8-6901] identifier 'a2' is used before its declaration [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:24]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'use_ixiy' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:58]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_halt' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:59]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_cb' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:60]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_ed' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:61]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_alu' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:62]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'HALT_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:63]
+INFO: [Synth 8-11241] undeclared symbol 'clk_pos', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:31]
+INFO: [Synth 8-11241] undeclared symbol 'clk_neg', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:32]
+INFO: [Synth 8-11241] undeclared symbol 'in_intr', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:44]
+INFO: [Synth 8-11241] undeclared symbol 'T1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:46]
+INFO: [Synth 8-11241] undeclared symbol 'latch_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:47]
+INFO: [Synth 8-11241] undeclared symbol 'mwait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:48]
+INFO: [Synth 8-11241] undeclared symbol 'M1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:49]
+INFO: [Synth 8-11241] undeclared symbol 'busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:50]
+INFO: [Synth 8-11241] undeclared symbol 'setM1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:51]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_iorq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:52]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:53]
+INFO: [Synth 8-11241] undeclared symbol 'iorq_Tw', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:54]
+INFO: [Synth 8-11241] undeclared symbol 'busack', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:55]
+INFO: [Synth 8-11241] undeclared symbol 'pin_control_oe', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:56]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:57]
+INFO: [Synth 8-11241] undeclared symbol 'table_xx', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:63]
+INFO: [Synth 8-11241] undeclared symbol 'nextM', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:82]
+INFO: [Synth 8-11241] undeclared symbol 'M2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:86]
+INFO: [Synth 8-11241] undeclared symbol 'M3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:87]
+INFO: [Synth 8-11241] undeclared symbol 'M4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:88]
+INFO: [Synth 8-11241] undeclared symbol 'M5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:89]
+INFO: [Synth 8-11241] undeclared symbol 'T2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:91]
+INFO: [Synth 8-11241] undeclared symbol 'T3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:92]
+INFO: [Synth 8-11241] undeclared symbol 'T4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:93]
+INFO: [Synth 8-11241] undeclared symbol 'T5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:94]
+INFO: [Synth 8-11241] undeclared symbol 'T6', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:95]
+INFO: [Synth 8-11241] undeclared symbol 'use_ixiy', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:104]
+INFO: [Synth 8-11241] undeclared symbol 'in_halt', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:105]
+INFO: [Synth 8-11241] undeclared symbol 'in_alu', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:106]
+INFO: [Synth 8-11241] undeclared symbol 'table_cb', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:107]
+INFO: [Synth 8-11241] undeclared symbol 'table_ed', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:108]
+INFO: [Synth 8-11241] undeclared symbol 'timings_en', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:138]
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2100.203 ; gain = 388.684 ; free physical = 118 ; free virtual = 1006
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2099.340 ; gain = 387.805 ; free physical = 85 ; free virtual = 1571
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'z80_top' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:3]
 INFO: [Synth 8-6157] synthesizing module 'clk_delay' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'clk_delay' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pla_decode' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pla_decode' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v:3]
+INFO: [Synth 8-6157] synthesizing module 'execute' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:5]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_Core' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:4]
+WARNING: [Synth 8-567] referenced signal 'TEMP' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'and_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'or_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'xor_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'inc_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'inc_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'dec_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ones_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'twos_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'BCD_1' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'BCD_2' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'new_half_carry' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'new_carry' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_left_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_c_left_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_c_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'shift_left_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'arithmetic_shift_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'logical_shift_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'TEST_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'TEST_IX_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'TEST_HL_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'set_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'reset_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_16bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_16bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_16bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_16bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_16bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'operandB16_plus_carry' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'inc_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'dec_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ldid_flag_add' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'cpid_flag_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ini_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ini_pv_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ind_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ind_pv_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'outi_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'out_pv_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'outd_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_Core' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:4]
+INFO: [Synth 8-6157] synthesizing module 'condition_check' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:352]
+INFO: [Synth 8-6155] done synthesizing module 'condition_check' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:352]
+WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:163]
+INFO: [Synth 8-6155] done synthesizing module 'execute' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:5]
+INFO: [Synth 8-6157] synthesizing module 'sequencer' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'sequencer' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:3]
+WARNING: [Synth 8-7071] port 'M6' of module 'sequencer' is unconnected for instance 'sequencer_' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:118]
+WARNING: [Synth 8-7023] instance 'sequencer_' of module 'sequencer' has 21 connections declared, but only 20 given [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:118]
+INFO: [Synth 8-6155] done synthesizing module 'z80_top' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:3]
+WARNING: [Synth 8-3848] Net DATA_OUT in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:20]
+WARNING: [Synth 8-3848] Net accum in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:93]
+WARNING: [Synth 8-3848] Net EXTOGGLE_DEHL in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:90]
+WARNING: [Synth 8-3848] Net EXXTOGGLE in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:91]
+WARNING: [Synth 8-3848] Net IOREQ_b in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:15]
+WARNING: [Synth 8-3848] Net BUSACK_b in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:20]
+WARNING: [Synth 8-3848] Net in_intr in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:44]
+WARNING: [Synth 8-3848] Net mwait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:48]
+WARNING: [Synth 8-3848] Net latch_wait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:47]
+WARNING: [Synth 8-3848] Net busrq in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:50]
+WARNING: [Synth 8-7129] Port clk_neg in module sequencer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flag[5] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flag[4] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flag[3] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flag[1] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[7] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[6] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[5] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[4] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[3] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[2] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[1] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[0] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[104] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[103] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[102] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[101] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[100] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[99] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[98] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[97] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[96] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[94] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[93] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[92] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[91] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[90] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[89] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[88] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[87] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[86] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[85] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[83] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[82] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[81] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[80] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[79] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[78] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[77] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[76] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[75] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[74] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[73] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[72] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[71] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[70] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[69] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[68] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[67] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[66] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[64] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[63] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[62] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[61] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[60] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[59] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[58] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[57] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[56] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[55] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[54] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[53] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[51] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[49] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[48] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[47] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[46] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[45] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[44] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[42] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[41] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[40] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[39] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[38] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[37] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[36] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[35] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[34] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[33] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[32] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[31] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[30] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[29] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[28] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[27] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[26] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[25] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[24] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[23] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[22] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[21] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[20] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[19] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[18] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[16] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[15] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[14] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[13] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[12] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[11] in module execute is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2167.449 ; gain = 455.930 ; free physical = 74 ; free virtual = 667
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2178.957 ; gain = 467.422 ; free physical = 116 ; free virtual = 1299
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2182.445 ; gain = 470.926 ; free physical = 72 ; free virtual = 667
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2193.949 ; gain = 482.414 ; free physical = 111 ; free virtual = 1298
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -45,19 +268,37 @@ Start Loading Part and Timing Information
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7s50csga324-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2190.605 ; gain = 479.086 ; free physical = 71 ; free virtual = 667
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2202.109 ; gain = 490.574 ; free physical = 110 ; free virtual = 1297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Preparing Guide Design
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2199.988 ; gain = 488.469 ; free physical = 64 ; free virtual = 663
+Finished Doing Graph Differ : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2212.277 ; gain = 500.742 ; free physical = 103 ; free virtual = 1292
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2200.012 ; gain = 488.492 ; free physical = 64 ; free virtual = 663
+Finished Preparing Guide Design : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2212.285 ; gain = 500.750 ; free physical = 103 ; free virtual = 1292
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'a2_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:24]
+WARNING: [Synth 8-327] inferring latch for variable 'iorq_Tw_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:25]
+WARNING: [Synth 8-327] inferring latch for variable 'hold_clk_wait_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:26]
+WARNING: [Synth 8-327] inferring latch for variable 'hold_clk_busrq_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'TEMP_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:136]
+WARNING: [Synth 8-327] inferring latch for variable 'M1_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:33]
+WARNING: [Synth 8-327] inferring latch for variable 'M2_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:34]
+WARNING: [Synth 8-327] inferring latch for variable 'M3_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:35]
+WARNING: [Synth 8-327] inferring latch for variable 'M4_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:36]
+WARNING: [Synth 8-327] inferring latch for variable 'M5_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:37]
+WARNING: [Synth 8-327] inferring latch for variable 'M6_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'T1_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'T2_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:40]
+WARNING: [Synth 8-327] inferring latch for variable 'T3_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:41]
+WARNING: [Synth 8-327] inferring latch for variable 'T4_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:42]
+WARNING: [Synth 8-327] inferring latch for variable 'T5_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:43]
+WARNING: [Synth 8-327] inferring latch for variable 'T6_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'reset_flag_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:45]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2201.199 ; gain = 489.680 ; free physical = 77 ; free virtual = 651
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2243.723 ; gain = 532.188 ; free physical = 91 ; free virtual = 1228
 ---------------------------------------------------------------------------------
 
 
@@ -75,10 +316,43 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    2 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 5     
+	   3 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 7     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 4     
+	   3 Input    8 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 2     
+	   3 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   3 Input    4 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 2     
+	   3 Input    1 Bit       Adders := 2     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 11    
++---XORs : 
+	                8 Bit    Wide XORs := 13    
 +---Registers : 
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 19    
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 15    
+	  36 Input   16 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 12    
+	  16 Input    8 Bit        Muxes := 3     
+	  54 Input    6 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 92    
+	  17 Input    1 Bit        Muxes := 7     
+	  16 Input    1 Bit        Muxes := 5     
+	  54 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -96,21 +370,93 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'clk_delay_/a2_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:33]
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/a2_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/iorq_Tw_reg__0) is unused and will be removed from module z80_top.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'clk_delay_/hold_clk_wait_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:45]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:45]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:45]
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/hold_clk_wait_reg__0) is unused and will be removed from module z80_top.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'clk_delay_/hold_clk_busrq_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:57]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:57]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:57]
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/hold_clk_busrq_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[7]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[6]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[5]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[4]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[3]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[2]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[1]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[0]) is unused and will be removed from module z80_top.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/MREQ_b_reg__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:159]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:159]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:159]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/RD_b_reg__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:160]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:160]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:160]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/M1_b_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:308]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:308]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:308]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/in_alu_reg__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:225]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:225]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:225]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/DR_reg[3]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:220]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:220]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:220]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[15]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[14]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[13]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[12]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[11]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[10]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[9]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/REG_IN_reg[8]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:242]
+WARNING: [Synth 8-3332] Sequential element (sequencer_/M4_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (sequencer_/M5_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (sequencer_/M6_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (sequencer_/T5_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (sequencer_/T6_reg__0) is unused and will be removed from module z80_top.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/nextM_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:293]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:293]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:293]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'execute_/setM1_reg__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:205]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:205]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:205]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2345.211 ; gain = 633.691 ; free physical = 66 ; free virtual = 467
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2378.219 ; gain = 666.684 ; free physical = 94 ; free virtual = 1079
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2345.590 ; gain = 634.070 ; free physical = 62 ; free virtual = 465
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2378.598 ; gain = 667.062 ; free physical = 90 ; free virtual = 1079
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5966] Removing register instance (\execute_/halt_flag_reg ) from module (z80_top) as it has self-loop and (\execute_/halt_flag_reg__0 ) is actual driver [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:340]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2353.812 ; gain = 642.293 ; free physical = 75 ; free virtual = 457
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2378.812 ; gain = 667.277 ; free physical = 85 ; free virtual = 1077
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -127,38 +473,118 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin i_0:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_1:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_2:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_3:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_4:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_5:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_6:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_7:a to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2353.945 ; gain = 642.426 ; free physical = 70 ; free virtual = 455
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2378.945 ; gain = 667.410 ; free physical = 96 ; free virtual = 1050
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2353.961 ; gain = 642.441 ; free physical = 69 ; free virtual = 455
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2378.961 ; gain = 667.426 ; free physical = 95 ; free virtual = 1049
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[15] with 1st driver pin 'execute_/ADDRESS_BUS_reg[15]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[15] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[15]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[15] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[15]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[15] with 4th driver pin 'execute_/ADDRESS_BUS_reg[15]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[14] with 1st driver pin 'execute_/ADDRESS_BUS_reg[14]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[14] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[14]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[14] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[14]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[14] with 4th driver pin 'execute_/ADDRESS_BUS_reg[14]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[13] with 1st driver pin 'execute_/ADDRESS_BUS_reg[13]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[13] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[13]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[13] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[13]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[13] with 4th driver pin 'execute_/ADDRESS_BUS_reg[13]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[12] with 1st driver pin 'execute_/ADDRESS_BUS_reg[12]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[12] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[12]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[12] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[12]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[12] with 4th driver pin 'execute_/ADDRESS_BUS_reg[12]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[11] with 1st driver pin 'execute_/ADDRESS_BUS_reg[11]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[11] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[11]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[11] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[11]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[11] with 4th driver pin 'execute_/ADDRESS_BUS_reg[11]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[10] with 1st driver pin 'execute_/ADDRESS_BUS_reg[10]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[10] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[10]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[10] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[10]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[10] with 4th driver pin 'execute_/ADDRESS_BUS_reg[10]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[9] with 1st driver pin 'execute_/ADDRESS_BUS_reg[9]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[9] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[9]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[9] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[9]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[9] with 4th driver pin 'execute_/ADDRESS_BUS_reg[9]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[8] with 1st driver pin 'execute_/ADDRESS_BUS_reg[8]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[8] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[8]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[8] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[8]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[8] with 4th driver pin 'execute_/ADDRESS_BUS_reg[8]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[7] with 1st driver pin 'execute_/ADDRESS_BUS_reg[7]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[7] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[7]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[7] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[7]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[7] with 4th driver pin 'execute_/ADDRESS_BUS_reg[7]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[6] with 1st driver pin 'execute_/ADDRESS_BUS_reg[6]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[6] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[6]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[6] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[6]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[6] with 4th driver pin 'execute_/ADDRESS_BUS_reg[6]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[5] with 1st driver pin 'execute_/ADDRESS_BUS_reg[5]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[5] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[5]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[5] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[5]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[5] with 4th driver pin 'execute_/ADDRESS_BUS_reg[5]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[4] with 1st driver pin 'execute_/ADDRESS_BUS_reg[4]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[4] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[4]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[4] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[4]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[4] with 4th driver pin 'execute_/ADDRESS_BUS_reg[4]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[3] with 1st driver pin 'execute_/ADDRESS_BUS_reg[3]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[3] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[3]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[3] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[3]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[3] with 4th driver pin 'execute_/ADDRESS_BUS_reg[3]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[2] with 1st driver pin 'execute_/ADDRESS_BUS_reg[2]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[2] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[2]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[2] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[2]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[2] with 4th driver pin 'execute_/ADDRESS_BUS_reg[2]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[1] with 1st driver pin 'execute_/ADDRESS_BUS_reg[1]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[1] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[1]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[1] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[1]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[1] with 4th driver pin 'execute_/ADDRESS_BUS_reg[1]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[0] with 1st driver pin 'execute_/ADDRESS_BUS_reg[0]__2/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:142]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[0] with 2nd driver pin 'execute_/ADDRESS_BUS_reg[0]__1/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:164]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[0] with 3rd driver pin 'execute_/ADDRESS_BUS_reg[0]__0/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:188]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin ADDRESS_BUS_OBUF[0] with 4th driver pin 'execute_/ADDRESS_BUS_reg[0]/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:262]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       41|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2354.008 ; gain = 642.488 ; free physical = 69 ; free virtual = 455
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2379.043 ; gain = 667.508 ; free physical = 93 ; free virtual = 1049
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2354.016 ; gain = 642.496 ; free physical = 69 ; free virtual = 454
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2379.059 ; gain = 667.523 ; free physical = 92 ; free virtual = 1048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2354.047 ; gain = 642.527 ; free physical = 68 ; free virtual = 454
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2379.090 ; gain = 667.555 ; free physical = 92 ; free virtual = 1048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2354.051 ; gain = 642.531 ; free physical = 68 ; free virtual = 454
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2379.094 ; gain = 667.559 ; free physical = 92 ; free virtual = 1048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -171,45 +597,58 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |BUFG |     1|
-|2     |LUT1 |     3|
-|3     |LUT2 |     6|
-|4     |LUT4 |     2|
-|5     |FDRE |     7|
-|6     |IBUF |     9|
-|7     |OBUF |     6|
-+------+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     3|
+|2     |CARRY4 |     4|
+|3     |LUT1   |     4|
+|4     |LUT2   |     6|
+|5     |LUT3   |     1|
+|6     |LUT4   |    34|
+|7     |LUT5   |    36|
+|8     |LUT6   |    36|
+|9     |FDRE   |   172|
+|10    |FDSE   |     1|
+|11    |LD     |     8|
+|12    |IBUF   |    11|
+|13    |OBUF   |    22|
+|14    |OBUFT  |     2|
++------+-------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |    34|
-+------+---------+-------+------+
++------+-------------+----------+------+
+|      |Instance     |Module    |Cells |
++------+-------------+----------+------+
+|1     |top          |          |   340|
+|2     |  execute_   |execute   |   281|
+|3     |  sequencer_ |sequencer |    18|
++------+-------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2354.090 ; gain = 642.570 ; free physical = 68 ; free virtual = 454
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2379.121 ; gain = 667.586 ; free physical = 89 ; free virtual = 1046
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2354.109 ; gain = 642.590 ; free physical = 65 ; free virtual = 453
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2354.125 ; gain = 642.590 ; free physical = 64 ; free virtual = 453
+Synthesis finished with 0 errors, 216 critical warnings and 297 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2379.141 ; gain = 667.605 ; free physical = 86 ; free virtual = 1045
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2379.160 ; gain = 667.609 ; free physical = 84 ; free virtual = 1045
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2368.273 ; gain = 0.035 ; free physical = 460 ; free virtual = 829
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2390.430 ; gain = 0.047 ; free physical = 440 ; free virtual = 1393
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2478.949 ; gain = 0.000 ; free physical = 345 ; free virtual = 751
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 8 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2497.098 ; gain = 0.000 ; free physical = 318 ; free virtual = 1310
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 8 instances were transformed.
+  LD => LDCE (inverted pins: G): 8 instances
 
-Synth Design complete | Checksum: 69dcf100
+Synth Design complete | Checksum: 7d3cd1e7
 INFO: [Common 17-83] Releasing license: Synthesis
-21 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+71 Infos, 221 Warnings, 118 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 2479.027 ; gain = 778.066 ; free physical = 342 ; free virtual = 750
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1769.600; main = 1401.976; forked = 584.839
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3887.965; main = 2479.031; forked = 1683.449
-INFO: [Common 17-1381] The checkpoint '/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/clk_delay.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file clk_delay_utilization_synth.rpt -pb clk_delay_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 20 16:38:29 2026...
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:26 . Memory (MB): peak = 2497.184 ; gain = 796.207 ; free physical = 312 ; free virtual = 1306
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1875.882; main = 1347.562; forked = 559.910
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4062.348; main = 2497.184; forked = 1683.461
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/z80_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file z80_top_utilization_synth.rpt -pb z80_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 12 21:08:22 2026...

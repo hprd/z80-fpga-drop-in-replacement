@@ -1,0 +1,90 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Feb 12 21:10:20 2026
+# Process ID: 21912
+# Current directory: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/impl_1
+# Command line: vivado -log z80_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source z80_top.tcl -notrace
+# Log file: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/impl_1/z80_top.vdi
+# Journal file: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/impl_1/vivado.jou
+# Running On: f157b1d178b9, OS: Linux, CPU Frequency: 2502.057 MHz, CPU Physical cores: 1, Host memory: 3059 MB
+#-----------------------------------------------------------
+source z80_top.tcl -notrace
+Command: open_checkpoint /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/impl_1/z80_top.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 1620.699 ; gain = 0.195 ; free physical = 97 ; free virtual = 1403
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2056.965 ; gain = 0.043 ; free physical = 76 ; free virtual = 999
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2123.691 ; gain = 0.000 ; free physical = 83 ; free virtual = 908
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2023.1 (64-bit) build 3865809
+open_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2127.793 ; gain = 507.738 ; free physical = 81 ; free virtual = 906
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 5 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/HALT_b_OBUF has multiple drivers: execute_/HALT_b_reg__0/Q, and execute_/HALT_b_reg/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[0] has multiple drivers: execute_/PC_reg[0]__3/Q, execute_/PC_reg[0]__2/Q, execute_/PC_reg[0]__1/Q, execute_/PC_reg[0]__0/Q, and execute_/PC_reg[0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[10] has multiple drivers: execute_/PC_reg[10]/Q, execute_/PC_reg[10]__3/Q, execute_/PC_reg[10]__2/Q, execute_/PC_reg[10]__0/Q, and execute_/PC_reg[10]__1/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[11] has multiple drivers: execute_/PC_reg[11]__3/Q, execute_/PC_reg[11]__2/Q, execute_/PC_reg[11]__1/Q, execute_/PC_reg[11]__0/Q, and execute_/PC_reg[11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[12] has multiple drivers: execute_/PC_reg[12]__2/Q, execute_/PC_reg[12]__1/Q, execute_/PC_reg[12]__0/Q, execute_/PC_reg[12]/Q, and execute_/PC_reg[12]__3/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[13] has multiple drivers: execute_/PC_reg[13]/Q, execute_/PC_reg[13]__0/Q, execute_/PC_reg[13]__1/Q, execute_/PC_reg[13]__2/Q, and execute_/PC_reg[13]__3/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[14] has multiple drivers: execute_/PC_reg[14]/Q, execute_/PC_reg[14]__0/Q, execute_/PC_reg[14]__1/Q, execute_/PC_reg[14]__2/Q, and execute_/PC_reg[14]__3/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[15] has multiple drivers: execute_/PC_reg[15]__3/Q, execute_/PC_reg[15]__2/Q, execute_/PC_reg[15]__1/Q, execute_/PC_reg[15]__0/Q, and execute_/PC_reg[15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[1] has multiple drivers: execute_/PC_reg[1]__3/Q, execute_/PC_reg[1]__2/Q, execute_/PC_reg[1]__1/Q, execute_/PC_reg[1]__0/Q, and execute_/PC_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[2] has multiple drivers: execute_/PC_reg[2]__3/Q, execute_/PC_reg[2]__2/Q, execute_/PC_reg[2]__1/Q, execute_/PC_reg[2]__0/Q, and execute_/PC_reg[2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[3] has multiple drivers: execute_/PC_reg[3]__3/Q, execute_/PC_reg[3]__2/Q, execute_/PC_reg[3]__1/Q, execute_/PC_reg[3]__0/Q, and execute_/PC_reg[3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[4] has multiple drivers: execute_/PC_reg[4]__3/Q, execute_/PC_reg[4]/Q, execute_/PC_reg[4]__0/Q, execute_/PC_reg[4]__1/Q, and execute_/PC_reg[4]__2/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[5] has multiple drivers: execute_/PC_reg[5]__3/Q, execute_/PC_reg[5]__1/Q, execute_/PC_reg[5]__0/Q, execute_/PC_reg[5]/Q, and execute_/PC_reg[5]__2/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[6] has multiple drivers: execute_/PC_reg[6]__1/Q, execute_/PC_reg[6]__2/Q, execute_/PC_reg[6]__0/Q, execute_/PC_reg[6]__3/Q, and execute_/PC_reg[6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[7] has multiple drivers: execute_/PC_reg[7]__3/Q, execute_/PC_reg[7]/Q, execute_/PC_reg[7]__0/Q, execute_/PC_reg[7]__2/Q, and execute_/PC_reg[7]__1/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[8] has multiple drivers: execute_/PC_reg[8]/Q, execute_/PC_reg[8]__2/Q, execute_/PC_reg[8]__3/Q, execute_/PC_reg[8]__1/Q, and execute_/PC_reg[8]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/PC[9] has multiple drivers: execute_/PC_reg[9]__2/Q, execute_/PC_reg[9]__1/Q, execute_/PC_reg[9]__3/Q, execute_/PC_reg[9]/Q, and execute_/PC_reg[9]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[0] has multiple drivers: execute_/ADDRESS_BUS_reg[0]__2/Q, execute_/ADDRESS_BUS_reg[0]__1/Q, execute_/ADDRESS_BUS_reg[0]__0/Q, and execute_/ADDRESS_BUS_reg[0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[10] has multiple drivers: execute_/ADDRESS_BUS_reg[10]__2/Q, execute_/ADDRESS_BUS_reg[10]__1/Q, execute_/ADDRESS_BUS_reg[10]/Q, and execute_/ADDRESS_BUS_reg[10]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[11] has multiple drivers: execute_/ADDRESS_BUS_reg[11]__2/Q, execute_/ADDRESS_BUS_reg[11]__1/Q, execute_/ADDRESS_BUS_reg[11]__0/Q, and execute_/ADDRESS_BUS_reg[11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[12] has multiple drivers: execute_/ADDRESS_BUS_reg[12]__2/Q, execute_/ADDRESS_BUS_reg[12]__1/Q, execute_/ADDRESS_BUS_reg[12]__0/Q, and execute_/ADDRESS_BUS_reg[12]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[13] has multiple drivers: execute_/ADDRESS_BUS_reg[13]__2/Q, execute_/ADDRESS_BUS_reg[13]__1/Q, execute_/ADDRESS_BUS_reg[13]__0/Q, and execute_/ADDRESS_BUS_reg[13]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[14] has multiple drivers: execute_/ADDRESS_BUS_reg[14]__2/Q, execute_/ADDRESS_BUS_reg[14]__1/Q, execute_/ADDRESS_BUS_reg[14]__0/Q, and execute_/ADDRESS_BUS_reg[14]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[15] has multiple drivers: execute_/ADDRESS_BUS_reg[15]__2/Q, execute_/ADDRESS_BUS_reg[15]__1/Q, execute_/ADDRESS_BUS_reg[15]__0/Q, and execute_/ADDRESS_BUS_reg[15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[1] has multiple drivers: execute_/ADDRESS_BUS_reg[1]__2/Q, execute_/ADDRESS_BUS_reg[1]__1/Q, execute_/ADDRESS_BUS_reg[1]__0/Q, and execute_/ADDRESS_BUS_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[2] has multiple drivers: execute_/ADDRESS_BUS_reg[2]__2/Q, execute_/ADDRESS_BUS_reg[2]__1/Q, execute_/ADDRESS_BUS_reg[2]__0/Q, and execute_/ADDRESS_BUS_reg[2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[3] has multiple drivers: execute_/ADDRESS_BUS_reg[3]__2/Q, execute_/ADDRESS_BUS_reg[3]__1/Q, execute_/ADDRESS_BUS_reg[3]__0/Q, and execute_/ADDRESS_BUS_reg[3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[4] has multiple drivers: execute_/ADDRESS_BUS_reg[4]__2/Q, execute_/ADDRESS_BUS_reg[4]__1/Q, execute_/ADDRESS_BUS_reg[4]__0/Q, and execute_/ADDRESS_BUS_reg[4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[5] has multiple drivers: execute_/ADDRESS_BUS_reg[5]__2/Q, execute_/ADDRESS_BUS_reg[5]__1/Q, execute_/ADDRESS_BUS_reg[5]__0/Q, and execute_/ADDRESS_BUS_reg[5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[6] has multiple drivers: execute_/ADDRESS_BUS_reg[6]__2/Q, execute_/ADDRESS_BUS_reg[6]__1/Q, execute_/ADDRESS_BUS_reg[6]__0/Q, and execute_/ADDRESS_BUS_reg[6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[7] has multiple drivers: execute_/ADDRESS_BUS_reg[7]__2/Q, execute_/ADDRESS_BUS_reg[7]__1/Q, execute_/ADDRESS_BUS_reg[7]__0/Q, and execute_/ADDRESS_BUS_reg[7]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[8] has multiple drivers: execute_/ADDRESS_BUS_reg[8]__2/Q, execute_/ADDRESS_BUS_reg[8]__1/Q, execute_/ADDRESS_BUS_reg[8]__0/Q, and execute_/ADDRESS_BUS_reg[8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net execute_/Q[9] has multiple drivers: execute_/ADDRESS_BUS_reg[9]__2/Q, execute_/ADDRESS_BUS_reg[9]__1/Q, execute_/ADDRESS_BUS_reg[9]__0/Q, and execute_/ADDRESS_BUS_reg[9]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/M1 has multiple drivers: sequencer_/M1_reg__0/Q, and sequencer_/M1_reg/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/M2 has multiple drivers: sequencer_/M2_reg__0/Q, and sequencer_/M2_reg/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/M3 has multiple drivers: sequencer_/M3_reg/Q, and sequencer_/M3_reg__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/T1 has multiple drivers: sequencer_/T1_reg__0/Q, and sequencer_/T1_reg/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/T2 has multiple drivers: sequencer_/T2_reg/Q, and sequencer_/T2_reg__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/T3 has multiple drivers: sequencer_/T3_reg/Q, and sequencer_/T3_reg__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/T4 has multiple drivers: sequencer_/T4_reg__0/Q, and sequencer_/T4_reg/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net sequencer_/reset_flag has multiple drivers: sequencer_/reset_flag_reg/Q, and sequencer_/reset_flag_reg__0/Q.
+INFO: [Project 1-461] DRC finished with 41 Errors, 8 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.97 . Memory (MB): peak = 2216.480 ; gain = 67.695 ; free physical = 118 ; free virtual = 872
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 0 Critical Warnings and 42 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 12 21:10:51 2026...

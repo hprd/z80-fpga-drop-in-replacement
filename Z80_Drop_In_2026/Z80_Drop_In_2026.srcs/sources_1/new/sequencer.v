@@ -47,7 +47,6 @@ module sequencer(
     end
     
     always @(posedge clk_pos) begin
-
             if(nextM || setM1) begin
                 M1 <= setM1;
                 M2 <= M1 & !setM1;

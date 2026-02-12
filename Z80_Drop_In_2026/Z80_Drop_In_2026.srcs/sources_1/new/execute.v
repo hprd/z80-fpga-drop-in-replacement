@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 `include "z80_defines.v"
+`include "pla_defines.v"
 
 module execute
 (
@@ -30,23 +31,7 @@ module execute
     //----------------------------------------------------------
     input wire [104:0] pla,             // Statically decoded instructions
 
-//    //----------------------------------------------------------
-//    // Inputs from various blocks
-//    //----------------------------------------------------------
-//    input wire in_intr,                 // Servicing maskable interrupt
-//    input wire in_nmi,                  // Servicing non-maskable interrupt
-//    input wire in_halt,                 // Currently in HALT mode
-//    input wire im1,                     // Interrupt Mode 1
-//    input wire im2,                     // Interrupt Mode 2
-//    input wire use_ixiy,                // Special decode signal
-//    input wire flags_cond_true,         // Flags condition is true
-//    input wire repeat_en,               // Enable repeat of a block instruction
-//    input wire flags_zf,                // ZF to test a condition
-//    input wire flags_nf,                // NF to test for subtraction
-//    input wire flags_sf,                // SF to test for 8-bit sign of a value
-//    input wire flags_cf,                // CF to set HF for CCF
 
-    //----------------------------------------------------------
     // Machine and clock cycles
     //----------------------------------------------------------
     input wire M1,                      // Machine cycle #1
@@ -155,19 +140,16 @@ condition_check condition_check_(
 always @(posedge clk_pos) begin
     if(M1 & T1) begin
         ADDRESS_BUS <= PC;
-        M1_b <= 0;
         RFSH_b <= 1;
         WR_b <= 1;
     end
-
-    if(M1 & T3) begin
+    if(M1 & T2) begin
+        opcode <= DATA_IN;
         MREQ_b <= 1;
         RD_b <= 1;
         M1_b <= 1;
     end
 
-    if(M1 & T4) begin
-    end
 end
 
 always @(posedge clk_neg) begin
@@ -176,9 +158,6 @@ always @(posedge clk_neg) begin
     if(M1 & T1) begin
         MREQ_b <= 0;
         RD_b <= 0;
-    end
-    if(M1 & T2) begin
-        opcode <= DATA_IN;
     end
     if(M1 & T4) begin
         nextM <= 1;
@@ -192,10 +171,10 @@ end
 /////////////////////
 
     /////////////////////
-    //LD r , n
+    //LD r , n (8-bit Immediate Register Load)
     /////////////////////
     always @(posedge clk_pos) begin                        
-        if (pla[17] & ~pla[50]) begin
+        if (`LD_r_n) begin
             if(M1 & T3) begin
                 PC <= PC + 1;
             end
@@ -212,7 +191,7 @@ end
     end
     
     always @(posedge clk_neg) begin
-        if (pla[17] & ~pla[50]) begin
+        if (`LD_r_n) begin
             if(M2 & T1) begin
                 MREQ_b <= 0;
                 RD_b <= 0;
@@ -224,6 +203,7 @@ end
                 MREQ_b <= 1;
                 RD_b <= 1;
                 setM1 <= 1;
+                M1_b <= 0;       
             end
         end
     end
@@ -232,16 +212,10 @@ end
     //ALU a, r
     /////////////////////
     always @(posedge clk_pos) begin                        
-        if (pla[65] & ~pla[52]) begin
-            if (M1 & T2) begin
-                in_alu <= 1;
-            end   
+        if (`ALU_A_r) begin  
             if (M1 & T3) begin 
                 operandA <= SR2_OUT;
                 operandB <= SR1_OUT;
-                if (pla[84]) begin // add a, r
-                    ALU_OP <= `ALU_ADD_8BIT;
-                end
                 LD_REG <= 1;
                 DR <= 14'h7;              
                 PC <= PC + 1;
@@ -254,18 +228,23 @@ end
     end
     
     always @(posedge clk_neg) begin
-        if (pla[65] & ~pla[52]) begin
+        if (`ALU_A_r) begin
             if (M1 & T3) begin
+                in_alu <= 1;
                 SR1 <= opcode[2:0];
-                SR2 <= 4'h7;                     
+                SR2 <= 4'h7;
+                if (`ADD_OP) begin // add a, r
+                    ALU_OP <= `ALU_ADD_8BIT;
+                end                     
             end           
             if (M1 & T4) begin
-                if (pla[84]) begin // add a, r
+                if (`ADD_OP) begin // add a, r
                     REG_IN <= ALU_OUT;
                     flag <= FLAG_OUT;
                 end    
                 else begin REG_IN = accum; end
                 setM1 <= 1;
+                M1_b <= 0;
             end
         end    
     end
@@ -275,7 +254,7 @@ end
     /////////////////////
     reg [15:0] next_PC;
     always @(posedge clk_pos) begin                        
-        if (pla[43]) begin
+        if (`JP_cc_nn) begin
             if(M1 & T3) begin
                 PC <= PC + 1;
             end
@@ -294,7 +273,7 @@ end
     end
     
     always @(posedge clk_neg) begin
-        if (pla[43]) begin
+        if (`JP_cc_nn) begin
             if(M1 & T3) begin
                 condition_in <= opcode[5:3];
             end
@@ -326,6 +305,7 @@ end
                 MREQ_b <= 1;
                 RD_b <= 1;
                 setM1 <= 1;
+                M1_b <= 0;
             end       
         end    
     end

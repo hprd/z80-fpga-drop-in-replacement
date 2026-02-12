@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log clk_delay.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_delay.tcl" );
+         "-log z80_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top.tcl" );
 
 
 

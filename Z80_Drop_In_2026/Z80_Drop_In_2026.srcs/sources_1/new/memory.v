@@ -34,10 +34,13 @@ module memory(
     // 11000010,    JP  NZ,  
     // 00000100,            4
     // 00000000,            + 0 << 8
-    // 00001110,    LD  C,  
-    // 00000001,            1
+    // 11001010,    JP    
+    // 00000000,            0
+    // 00000000,            + 0 << 8
     // 01110110     HALT
     //
+    
+    //make a continuous loop
     
     reg counter = 1'b0;
     assign clk_pos = counter;
