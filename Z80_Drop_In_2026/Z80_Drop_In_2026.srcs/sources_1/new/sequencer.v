@@ -2,8 +2,7 @@
 
 module sequencer(
     input setM1,
-    input clk_pos,
-    input clk_neg,
+    input CLK_b,
     input nreset,
     input nextM,
     input hold_clk_iorq,
@@ -26,9 +25,18 @@ module sequencer(
     
     assign timings_en = !(hold_clk_iorq & hold_clk_wait & hold_clk_busrq);
     
-    reg reset_flag = 0;
     
-    always @(*) begin
+    reg counter = 1'b0;
+    always @(posedge CLK_b) begin
+        counter <= ~counter;
+    end
+
+    `define POS_EDGE counter == 1'b1
+    `define NEG_EDGE counter == 1'b0
+
+    reg reset_flag = 0;
+
+    always @(posedge CLK_b) begin
         if(!nreset) begin
             M1 <= 1;
             M2 <= 0;
@@ -44,9 +52,7 @@ module sequencer(
             T6 <= 0;
             reset_flag <= 1;
         end
-    end
-    
-    always @(posedge clk_pos) begin
+        if(`POS_EDGE) begin
             if(nextM || setM1) begin
                 M1 <= setM1;
                 M2 <= M1 & !setM1;
@@ -65,5 +71,6 @@ module sequencer(
             end
             if(reset_flag) reset_flag <= 0;
         end
+    end
     
 endmodule

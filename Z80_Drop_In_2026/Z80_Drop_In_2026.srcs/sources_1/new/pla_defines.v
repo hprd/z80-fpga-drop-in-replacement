@@ -10,3 +10,6 @@
 `define ALU_A_r pla[65] & ~pla[52] //ALU Operation with Accumulator and register R
 
 `define ADD_OP pla[84] //ALU Operation is ADD
+
+//HALT
+`define HALT pla[95]    //HALT opcode

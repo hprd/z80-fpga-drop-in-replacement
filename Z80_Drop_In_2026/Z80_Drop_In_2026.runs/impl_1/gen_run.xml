@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1770930613">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1770999662">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="z80_top_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="z80_top_routed.rqs"/>
@@ -14,6 +14,7 @@
   <File Type="CFI_FILE" Name="z80_top.cfi"/>
   <File Type="RCFI_FILE" Name="z80_top.rcfi"/>
   <File Type="PL-PDI-FILE" Name="z80_top_pld.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="z80_top_soc.pdi"/>
   <File Type="RDI-RDI" Name="z80_top.vdi"/>
   <File Type="PDI-FILE" Name="z80_top.pdi"/>
   <File Type="BITSTR-MMI" Name="z80_top.mmi"/>
@@ -83,8 +84,6 @@
   <File Type="REPORTS-TCL" Name="z80_top_reports.tcl"/>
   <File Type="INIT-TIMING" Name="z80_top_timing_summary_init.rpt"/>
   <File Type="PA-TCL" Name="z80_top.tcl"/>
-  <File Type="BOOT-PDI-FILE" Name="z80_top_soc.pdi"/>
-  <File Type="PA-DCP" Name="z80_top.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/z80_defines.v">
@@ -205,14 +204,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/z80_integrated.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/z80_memory_tb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>

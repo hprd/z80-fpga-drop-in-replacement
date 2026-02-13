@@ -50,9 +50,16 @@ module execute
     input NMI_b,
 
     
-    input clk_pos,
-    input clk_neg
+    input CLK_b
     );
+
+reg counter = 1'b0;
+always @(posedge CLK_b) begin
+    counter <= ~counter;
+end
+
+`define POS_EDGE counter == 1'b1
+`define NEG_EDGE counter == 1'b0
 
 reg [15:0] PC = 0;
 reg use_ixiy = 0;
@@ -94,7 +101,7 @@ wire rsel3 = op3 ^ (op4 & op5);
     reg [7:0] operand;
     
 reg_file reg_file_(
-    .clk(clk_pos),
+    .clk(counter),
     .SR1(SR1),
     .SR2(SR2),
     .DR(DR),
@@ -117,6 +124,8 @@ reg_file reg_file_(
     wire [7:0] FLAG_OUT;
     reg [2:0] condition_in;
     wire check_out;
+    reg [15:0] next_PC;
+
 
 ALU_Core ALU_(
     .ALU_OP(ALU_OP),
@@ -133,218 +142,434 @@ condition_check condition_check_(
     .check_out(check_out)
 );
 
-
-/////////////////////
-//Opcode Fetch Logic
-/////////////////////
-always @(posedge clk_pos) begin
-    if(M1 & T1) begin
-        ADDRESS_BUS <= PC;
-        RFSH_b <= 1;
-        WR_b <= 1;
-    end
-    if(M1 & T2) begin
-        opcode <= DATA_IN;
-        MREQ_b <= 1;
-        RD_b <= 1;
-        M1_b <= 1;
-    end
-
-end
-
-always @(posedge clk_neg) begin
-    nextM = 0;                          
-    setM1 = 0;  
-    if(M1 & T1) begin
-        MREQ_b <= 0;
-        RD_b <= 0;
-    end
-    if(M1 & T4) begin
-        nextM <= 1;
-        ADDRESS_BUS <= PC;
-    end
-end
+//template
+    //always @(posedge CLK_b) begin
+    //    if() begin
+    //        if(`POS_EDGE) begin
+        
+    //        end
+    //        else if (`NEG_EDGE) begin
+        
+    //        end
+    //        else begin end
+    //    end
+    //end
 
 
-/////////////////////
-//Opcode Execute Logic
-/////////////////////
+///////////////////////
+////Opcode Fetch Logic
+///////////////////////
 
-    /////////////////////
-    //LD r , n (8-bit Immediate Register Load)
-    /////////////////////
-    always @(posedge clk_pos) begin                        
-        if (`LD_r_n) begin
-            if(M1 & T3) begin
-                PC <= PC + 1;
-            end
-            if (M2 & T2) begin  
-                DR <= {1'b0, opcode[5:3]};
-                LD_REG <= 1;
-                PC <= PC + 1;
-            end            
-            if(M2 & T3) begin
-                LD_REG <= 0;
-                ADDRESS_BUS <= PC;
-            end
-        end
-    end
+//    always @(posedge CLK_b) begin
+//        if(`POS_EDGE) begin
+//            if(M1 & T1) begin
+//                ADDRESS_BUS <= PC;
+//                RFSH_b <= 1;
+//                WR_b <= 1;
+//            end
+//            else if(M1 & T2) begin
+//                opcode <= DATA_IN;
+//                MREQ_b <= 1;
+//                RD_b <= 1;
+//                M1_b <= 1;
+//            end
+//            else if(M1 & T4) begin
+//                ADDRESS_BUS <= PC;
+//            end
+//        end
+//        else if (`NEG_EDGE) begin
+//            nextM = 0;                          
+//            setM1 = 0;  
+//            if(M1 & T1) begin
+//                MREQ_b <= 0;
+//                RD_b <= 0;
+//            end
+//            else if(M1 & T4) begin
+//                nextM <= 1;
+//            end    
+//        end
+//        else begin end
+//    end
+
+
+///////////////////////
+////Opcode Execute Logic
+///////////////////////
+
+//    /////////////////////
+//    //LD r , n (8-bit Immediate Register Load)
+//    /////////////////////
     
-    always @(posedge clk_neg) begin
-        if (`LD_r_n) begin
-            if(M2 & T1) begin
-                MREQ_b <= 0;
-                RD_b <= 0;
-            end
-            if(M2 & T2) begin
-                REG_IN <= DATA_IN;
-            end
-            if(M2 & T3) begin
-                MREQ_b <= 1;
-                RD_b <= 1;
-                setM1 <= 1;
-                M1_b <= 0;       
-            end
-        end
-    end
+//    always @(posedge CLK_b) begin
+//        if(`LD_r_n) begin
+//            if(`POS_EDGE) begin
+//                if(M1 & T3) begin
+//                    PC <= PC + 1;
+//                end
+//                else if (M2 & T2) begin  
+//                    DR <= {1'b0, opcode[5:3]};
+//                    LD_REG <= 1;
+//                    PC <= PC + 1;
+//                end            
+//                else if(M2 & T3) begin
+//                    LD_REG <= 0;
+//                    ADDRESS_BUS <= PC;
+//                end        
+//            end
+//            else if (`NEG_EDGE) begin
+//                if(M2 & T1) begin
+//                    MREQ_b <= 0;
+//                    RD_b <= 0;
+//                end
+//                else if(M2 & T2) begin
+//                    REG_IN <= DATA_IN;
+//                end
+//                else if(M2 & T3) begin
+//                    MREQ_b <= 1;
+//                    RD_b <= 1;
+//                    setM1 <= 1;
+//                    M1_b <= 0;       
+//                end        
+//            end
+//            else begin end
+//        end
+//    end
 
-    /////////////////////
-    //ALU a, r
-    /////////////////////
-    always @(posedge clk_pos) begin                        
-        if (`ALU_A_r) begin  
-            if (M1 & T3) begin 
-                operandA <= SR2_OUT;
-                operandB <= SR1_OUT;
-                LD_REG <= 1;
-                DR <= 14'h7;              
-                PC <= PC + 1;
-            end            
-            if (M1 & T4) begin
-                LD_REG <= 0;
-                in_alu <= 0;
-            end                 
-        end
-    end
+//    /////////////////////
+//    //ALU a, r
+//    /////////////////////
     
-    always @(posedge clk_neg) begin
-        if (`ALU_A_r) begin
-            if (M1 & T3) begin
-                in_alu <= 1;
-                SR1 <= opcode[2:0];
-                SR2 <= 4'h7;
-                if (`ADD_OP) begin // add a, r
-                    ALU_OP <= `ALU_ADD_8BIT;
-                end                     
-            end           
-            if (M1 & T4) begin
-                if (`ADD_OP) begin // add a, r
-                    REG_IN <= ALU_OUT;
-                    flag <= FLAG_OUT;
-                end    
-                else begin REG_IN = accum; end
-                setM1 <= 1;
-                M1_b <= 0;
-            end
-        end    
-    end
+//    always @(posedge CLK_b) begin
+//        if(`ALU_A_r) begin
+//            if(`POS_EDGE) begin
+//                if (M1 & T3) begin 
+//                    operandA <= SR2_OUT;
+//                    operandB <= SR1_OUT;
+//                    LD_REG <= 1;
+//                    DR <= 14'h7;              
+//                    PC <= PC + 1;
+//                    if (`ADD_OP) begin // add a, r
+//                        ALU_OP <= `ALU_ADD_8BIT;
+//                    end     
+//                end            
+//                else if (M1 & T4) begin
+//                    in_alu <= 0;
+//                    LD_REG <= 0;
+//                end                         
+//            end
+//            else if (`NEG_EDGE) begin
+//                if (M1 & T3) begin
+//                    in_alu <= 1;
+//                    SR1 <= opcode[2:0];
+//                    SR2 <= 4'h7;                
+//                end           
+//                else if (M1 & T4) begin
+//                    if (`ADD_OP) begin // add a, r
+//                        REG_IN <= ALU_OUT;
+//                        flag <= FLAG_OUT;
+//                    end    
+//                    else begin REG_IN = accum; end
+//                    setM1 <= 1;
+//                    M1_b <= 0;
+//                end        
+//            end
+//            else begin end
+//        end
+//    end
 
-    /////////////////////
-    //JP cc , nn
-    /////////////////////
-    reg [15:0] next_PC;
-    always @(posedge clk_pos) begin                        
-        if (`JP_cc_nn) begin
-            if(M1 & T3) begin
-                PC <= PC + 1;
-            end
-            if(M2 & T3) begin
-                ADDRESS_BUS <= PC;
-            end 
-            if (M3 & T2) begin  
-                if(~check_out) begin
-                    PC <= PC + 1;
-                end
-            end            
-            if(M3 & T3) begin
-                ADDRESS_BUS <= PC;
-            end        
-        end
-    end
+//    /////////////////////
+//    //JP cc , nn
+//    /////////////////////
     
-    always @(posedge clk_neg) begin
-        if (`JP_cc_nn) begin
-            if(M1 & T3) begin
-                condition_in <= opcode[5:3];
-            end
-            if(M2 & T1) begin
-                MREQ_b <= 0;
-                RD_b <= 0;
-            end
-            if(M2 & T2) begin
-                if(check_out) begin
-                    next_PC <= DATA_IN;
-                end
-                PC <= PC + 1;
-            end
-            if(M2 & T3) begin
-                MREQ_b <= 1;
-                RD_b <= 1;
-                nextM <= 1;
-            end    
-            if(M3 & T1) begin
-                MREQ_b <= 0;
-                RD_b <= 0;
-            end
-            if(M3 & T3) begin
-                if(check_out) begin
-                    PC <= next_PC + (DATA_IN << 8);
-                end
-            end
-            if(M3 & T3) begin
-                MREQ_b <= 1;
-                RD_b <= 1;
-                setM1 <= 1;
-                M1_b <= 0;
-            end       
-        end    
-    end
+//    always @(posedge CLK_b) begin
+//        if(`JP_cc_nn) begin
+//            if(`POS_EDGE) begin
+//                if(M1 & T3) begin
+//                    PC <= PC + 1;
+//                end
+//                else if(M2 & T3) begin
+//                    ADDRESS_BUS <= PC;
+//                end 
+//                else if (M3 & T2) begin  
+//                    if(~check_out) begin
+//                        PC <= PC + 1;
+//                    end
+//                end            
+//                else if(M3 & T3) begin
+//                    ADDRESS_BUS <= PC;
+//                end                
+//            end
+//            else if (`NEG_EDGE) begin
+//                if(M1 & T3) begin
+//                    condition_in <= opcode[5:3];
+//                end
+//                else if(M2 & T1) begin
+//                    MREQ_b <= 0;
+//                    RD_b <= 0;
+//                end
+//                else if(M2 & T2) begin
+//                    if(check_out) begin
+//                        next_PC <= DATA_IN;
+//                    end
+//                    PC <= PC + 1;
+//                end
+//                else if(M2 & T3) begin
+//                    MREQ_b <= 1;
+//                    RD_b <= 1;
+//                    nextM <= 1;
+//                end    
+//                else if(M3 & T1) begin
+//                    MREQ_b <= 0;
+//                    RD_b <= 0;
+//                end
+//                else if(M3 & T3) begin
+//                    if(check_out) begin
+//                        PC <= next_PC + (DATA_IN << 8);
+//                    end
+//                    MREQ_b <= 1;
+//                    RD_b <= 1;
+//                    setM1 <= 1;
+//                    M1_b <= 0;
+//                end               
+//            end
+//            else begin end
+//        end
+//    end
 
-    /////////////////////
-    //HALT
-    /////////////////////
+
+//    /////////////////////
+//    //HALT
+//    /////////////////////
     reg halt_flag = 0;
-    always @(posedge clk_pos) begin                        
-        if (pla[95]) begin
-            if(M1 & T3) begin
-                if(~NMI_b) begin
-                    PC <= PC + 1;
-                    halt_flag <= 1;
-                end
-            end
-            if(M1 & T4) begin
-                HALT_b <= 0;
-            end        
-        end
-    end
     
-    always @(posedge clk_neg) begin
-        if (pla[95]) begin
-            if(M1 & T3) begin
-                if(~NMI_b) begin
-                    HALT_b <= 0;
-                end
-            end 
-            if(M1 & T4) begin
-                setM1 <= 1;
-                if(halt_flag) begin
-                    halt_flag <= 1;
-                    HALT_b <= 1;
-                end
-            end 
-        end    
-    end
+//    always @(posedge CLK_b) begin
+//        if(`HALT) begin
+//            if(`POS_EDGE) begin
+//                if(M1 & T3) begin
+//                    if(~NMI_b) begin
+//                        PC <= PC + 1;
+//                        halt_flag <= 1;
+//                    end
+//                end
+//                if(M1 & T4) begin
+//                    HALT_b <= 0;
+//                end                
+//            end
+//            else if (`NEG_EDGE) begin
+//                if(M1 & T3) begin
+//                    if(~NMI_b) begin
+//                        HALT_b <= 0;
+//                    end
+//                end 
+//                if(M1 & T4) begin
+//                    setM1 <= 1;
+//                    if(halt_flag) begin
+//                        halt_flag <= 1;
+//                        HALT_b <= 1;
+//                    end
+//                end         
+//            end
+//            else begin end
+//        end
+//    end
 
+    always @(posedge CLK_b) begin
+        if(`POS_EDGE) begin
+//    /////////////////////
+//    //OPCODE FETCH
+//    /////////////////////            
+            if(M1 & T1) begin
+                ADDRESS_BUS <= PC;
+                RFSH_b <= 1;
+                WR_b <= 1;
+            end
+            else if(M1 & T2) begin
+                opcode <= DATA_IN;
+                MREQ_b <= 1;
+                RD_b <= 1;
+                M1_b <= 1;
+            end
+            else if(M1 & T4) begin
+                ADDRESS_BUS <= PC;
+            end
+//    /////////////////////
+//    //LD r , n (8-bit Immediate Register Load)
+//    /////////////////////
+            if(`LD_r_n) begin
+                    if(M1 & T3) begin
+                        PC <= PC + 1;
+                    end
+                    else if (M2 & T2) begin  
+                        DR <= {1'b0, opcode[5:3]};
+                        LD_REG <= 1;
+                        PC <= PC + 1;
+                    end            
+                    else if(M2 & T3) begin
+                        LD_REG <= 0;
+                        ADDRESS_BUS <= PC;
+                    end        
+            end
+//    /////////////////////
+//    //ALU a, r (8-bit ALU Operation from Register on Accumulator)
+//    /////////////////////
+            if(`ALU_A_r) begin
+                if (M1 & T3) begin 
+                    operandA <= SR2_OUT;
+                    operandB <= SR1_OUT;
+                    LD_REG <= 1;
+                    DR <= 14'h7;              
+                    PC <= PC + 1;
+                    if (`ADD_OP) begin // add a, r
+                        ALU_OP <= `ALU_ADD_8BIT;
+                    end     
+                end            
+                else if (M1 & T4) begin
+                    in_alu <= 0;
+                    LD_REG <= 0;
+                end                         
+            end
+//    /////////////////////
+//    //JP cc , nn  (Conditional Jump to Address NN)
+//    /////////////////////         
+            if(`JP_cc_nn) begin
+                if(M1 & T3) begin
+                    PC <= PC + 1;
+                end
+                else if(M2 & T3) begin
+                    ADDRESS_BUS <= PC;
+                end 
+                else if (M3 & T2) begin  
+                    if(~check_out) begin
+                        PC <= PC + 1;
+                    end
+                end            
+                else if(M3 & T3) begin
+                    ADDRESS_BUS <= PC;
+                end                
+            end
+//    /////////////////////
+//    //HALT
+//    /////////////////////            
+            if(`HALT) begin
+                if(M1 & T3) begin
+                    if(~NMI_b) begin
+                        PC <= PC + 1;
+                        halt_flag <= 1;
+                    end
+                end
+                else if(M1 & T4) begin
+                    HALT_b <= 0;
+                end                
+            end
+                           
+        end
+  
+        else if(`NEG_EDGE) begin
+//    /////////////////////
+//    //OPCODE FETCH
+//    /////////////////////  
+            nextM = 0;                          
+            setM1 = 0;  
+            if(M1 & T1) begin
+                MREQ_b <= 0;
+                RD_b <= 0;
+            end
+            else if(M1 & T4) begin
+                nextM <= 1;
+            end
+//    /////////////////////
+//    //LD r , n (8-bit Immediate Register Load)
+//    /////////////////////
+            if (`LD_r_n) begin
+                if(M2 & T1) begin
+                    MREQ_b <= 0;
+                    RD_b <= 0;
+                end
+                else if(M2 & T2) begin
+                    REG_IN <= DATA_IN;
+                end
+                else if(M2 & T3) begin
+                    MREQ_b <= 1;
+                    RD_b <= 1;
+                    setM1 <= 1;
+                    M1_b <= 0;       
+                end        
+            end
+//    /////////////////////
+//    //ALU a, r (8-bit ALU Operation from Register on Accumulator)
+//    /////////////////////    
+            if (`ALU_A_r) begin
+                if (M1 & T3) begin
+                    in_alu <= 1;
+                    SR1 <= opcode[2:0];
+                    SR2 <= 4'h7;                
+                end           
+                else if (M1 & T4) begin
+                    if (`ADD_OP) begin // add a, r
+                        REG_IN <= ALU_OUT;
+                        flag <= FLAG_OUT;
+                    end    
+                    else begin REG_IN = accum; end
+                    setM1 <= 1;
+                    M1_b <= 0;
+                end        
+            end
+//    /////////////////////
+//    //JP cc , nn  (Conditional Jump to Address NN)
+//    /////////////////////   
+            if (`JP_cc_nn) begin
+                if(M1 & T3) begin
+                    condition_in <= opcode[5:3];
+                end
+                else if(M2 & T1) begin
+                    MREQ_b <= 0;
+                    RD_b <= 0;
+                end
+                else if(M2 & T2) begin
+                    if(check_out) begin
+                        next_PC <= DATA_IN;
+                    end
+                    PC <= PC + 1;
+                end
+                else if(M2 & T3) begin
+                    MREQ_b <= 1;
+                    RD_b <= 1;
+                    nextM <= 1;
+                end    
+                else if(M3 & T1) begin
+                    MREQ_b <= 0;
+                    RD_b <= 0;
+                end
+                else if(M3 & T3) begin
+                    if(check_out) begin
+                        PC <= next_PC + (DATA_IN << 8);
+                    end
+                    MREQ_b <= 1;
+                    RD_b <= 1;
+                    setM1 <= 1;
+                    M1_b <= 0;
+                end               
+            end
+//    /////////////////////
+//    //HALT
+//    /////////////////////
+            if (`HALT) begin
+                if(M1 & T3) begin
+                    if(~NMI_b) begin
+                        HALT_b <= 0;
+                    end
+                end 
+                if(M1 & T4) begin
+                    setM1 <= 1;
+                    if(halt_flag) begin
+                        halt_flag <= 1;
+                        HALT_b <= 1;
+                    end
+                end         
+            end                
+        end
+        else begin end
+    end
 
 endmodule
 

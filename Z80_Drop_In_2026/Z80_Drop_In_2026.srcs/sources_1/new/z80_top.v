@@ -27,20 +27,12 @@ module z80_top(
     assign D = (RD_b) ? data_out : 8'hZ;
     assign data_in = D;
     
-    reg counter = 1'b0;
-    assign clk_pos = counter;
-    assign clk_neg = ~counter;
-
-    always @(posedge CLK_b) begin
-        if(RESET_b) counter = counter + 1;
-    end
         
     // =============================
     // Clock Delay for stalls
     // =============================    
     clk_delay clk_delay_(
-        .clk_pos(clk_pos),
-        .clk_neg(clk_neg),
+        .CLK_b(CLK_b),
         .in_intr(in_intr),
         .nreset(RESET_b),
         .T1(T1),
@@ -77,8 +69,7 @@ module z80_top(
     // Execute Module
     // =============================
     execute execute_(
-        .clk_pos(clk_pos),
-        .clk_neg(clk_neg),
+        .CLK_b(CLK_b),
         .nextM(nextM),
         .setM1(setM1),
         .pla(pla),
@@ -116,8 +107,7 @@ module z80_top(
     // Clock Cycle Sequencer
     // =============================
     sequencer sequencer_(
-        .clk_pos(clk_pos),
-        .clk_neg(clk_neg),
+        .CLK_b(CLK_b),
         .nextM(nextM),
         .setM1(setM1),
         .nreset(RESET_b),
