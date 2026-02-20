@@ -3,6 +3,9 @@
 //8-BIT LOAD GROUP
 `define LD_r_n pla[17] & ~pla[50] //Immediate register load of register R with 8-bit value N
 
+//8-BIT LOAD Memory
+`define LD_hl_r pla[59] & ~use_ixiy
+
 //JUMP GROUP
 `define JP_cc_nn pla[43] //Conditional Jump based on CC conditions to address NN
 

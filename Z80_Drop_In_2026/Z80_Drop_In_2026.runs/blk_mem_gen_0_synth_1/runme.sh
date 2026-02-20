@@ -1,16 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 
 # 
 # Vivado(TM)
 # runme.sh: a Vivado-generated Runs Script for UNIX
 # Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-# Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+# Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 # 
 
+echo "This script was generated under a different operating system."
+echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executing this script"
+exit
+
 if [ -z "$PATH" ]; then
-  PATH=/home/user/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/lin64:/home/user/Xilinx/Vivado/2023.1/bin
+  PATH=C:/Xilinx/2025.2/Vitis/bin;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.2/Vivado/bin
 else
-  PATH=/home/user/Xilinx/Vivado/2023.1/ids_lite/ISE/bin/lin64:/home/user/Xilinx/Vivado/2023.1/bin:$PATH
+  PATH=C:/Xilinx/2025.2/Vitis/bin;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.2/Vivado/bin:$PATH
 fi
 export PATH
 
@@ -21,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1'
+HD_PWD='C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

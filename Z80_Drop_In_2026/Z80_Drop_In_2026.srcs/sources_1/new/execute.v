@@ -142,6 +142,10 @@ condition_check condition_check_(
     .check_out(check_out)
 );
 
+localparam REG_HL = 4'd10;  //Register File HL parameter
+reg [15:0] hl_latched;
+reg [7:0]  r_latched;
+
 //template
     //always @(posedge CLK_b) begin
     //    if() begin
@@ -410,6 +414,30 @@ condition_check condition_check_(
                     end        
             end
 //    /////////////////////
+//    //LD hl , r (8-bit Load into Memory from Register)
+//    //M1: T1-T4 opcode fetch
+//    //M2: T1-T3 Actual memory write  
+//    /////////////////////
+            if(`LD_hl_r)begin
+                if(M1 & T3)begin
+                    PC <= PC + 1;
+                end
+                else if(M1 & T4)begin
+                    hl_latched <= SR2_OUT;          //HL register
+                    r_latched <= SR1_OUT[7:0];      //Source register
+                    PC <= PC + 1;
+                    ADDRESS_BUS <= SR2_OUT;      //Address on the bus
+                    //DATA_OUT <= SR1_OUT[7:0];          //register as data to write
+                end
+               // else if(M2 & T1)begin
+                    //ADDRESS_BUS <= hl_latched;      //Address on the bus
+                    //DATA_OUT <= r_latched;          //register as data to write
+                //end
+                else if(M2 & T3)begin
+                    ADDRESS_BUS <= PC;
+                end 
+            end   
+//    /////////////////////
 //    //ALU a, r (8-bit ALU Operation from Register on Accumulator)
 //    /////////////////////
             if(`ALU_A_r) begin
@@ -495,6 +523,31 @@ condition_check condition_check_(
                     M1_b <= 0;       
                 end        
             end
+//    /////////////////////
+//    //LD hl , r (8-bit Load into Memory from Register)
+//    //M1: T1-T4 opcode fetch
+//    //M2: T1-T3 Actual memory write  
+//    /////////////////////
+            else if(`LD_hl_r)begin
+                if(M1 & T3)begin                    //Set reg file select lines so outputs settle before M1 T4
+                    SR1 <= {1'b0, opcode[2:0]};
+                    SR2 <= REG_HL;
+                end
+                else if(M2 & T1)begin
+                    MREQ_b <= 0;
+                    DATA_OUT <= SR1_OUT[7:0];
+                end
+                else if(M2 & T2)begin
+                    WR_b <= 0;
+                end
+                else if(M2 & T3)begin               //deassert WR (WR goes high on rising edge of T3)
+                    WR_b <= 1;
+                    MREQ_b <=1;
+                    M1_b <=0;
+                    
+                    setM1 <=1;
+                end
+            end   
 //    /////////////////////
 //    //ALU a, r (8-bit ALU Operation from Register on Accumulator)
 //    /////////////////////    

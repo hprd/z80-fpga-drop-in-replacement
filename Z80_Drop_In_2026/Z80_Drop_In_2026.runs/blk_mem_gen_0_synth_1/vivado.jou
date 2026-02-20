@@ -1,14 +1,24 @@
 #-----------------------------------------------------------
-# Vivado v2023.1 (64-bit)
-# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
-# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
-# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Nov 19 15:00:06 2025
-# Process ID: 2849
-# Current directory: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1
-# Command line: vivado -log blk_mem_gen_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_0.tcl
-# Log file: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1/blk_mem_gen_0.vds
-# Journal file: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1/vivado.jou
-# Running On: f88a43f63abe, OS: Linux, CPU Frequency: 2502.057 MHz, CPU Physical cores: 1, Host memory: 3059 MB
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu Feb 19 13:02:03 2026
+# Process ID         : 15476
+# Current directory  : C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1
+# Command line       : vivado.exe -log blk_mem_gen_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_0.tcl
+# Log file           : C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1/blk_mem_gen_0.vds
+# Journal file       : C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/blk_mem_gen_0_synth_1\vivado.jou
+# Running On         : LAPTOP-B5L0QDBQ
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+# CPU Frequency      : 2592 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 17041 MB
+# Swap memory        : 15032 MB
+# Total Virtual      : 32074 MB
+# Available Virtual  : 6526 MB
 #-----------------------------------------------------------
 source blk_mem_gen_0.tcl -notrace

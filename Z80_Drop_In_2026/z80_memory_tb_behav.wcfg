@@ -11,185 +11,165 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="9.360001 us"></ZoomEndTime>
-      <Cursor1Time time="1.125000 us"></Cursor1Time>
+      <ZoomStartTime time="5,590.703 ns"></ZoomStartTime>
+      <ZoomEndTime time="7,804.692 ns"></ZoomEndTime>
+      <Cursor1Time time="5,765.412 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="234"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <ValueColumnWidth column_width="62"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="43" />
-   <wvobject type="logic" fp_name="/z80_memory_tb/clk">
+   <WVObjectSize size="38" />
+   <wvobject fp_name="/z80_memory_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/execute_/counter">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/counter" type="logic">
       <obj_property name="ElementShortName">counter</obj_property>
       <obj_property name="ObjectShortName">counter</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/RESET_b">
+   <wvobject fp_name="/z80_memory_tb/RESET_b" type="logic">
       <obj_property name="ElementShortName">RESET_b</obj_property>
       <obj_property name="ObjectShortName">RESET_b</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/HALT_b">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/HALT_b" type="logic">
       <obj_property name="ElementShortName">HALT_b</obj_property>
       <obj_property name="ObjectShortName">HALT_b</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/ADDR">
+   <wvobject fp_name="/z80_memory_tb/ADDR" type="array">
       <obj_property name="ElementShortName">ADDR[15:0]</obj_property>
       <obj_property name="ObjectShortName">ADDR[15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/MREQ_b">
+   <wvobject fp_name="/z80_memory_tb/MREQ_b" type="logic">
       <obj_property name="ElementShortName">MREQ_b</obj_property>
       <obj_property name="ObjectShortName">MREQ_b</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/RD_b">
+   <wvobject fp_name="/z80_memory_tb/RD_b" type="logic">
       <obj_property name="ElementShortName">RD_b</obj_property>
       <obj_property name="ObjectShortName">RD_b</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/M1_b">
-      <obj_property name="ElementShortName">M1_b</obj_property>
-      <obj_property name="ObjectShortName">M1_b</obj_property>
+   <wvobject fp_name="/z80_memory_tb/WR_b" type="logic">
+      <obj_property name="ElementShortName">WR_b</obj_property>
+      <obj_property name="ObjectShortName">WR_b</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/DATA">
+   <wvobject fp_name="/z80_memory_tb/DATA" type="array">
       <obj_property name="ElementShortName">DATA[7:0]</obj_property>
       <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/A">
+   <wvobject fp_name="/z80_memory_tb/M1_b" type="logic">
+      <obj_property name="ElementShortName">M1_b</obj_property>
+      <obj_property name="ObjectShortName">M1_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/A" type="array">
       <obj_property name="ElementShortName">A[7:0]</obj_property>
       <obj_property name="ObjectShortName">A[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/B">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/B" type="array">
       <obj_property name="ElementShortName">B[7:0]</obj_property>
       <obj_property name="ObjectShortName">B[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/C">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/C" type="array">
       <obj_property name="ElementShortName">C[7:0]</obj_property>
       <obj_property name="ObjectShortName">C[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/M1">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/M1" type="logic">
       <obj_property name="ElementShortName">M1</obj_property>
       <obj_property name="ObjectShortName">M1</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/M2">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/M2" type="logic">
       <obj_property name="ElementShortName">M2</obj_property>
       <obj_property name="ObjectShortName">M2</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/M3">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/M3" type="logic">
       <obj_property name="ElementShortName">M3</obj_property>
       <obj_property name="ObjectShortName">M3</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/M4">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/M4" type="logic">
       <obj_property name="ElementShortName">M4</obj_property>
       <obj_property name="ObjectShortName">M4</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/M5">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/M5" type="logic">
       <obj_property name="ElementShortName">M5</obj_property>
       <obj_property name="ObjectShortName">M5</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/T1">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/T1" type="logic">
       <obj_property name="ElementShortName">T1</obj_property>
       <obj_property name="ObjectShortName">T1</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/T2">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/T2" type="logic">
       <obj_property name="ElementShortName">T2</obj_property>
       <obj_property name="ObjectShortName">T2</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/T3">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/T3" type="logic">
       <obj_property name="ElementShortName">T3</obj_property>
       <obj_property name="ObjectShortName">T3</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/T4">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/T4" type="logic">
       <obj_property name="ElementShortName">T4</obj_property>
       <obj_property name="ObjectShortName">T4</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/T5">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/T5" type="logic">
       <obj_property name="ElementShortName">T5</obj_property>
       <obj_property name="ObjectShortName">T5</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/T6">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/T6" type="logic">
       <obj_property name="ElementShortName">T6</obj_property>
       <obj_property name="ObjectShortName">T6</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/nextM">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/nextM" type="logic">
       <obj_property name="ElementShortName">nextM</obj_property>
       <obj_property name="ObjectShortName">nextM</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/setM1">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/setM1" type="logic">
       <obj_property name="ElementShortName">setM1</obj_property>
       <obj_property name="ObjectShortName">setM1</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/pla_decode_/prefix">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/pla_decode_/prefix" type="array">
       <obj_property name="ElementShortName">prefix[6:0]</obj_property>
       <obj_property name="ObjectShortName">prefix[6:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/pla_decode_/opcode">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/pla_decode_/opcode" type="array">
       <obj_property name="ElementShortName">opcode[7:0]</obj_property>
       <obj_property name="ObjectShortName">opcode[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/pla_decode_/pla">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/pla_decode_/pla" type="array">
       <obj_property name="ElementShortName">pla[104:0]</obj_property>
       <obj_property name="ObjectShortName">pla[104:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/PC">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/PC" type="array">
       <obj_property name="ElementShortName">PC[15:0]</obj_property>
       <obj_property name="ObjectShortName">PC[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/flag">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/flag" type="array">
       <obj_property name="ElementShortName">flag[7:0]</obj_property>
       <obj_property name="ObjectShortName">flag[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/execute_/check_out">
-      <obj_property name="ElementShortName">check_out</obj_property>
-      <obj_property name="ObjectShortName">check_out</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/ALU_/ALU_OP">
-      <obj_property name="ElementShortName">ALU_OP[6:0]</obj_property>
-      <obj_property name="ObjectShortName">ALU_OP[6:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/ALU_/operandA">
-      <obj_property name="ElementShortName">operandA[15:0]</obj_property>
-      <obj_property name="ObjectShortName">operandA[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/ALU_/operandB">
-      <obj_property name="ElementShortName">operandB[15:0]</obj_property>
-      <obj_property name="ObjectShortName">operandB[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/ALU_/ALU_OUT">
-      <obj_property name="ElementShortName">ALU_OUT[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ALU_OUT[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR1">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR1" type="array">
       <obj_property name="ElementShortName">SR1[3:0]</obj_property>
       <obj_property name="ObjectShortName">SR1[3:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR2">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR2" type="array">
       <obj_property name="ElementShortName">SR2[3:0]</obj_property>
       <obj_property name="ObjectShortName">SR2[3:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/DR">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/DR" type="array">
       <obj_property name="ElementShortName">DR[3:0]</obj_property>
       <obj_property name="ObjectShortName">DR[3:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/REG_IN">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/REG_IN" type="array">
       <obj_property name="ElementShortName">REG_IN[15:0]</obj_property>
       <obj_property name="ObjectShortName">REG_IN[15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/LD_REG">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/LD_REG" type="logic">
       <obj_property name="ElementShortName">LD_REG</obj_property>
       <obj_property name="ObjectShortName">LD_REG</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR1_OUT">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR1_OUT" type="array">
       <obj_property name="ElementShortName">SR1_OUT[15:0]</obj_property>
       <obj_property name="ObjectShortName">SR1_OUT[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR2_OUT">
+   <wvobject fp_name="/z80_memory_tb/z80_top_/execute_/reg_file_/SR2_OUT" type="array">
       <obj_property name="ElementShortName">SR2_OUT[15:0]</obj_property>
       <obj_property name="ObjectShortName">SR2_OUT[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/z80_memory_tb/z80_top_/execute_/in_alu">
-      <obj_property name="ElementShortName">in_alu</obj_property>
-      <obj_property name="ObjectShortName">in_alu</obj_property>
    </wvobject>
 </wave_config>
