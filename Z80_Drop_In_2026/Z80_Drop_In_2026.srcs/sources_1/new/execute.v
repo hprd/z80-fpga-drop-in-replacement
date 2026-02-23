@@ -102,6 +102,7 @@ wire rsel3 = op3 ^ (op4 & op5);
     
 reg_file reg_file_(
     .clk(counter),
+    .rst(RESET_b),
     .SR1(SR1),
     .SR2(SR2),
     .DR(DR),
@@ -149,6 +150,9 @@ reg [7:0]  r_latched;
     reg halt_flag = 0;
     
     always @(posedge CLK_b) begin
+        if(!RESET_b) begin
+            PC <= 0;
+        end
         if(`POS_EDGE) begin
 //    /////////////////////
 //    //OPCODE FETCH

@@ -3,6 +3,7 @@
 module reg_file(
     
     input clk,
+    input rst,
     input [3:0] SR1,
     input [3:0] SR2,
     input [3:0] DR,
@@ -85,7 +86,27 @@ module reg_file(
     end
         
     always @(posedge clk) begin
-           
+        if(!rst) begin
+            B <= 0;
+            C <= 0;
+            D <= 0;
+            E <= 0;
+            H <= 0;
+            L <= 0;
+            W <= 0;
+            Z <= 0;
+            A <= 0;
+            Bp <= 0;
+            Cp <= 0;
+            Dp <= 0;
+            Ep <= 0;
+            Hp <= 0;
+            Lp <= 0;
+            Ap <= 0;
+            SP <= 0;
+            IX <= 0;
+            IY <= 0;
+        end   
         if (LD_REG) begin 
             case (DR)
                 REG_B:          B <= REG_IN[7:0];
