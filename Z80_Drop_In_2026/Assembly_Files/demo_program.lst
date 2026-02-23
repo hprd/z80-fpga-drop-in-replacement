@@ -1,0 +1,70 @@
+                        ; --------------------------------------
+                        ; zasm: assemble "demo_program.asm"
+                        ; date: 2026-02-23 16:06:26
+                        ; --------------------------------------
+
+
+                                                ; --------------------------------------
+                                                ; zasm: assemble "demo_program.asm"
+                                                ; date: 2026-02-23 09:10:16
+                                                ; --------------------------------------
+                        
+                        
+0000:                       ORG 0000h
+                                                
+0000: 3E80     [ 7]         LD   A,80h          ; Initial LED state
+                                                
+0002:                   START:
+0002: D380     [11]         OUT  (80h),A        ; Output current LED state  *********
+                                                
+                        ; ---------------- Delay ----------------
+0004: 0602     [18]         LD   B,02h          ; Outer loop counter
+                                                
+0006:                   DELAY_OUTER:
+0006: 16FF     [ 7]         LD   D,0FFh         ; Middle loop counter
+                                                
+0008:                   DELAY_MIDDLE:
+0008: 1EFF     [ 7]         LD   E,0FFh         ; Inner loop counter
+                                                
+000A:                   DELAY_INNER:
+000A: 1D       [ 4]         DEC  E                                           ;*********
+000B: 20FD     [11|16]      JR   NZ,DELAY_INNER                                  ;*********
+                                                
+000D: 15       [15]         DEC  D
+000E: 20F8     [22|27]      JR   NZ,DELAY_MIDDLE
+                                                
+0010: 10F4     [30|35]      DJNZ DELAY_OUTER                                             ;*********
+                        ; ---------------------------------------
+                                                
+0012: EE80     [37]         XOR  80h            ; Toggle between 80h and 00h         *********
+0014: 18EC     [49]         JR   START                      
+                                                
+0016: 76       [53]         HALT
+                                                
+                                                ;DELAY_INNER = (254 × (4 + 12)) + (4 + 7) = 4075 T
+                                                ;DELAY_MIDDLE = (254 × (7 + 4075 + 4 + 12)) + (7 + 4075 + 4 + 7) = = 1,044,985 T
+                                                ;DELAY_OUTER = (7 + 1,044,985 + 13) + (7 + 1,044,985 + 8) = = 2,090,005 T
+                                                ;2,090,005 T * 0.25 us/T = 0.5225 seconds
+                                                
+                                                ;Z7474
+                                                
+                                                ;Run Z80 code on Z80
+                                                ;Test FPGA
+
+
+; +++ segments +++
+
+#CODE          = $0000 =     0,  size = $0017 =    23
+
+; +++ global symbols +++
+
+DELAY_INNER  = $000A =    10          demo_program.asm:23
+DELAY_MIDDLE = $0008 =     8          demo_program.asm:20
+DELAY_OUTER  = $0006 =     6          demo_program.asm:17
+START        = $0002 =     2          demo_program.asm:11
+_end         = $0017 =    23          demo_program.asm:7 (unused)
+_size        = $0017 =    23          demo_program.asm:7 (unused)
+
+
+total time: 0.0024 sec.
+no errors
