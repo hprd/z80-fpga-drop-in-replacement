@@ -1,17 +1,22 @@
 0.7
 2020.2
-Nov 14 2025
-19:37:27
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.gen/sources_1/ip/blk_mem_gen_0_3/sim/blk_mem_gen_0.v,1771527719,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v,,blk_mem_gen_0,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.sim/sim_1/behav/xsim/glbl.v,1771373412,verilog,,,,glbl,,,,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v,1771373412,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v,ALU_Core,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v,1771373412,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v,,clk_delay,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v,1771568852,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v;C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v,condition_check;execute,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v,1771373412,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v,,memory,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v,1771373412,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v,,pla_decode,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v,1771527124,verilog,,,,,,,,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v,1771373412,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v,,reg_file,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v,1771373412,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v,,sequencer,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v,1771373412,verilog,,,,,,,,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_memory_tb.v,1771569482,verilog,,,,z80_memory_tb,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
-C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v,1771373412,verilog,,C:/Users/danie/Senior Design/z80-fpga-drop-in-replacement/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_memory_tb.v,,z80_top,,,../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef,,,,,
+May  7 2023
+15:10:42
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1771868380,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v,,blk_mem_gen_0,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sim_1/new/tb_alu.v,1763935493,verilog,,,,tb_ALU,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sim_1/new/tb_clk.v,1769187452,verilog,,,,tb_clk,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sim_1/new/tb_memory.v,1763565069,verilog,,,,tb_memory,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sim_1/new/test_top_tb.v,1769695590,verilog,,,,test_top_tb,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sim_1/new/top_sim.v,1769536362,verilog,,,,top_sim,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v,1770349674,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v,ALU_Core,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v,1770935443,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v,,clk_delay,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v,1771868212,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v;/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v,condition_check;execute,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v,1770922270,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v,,memory,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v,1770928133,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v,,pla_decode,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v,1771868240,verilog,,,,,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v,1770324849,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v,,reg_file,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v,1770999392,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v,,sequencer,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v,1770925547,verilog,,,,,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_memory_tb.v,1770333894,verilog,,,,z80_memory_tb,,,,,,,,
+/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v,1770998584,verilog,,/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_memory_tb.v,,z80_top,,,,,,,,

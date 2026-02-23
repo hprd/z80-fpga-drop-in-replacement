@@ -1,0 +1,508 @@
+
+*** Running vivado
+    with args -log z80_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top.tcl
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source z80_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1676.133 ; gain = 52.145 ; free physical = 391 ; free virtual = 2392
+Command: read_checkpoint -auto_incremental -incremental /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/utils_1/imports/synth_1/ALU.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/utils_1/imports/synth_1/ALU.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top z80_top -part xc7s50csga324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4415
+INFO: [Synth 8-11241] undeclared symbol 'a1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:23]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:36]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:38]
+WARNING: [Synth 8-10940] macro 'HALT' is redefined [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v:15]
+WARNING: [Synth 8-10940] macro 'HALT' is redefined [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v:62]
+WARNING: [Synth 8-10940] macro 'HALT' is redefined [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v:15]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'use_ixiy' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:65]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_halt' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:66]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_cb' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:67]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_ed' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:68]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_alu' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:69]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'HALT_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:70]
+INFO: [Synth 8-11241] undeclared symbol 'in_intr', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:36]
+INFO: [Synth 8-11241] undeclared symbol 'T1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:38]
+INFO: [Synth 8-11241] undeclared symbol 'latch_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:39]
+INFO: [Synth 8-11241] undeclared symbol 'mwait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:40]
+INFO: [Synth 8-11241] undeclared symbol 'M1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:41]
+INFO: [Synth 8-11241] undeclared symbol 'busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:42]
+INFO: [Synth 8-11241] undeclared symbol 'setM1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:43]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_iorq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:44]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:45]
+INFO: [Synth 8-11241] undeclared symbol 'iorq_Tw', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:46]
+INFO: [Synth 8-11241] undeclared symbol 'busack', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:47]
+INFO: [Synth 8-11241] undeclared symbol 'pin_control_oe', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:48]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:49]
+INFO: [Synth 8-11241] undeclared symbol 'table_xx', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:55]
+INFO: [Synth 8-11241] undeclared symbol 'nextM', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:73]
+INFO: [Synth 8-11241] undeclared symbol 'M2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:77]
+INFO: [Synth 8-11241] undeclared symbol 'M3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:78]
+INFO: [Synth 8-11241] undeclared symbol 'M4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:79]
+INFO: [Synth 8-11241] undeclared symbol 'M5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:80]
+INFO: [Synth 8-11241] undeclared symbol 'T2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:82]
+INFO: [Synth 8-11241] undeclared symbol 'T3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:83]
+INFO: [Synth 8-11241] undeclared symbol 'T4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:84]
+INFO: [Synth 8-11241] undeclared symbol 'T5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:85]
+INFO: [Synth 8-11241] undeclared symbol 'T6', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:86]
+INFO: [Synth 8-11241] undeclared symbol 'use_ixiy', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:95]
+INFO: [Synth 8-11241] undeclared symbol 'in_halt', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:96]
+INFO: [Synth 8-11241] undeclared symbol 'in_alu', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:97]
+INFO: [Synth 8-11241] undeclared symbol 'table_cb', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:98]
+INFO: [Synth 8-11241] undeclared symbol 'table_ed', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:99]
+INFO: [Synth 8-11241] undeclared symbol 'timings_en', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:128]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2101.477 ; gain = 389.754 ; free physical = 99 ; free virtual = 1854
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'z80_top' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'clk_delay' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'clk_delay' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pla_decode' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pla_decode' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_decode.v:3]
+INFO: [Synth 8-6157] synthesizing module 'execute' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:5]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/reg_file.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_Core' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:4]
+WARNING: [Synth 8-567] referenced signal 'TEMP' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_8bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'and_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'or_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'xor_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'inc_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'inc_8bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'dec_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ones_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'twos_8bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'BCD_1' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'BCD_2' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'new_half_carry' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'new_carry' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_left_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_c_left_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'rotate_c_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'shift_left_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'arithmetic_shift_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'logical_shift_right_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'TEST_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'TEST_IX_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'TEST_HL_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'set_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'reset_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_16bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_16bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'add_c_16bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_16bit_H' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'sub_c_16bit_overflow' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'operandB16_plus_carry' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'inc_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'dec_16bit_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ldid_flag_add' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'cpid_flag_wire' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ini_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ini_pv_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ind_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'ind_pv_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'outi_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'out_pv_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+WARNING: [Synth 8-567] referenced signal 'outd_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_Core' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:4]
+INFO: [Synth 8-6157] synthesizing module 'condition_check' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:577]
+INFO: [Synth 8-6155] done synthesizing module 'condition_check' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:577]
+WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:478]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:494]
+WARNING: [Synth 8-6090] variable 'REG_IN' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:512]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:513]
+WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:537]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:549]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:563]
+INFO: [Synth 8-6155] done synthesizing module 'execute' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:5]
+INFO: [Synth 8-6157] synthesizing module 'sequencer' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'sequencer' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:3]
+WARNING: [Synth 8-7071] port 'M6' of module 'sequencer' is unconnected for instance 'sequencer_' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:109]
+WARNING: [Synth 8-7023] instance 'sequencer_' of module 'sequencer' has 20 connections declared, but only 19 given [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:109]
+INFO: [Synth 8-6155] done synthesizing module 'z80_top' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:3]
+WARNING: [Synth 8-3848] Net DATA_OUT in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:20]
+WARNING: [Synth 8-3848] Net accum in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:100]
+WARNING: [Synth 8-3848] Net EXTOGGLE_DEHL in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:97]
+WARNING: [Synth 8-3848] Net EXXTOGGLE in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:98]
+WARNING: [Synth 8-3848] Net IOREQ_b in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:15]
+WARNING: [Synth 8-3848] Net BUSACK_b in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:20]
+WARNING: [Synth 8-3848] Net in_intr in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:36]
+WARNING: [Synth 8-3848] Net mwait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:40]
+WARNING: [Synth 8-3848] Net latch_wait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:39]
+WARNING: [Synth 8-3848] Net busrq in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:42]
+WARNING: [Synth 8-7129] Port flag[5] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flag[4] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flag[3] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port flag[1] in module condition_check is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[7] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[6] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[5] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[4] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[3] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[2] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[1] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DATA_OUT[0] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[104] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[103] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[102] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[101] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[100] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[99] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[98] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[97] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[96] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[94] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[93] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[92] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[91] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[90] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[89] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[88] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[87] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[86] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[85] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[83] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[82] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[81] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[80] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[79] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[78] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[77] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[76] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[75] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[74] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[73] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[72] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[71] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[70] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[69] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[68] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[67] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[66] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[64] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[63] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[62] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[61] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[60] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[59] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[58] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[57] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[56] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[55] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[54] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[53] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[51] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[49] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[48] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[47] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[46] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[45] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[44] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[42] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[41] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[40] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[39] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[38] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[37] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[36] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[35] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[34] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[33] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[32] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[31] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[30] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[29] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[28] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[27] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[26] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[25] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[24] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[23] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[22] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[21] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[20] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[19] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[18] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[16] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[15] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[14] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[13] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[12] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[11] in module execute is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pla[10] in module execute is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2183.113 ; gain = 471.391 ; free physical = 110 ; free virtual = 1541
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2198.105 ; gain = 486.383 ; free physical = 101 ; free virtual = 1540
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2206.262 ; gain = 494.539 ; free physical = 101 ; free virtual = 1541
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'a2_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:25]
+WARNING: [Synth 8-327] inferring latch for variable 'iorq_Tw_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:25]
+WARNING: [Synth 8-327] inferring latch for variable 'hold_clk_wait_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:36]
+WARNING: [Synth 8-327] inferring latch for variable 'hold_clk_busrq_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'TEMP_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:136]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2250.465 ; gain = 538.742 ; free physical = 70 ; free virtual = 1473
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 5     
+	   3 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 7     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 4     
+	   3 Input    8 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 2     
+	   3 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   3 Input    4 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 1     
+	   3 Input    1 Bit       Adders := 2     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 11    
++---XORs : 
+	                8 Bit    Wide XORs := 13    
++---Registers : 
+	               16 Bit    Registers := 7     
+	                8 Bit    Registers := 19    
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 26    
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 7     
+	  36 Input   16 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 15    
+	  16 Input    8 Bit        Muxes := 3     
+	  54 Input    6 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 160   
+	  17 Input    1 Bit        Muxes := 7     
+	  16 Input    1 Bit        Muxes := 5     
+	  54 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'clk_delay_/a2_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:56]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:56]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:56]
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/a2_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/iorq_Tw_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/hold_clk_wait_reg__0) is unused and will be removed from module z80_top.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'clk_delay_/hold_clk_busrq_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:55]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:55]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:55]
+WARNING: [Synth 8-3332] Sequential element (clk_delay_/hold_clk_busrq_reg__0) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[7]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[6]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[5]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[4]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[3]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[2]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[1]) is unused and will be removed from module z80_top.
+WARNING: [Synth 8-3332] Sequential element (execute_/ALU_/TEMP_reg[0]) is unused and will be removed from module z80_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2386.375 ; gain = 674.652 ; free physical = 105 ; free virtual = 1324
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2386.777 ; gain = 675.055 ; free physical = 103 ; free virtual = 1322
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2387.008 ; gain = 675.285 ; free physical = 93 ; free virtual = 1322
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin i_0:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_1:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_2:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_3:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_4:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_5:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_6:a to constant 0
+WARNING: [Synth 8-3295] tying undriven pin i_7:a to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.145 ; gain = 675.422 ; free physical = 87 ; free virtual = 1321
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.160 ; gain = 675.438 ; free physical = 87 ; free virtual = 1321
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.238 ; gain = 675.516 ; free physical = 87 ; free virtual = 1320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.254 ; gain = 675.531 ; free physical = 86 ; free virtual = 1320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.285 ; gain = 675.562 ; free physical = 86 ; free virtual = 1320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.289 ; gain = 675.566 ; free physical = 86 ; free virtual = 1320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    11|
+|3     |LUT1   |     3|
+|4     |LUT2   |    12|
+|5     |LUT3   |     6|
+|6     |LUT4   |    33|
+|7     |LUT5   |    21|
+|8     |LUT6   |    63|
+|9     |MUXF7  |     8|
+|10    |FDRE   |   167|
+|11    |IBUF   |     3|
+|12    |IOBUF  |     8|
+|13    |OBUF   |    22|
+|14    |OBUFT  |     2|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------+----------+------+
+|      |Instance      |Module    |Cells |
++------+--------------+----------+------+
+|1     |top           |          |   361|
+|2     |  execute_    |execute   |   266|
+|3     |    ALU_      |ALU_Core  |     7|
+|4     |    reg_file_ |reg_file  |    96|
+|5     |  sequencer_  |sequencer |    58|
++------+--------------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.324 ; gain = 675.602 ; free physical = 86 ; free virtual = 1319
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 6 critical warnings and 286 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.348 ; gain = 675.621 ; free physical = 86 ; free virtual = 1320
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2387.367 ; gain = 675.629 ; free physical = 85 ; free virtual = 1320
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2391.695 ; gain = 0.055 ; free physical = 455 ; free virtual = 1708
+INFO: [Netlist 29-17] Analyzing 27 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2499.957 ; gain = 0.000 ; free physical = 308 ; free virtual = 1633
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+Synth Design complete | Checksum: 2b000b0f
+INFO: [Common 17-83] Releasing license: Synthesis
+67 Infos, 211 Warnings, 6 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 2500.047 ; gain = 799.086 ; free physical = 305 ; free virtual = 1632
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1864.693; main = 1467.439; forked = 561.169
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3940.023; main = 2500.051; forked = 1683.449
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/z80_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file z80_top_utilization_synth.rpt -pb z80_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 13 16:17:27 2026...

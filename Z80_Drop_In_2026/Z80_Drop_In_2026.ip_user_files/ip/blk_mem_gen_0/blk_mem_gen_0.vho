@@ -11,7 +11,7 @@
 -- otherwise provided in a valid license issued to you by
 -- AMD, and to the maximum extent permitted by applicable
 -- law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
--- WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
+-- WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
 -- AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
 -- BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
 -- INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
@@ -46,7 +46,7 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 -- IP VLNV: xilinx.com:ip:blk_mem_gen:8.4
--- IP Revision: 12
+-- IP Revision: 6
 
 -- The following code must appear in the VHDL architecture header.
 
@@ -56,7 +56,7 @@ COMPONENT blk_mem_gen_0
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) 
   );
