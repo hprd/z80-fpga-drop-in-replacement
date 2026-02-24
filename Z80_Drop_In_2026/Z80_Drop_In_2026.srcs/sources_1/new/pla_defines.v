@@ -13,6 +13,10 @@
 `define ALU_A_r pla[65] & ~pla[52] //ALU Operation with Accumulator and register R
 
 `define ADD_OP pla[84] //ALU Operation is ADD
+`define XOR_OP pla[88] //ALU Operation is XOR
+
+//INPUT AND OUTPUT GROUPS
+`define OUT_n_A pla[37] & pla[28] //Outputs data A to peripheral on I/O Address n
 
 //HALT
 `define HALT pla[95]    //HALT opcode

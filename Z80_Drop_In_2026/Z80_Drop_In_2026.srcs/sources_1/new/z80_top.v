@@ -12,7 +12,7 @@ module z80_top(
     
     output M1_b,
     output MREQ_b,
-    output IOREQ_b,
+    output IORQ_b,
     output RD_b,
     output WR_b,
     output RFSH_b,
@@ -24,7 +24,7 @@ module z80_top(
     wire [7:0] data_out;
     wire [7:0] data_in;
     
-    assign D = (RD_b) ? data_out : 8'hZ;
+    assign D = (WR_b) ? 8'hZ: data_out;
     assign data_in = D;
     
         
@@ -86,6 +86,7 @@ module z80_top(
         .T6(T6),
         .ADDRESS_BUS(ADDRESS_BUS),
         .MREQ_b(MREQ_b),
+        .IORQ_b(IORQ_b),
         .RD_b(RD_b),
         .WR_b(WR_b),
         .M1_b(M1_b),

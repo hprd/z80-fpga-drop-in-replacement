@@ -12,7 +12,8 @@ module execute
     output reg nextM,                   // Last M cycle of any instruction
     output reg setM1,                   // Last T clock of any instruction
     output reg [15:0] ADDRESS_BUS,         // Memory address for Mem Reads/Writes
-    output reg MREQ_b,                  
+    output reg MREQ_b,   
+    output reg IORQ_b,               
     output reg RD_b,
     output reg WR_b,
     output reg M1_b,
@@ -146,12 +147,22 @@ condition_check condition_check_(
 localparam REG_HL = 4'd10;  //Register File HL parameter
 reg [15:0] hl_latched;
 reg [7:0]  r_latched;
+reg [7:0] IO_ADDRESS;   
+
 
     reg halt_flag = 0;
     
     always @(posedge CLK_b) begin
         if(!RESET_b) begin
             PC <= 0;
+            ADDRESS_BUS <= 0;         // Memory address for Mem Reads/Writes
+            MREQ_b <= 1;
+            IORQ_b <= 1;               
+            RD_b <= 1;
+            WR_b <= 1;
+            M1_b <= 0;
+            RFSH_b <= 1;
+            DATA_OUT <= 0;
         end
         if(`POS_EDGE) begin
 //    /////////////////////
@@ -175,18 +186,18 @@ reg [7:0]  r_latched;
 //    //LD r , n (8-bit Immediate Register Load)
 //    /////////////////////
             if(`LD_r_n) begin
-                    if(M1 & T3) begin
-                        PC <= PC + 1;
-                    end
-                    else if (M2 & T2) begin  
-                        DR <= {1'b0, opcode[5:3]};
-                        LD_REG <= 1;
-                        PC <= PC + 1;
-                    end            
-                    else if(M2 & T3) begin
-                        LD_REG <= 0;
-                        ADDRESS_BUS <= PC;
-                    end        
+               if(M1 & T3) begin
+                   PC <= PC + 1;
+                end
+                else if (M2 & T2) begin  
+                    DR <= {1'b0, opcode[5:3]};
+                    LD_REG <= 1;
+                    PC <= PC + 1;
+                end            
+               else if(M2 & T3) begin
+                    LD_REG <= 0;
+                    ADDRESS_BUS <= PC;
+                end        
             end
 //    /////////////////////
 //    //LD hl , r (8-bit Load into Memory from Register)
@@ -202,12 +213,7 @@ reg [7:0]  r_latched;
                     r_latched <= SR1_OUT[7:0];      //Source register
                     PC <= PC + 1;
                     ADDRESS_BUS <= SR2_OUT;      //Address on the bus
-                    //DATA_OUT <= SR1_OUT[7:0];          //register as data to write
                 end
-               // else if(M2 & T1)begin
-                    //ADDRESS_BUS <= hl_latched;      //Address on the bus
-                    //DATA_OUT <= r_latched;          //register as data to write
-                //end
                 else if(M2 & T3)begin
                     ADDRESS_BUS <= PC;
                 end 
@@ -224,6 +230,9 @@ reg [7:0]  r_latched;
                     PC <= PC + 1;
                     if (`ADD_OP) begin // add a, r
                         ALU_OP <= `ALU_ADD_8BIT;
+                    end
+                    if (`XOR_OP) begin  // xor a, r
+                        ALU_OP <= `ALU_XOR_8BIT;
                     end     
                 end            
                 else if (M1 & T4) begin
@@ -249,6 +258,27 @@ reg [7:0]  r_latched;
                 else if(M3 & T3) begin
                     ADDRESS_BUS <= PC;
                 end                
+            end
+//    /////////////////////
+//    //OUT (n), A  (Output Accumulator A to I/O Address n)
+//    /////////////////////         
+            if(`OUT_n_A) begin
+                if(M1 & T3) begin
+                    PC <= PC + 1;
+                end       
+                else if(M2 & T3) begin
+                   ADDRESS_BUS <= {SR1_OUT, IO_ADDRESS};
+                end
+                else if(M3 & T1) begin
+                    IORQ_b <= 0;
+                    WR_b <= 0;
+                end   
+                else if(M3 & T3) begin
+                    PC <= PC + 1;
+                end
+                else if(M3 & T4) begin
+                    ADDRESS_BUS <= PC;
+                end            
             end
 //    /////////////////////
 //    //HALT
@@ -336,7 +366,11 @@ reg [7:0]  r_latched;
                     if (`ADD_OP) begin // add a, r
                         REG_IN <= ALU_OUT;
                         flag <= FLAG_OUT;
-                    end    
+                    end
+                    else if (`XOR_OP) begin // add a, r
+                        REG_IN <= ALU_OUT;
+                        flag <= FLAG_OUT;
+                    end        
                     else begin REG_IN = accum; end
                     setM1 <= 1;
                     M1_b <= 0;
@@ -377,6 +411,34 @@ reg [7:0]  r_latched;
                     setM1 <= 1;
                     M1_b <= 0;
                 end               
+            end
+//    /////////////////////
+//    //OUT (n), A  (Output Accumulator A to I/O Address n)
+//    /////////////////////    
+            if (`OUT_n_A) begin
+                if(M2 & T1) begin
+                    MREQ_b <= 0;
+                    RD_b <= 0;
+                end
+                else if(M2 & T2) begin
+                    IO_ADDRESS <= DATA_IN;
+                    SR1 <= 4'h7;
+                end
+                else if(M2 & T3) begin
+                    MREQ_b <= 1;
+                    RD_b <= 1;
+                    nextM <= 1;
+                    M1_b <= 0;       
+                end        
+                else if(M3 & T1) begin
+                    DATA_OUT <= SR1_OUT;
+                end  
+                else if(M3 & T4) begin
+                    IORQ_b <= 1;
+                    WR_b <= 1;
+                    setM1 <= 1;
+                    M1_b <= 0;                
+                end  
             end
 //    /////////////////////
 //    //HALT
