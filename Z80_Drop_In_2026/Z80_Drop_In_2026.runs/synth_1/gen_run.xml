@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1770999402" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ALU.dcp">
-  <File Type="RDS-DCP" Name="z80_top.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="z80_top_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="z80_top.tcl"/>
-  <File Type="RDS-UTIL" Name="z80_top_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="z80_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="z80_top.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1771961404" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ALU.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="z80_top_with_mem_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="z80_top_with_mem.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="z80_top_with_mem_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="z80_top_with_mem_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="z80_top_with_mem_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="z80_top_with_mem.vds"/>
+  <File Type="REPORTS-TCL" Name="z80_top_with_mem_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="z80_top_with_mem_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="z80_top_with_mem.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/z80_defines.v">
@@ -73,7 +76,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/memory.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -87,15 +89,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/exec_matrix.vh">
       <FileInfo SFType="Verilog">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/address_latch.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -103,7 +96,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/exec_zero.vh">
       <FileInfo SFType="Verilog">
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -111,7 +103,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/exec_module.vh">
       <FileInfo SFType="Verilog">
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -119,7 +110,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/exec_matrix_compiled.vh">
       <FileInfo SFType="Verilog">
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -127,15 +117,31 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/z80_integrated.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/z80_memory_tb.v">
+    <File Path="$PSRCDIR/sources_1/new/branch_loop_program.coe">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/led_blink_demo.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/load_store_test.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/z80_top_with_mem.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -143,7 +149,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="z80_top"/>
+      <Option Name="TopModule" Val="z80_top_with_mem"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -170,4 +176,5 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
 </GenRun>

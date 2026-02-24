@@ -53,7 +53,7 @@ module z80_top_with_mem(
         
         .M1_b(M1_b),
         .MREQ_b(MREQ_b),
-        .IOREQ_b(IOREQ_b),
+        .IORQ_b(IORQ_b),
         .RD_b(RD_b),
         .WR_b(WR_b),
         .RFSH_b(RFSH_b),

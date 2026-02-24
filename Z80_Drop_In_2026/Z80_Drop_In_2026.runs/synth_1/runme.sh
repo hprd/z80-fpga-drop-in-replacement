@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log z80_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top.tcl
+EAStep vivado -log z80_top_with_mem.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top_with_mem.tcl

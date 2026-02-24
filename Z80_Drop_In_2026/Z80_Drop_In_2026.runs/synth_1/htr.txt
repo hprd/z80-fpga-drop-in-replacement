@@ -7,4 +7,4 @@
 # Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 #
 
-vivado -log z80_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top.tcl
+vivado -log z80_top_with_mem.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top_with_mem.tcl
