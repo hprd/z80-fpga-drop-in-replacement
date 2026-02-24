@@ -24,7 +24,8 @@ module z80_top(
     wire [7:0] data_out;
     wire [7:0] data_in;
     
-    assign D = (WR_b) ? 8'hZ: data_out;
+    wire dout_flag; 
+    assign D = (WR_b & dout_flag) ? 8'hZ: data_out;
     assign data_in = D;
     
         
@@ -101,7 +102,8 @@ module z80_top(
         .RESET_b(RESET_b),
         .opcode(opcode),
         .HALT_b(HALT_b),
-        .NMI_b(NMI_b)
+        .NMI_b(NMI_b),
+        .dout_flag(dout_flag)
     );
 
     // =============================

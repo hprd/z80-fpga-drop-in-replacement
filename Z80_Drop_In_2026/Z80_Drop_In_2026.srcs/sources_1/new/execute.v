@@ -26,6 +26,7 @@ module execute
     output in_alu,
     output reg [7:0] opcode,
     output HALT_b,
+    output reg dout_flag,
     
     //----------------------------------------------------------
     // Inputs from the instruction decode PLA
@@ -163,6 +164,7 @@ reg [7:0] IO_ADDRESS;
             M1_b <= 0;
             RFSH_b <= 1;
             DATA_OUT <= 0;
+            dout_flag <= 1;
         end
         if(`POS_EDGE) begin
 //    /////////////////////
@@ -197,6 +199,7 @@ reg [7:0] IO_ADDRESS;
                else if(M2 & T3) begin
                     LD_REG <= 0;
                     ADDRESS_BUS <= PC;
+                    M1_b <= 0;
                 end        
             end
 //    /////////////////////
@@ -216,6 +219,7 @@ reg [7:0] IO_ADDRESS;
                 end
                 else if(M2 & T3)begin
                     ADDRESS_BUS <= PC;
+                    M1_b <= 0;       
                 end 
             end   
 //    /////////////////////
@@ -238,6 +242,7 @@ reg [7:0] IO_ADDRESS;
                 else if (M1 & T4) begin
                     in_alu <= 0;
                     LD_REG <= 0;
+                    M1_b <= 0;       
                 end                         
             end
 //    /////////////////////
@@ -257,6 +262,7 @@ reg [7:0] IO_ADDRESS;
                 end            
                 else if(M3 & T3) begin
                     ADDRESS_BUS <= PC;
+                    M1_b <= 0;       
                 end                
             end
 //    /////////////////////
@@ -278,6 +284,8 @@ reg [7:0] IO_ADDRESS;
                 end
                 else if(M3 & T4) begin
                     ADDRESS_BUS <= PC;
+                    dout_flag <= 1;
+                    M1_b <= 0;       
                 end            
             end
 //    /////////////////////
@@ -294,7 +302,6 @@ reg [7:0] IO_ADDRESS;
                     HALT_b <= 0;
                 end                
             end
-                           
         end
   
         else if(`NEG_EDGE) begin
@@ -325,7 +332,6 @@ reg [7:0] IO_ADDRESS;
                     MREQ_b <= 1;
                     RD_b <= 1;
                     setM1 <= 1;
-                    M1_b <= 0;       
                 end        
             end
 //    /////////////////////
@@ -348,8 +354,6 @@ reg [7:0] IO_ADDRESS;
                 else if(M2 & T3)begin               //deassert WR (WR goes high on rising edge of T3)
                     WR_b <= 1;
                     MREQ_b <=1;
-                    M1_b <=0;
-                    
                     setM1 <=1;
                 end
             end   
@@ -373,7 +377,6 @@ reg [7:0] IO_ADDRESS;
                     end        
                     else begin REG_IN = accum; end
                     setM1 <= 1;
-                    M1_b <= 0;
                 end        
             end
 //    /////////////////////
@@ -409,7 +412,6 @@ reg [7:0] IO_ADDRESS;
                     MREQ_b <= 1;
                     RD_b <= 1;
                     setM1 <= 1;
-                    M1_b <= 0;
                 end               
             end
 //    /////////////////////
@@ -428,16 +430,15 @@ reg [7:0] IO_ADDRESS;
                     MREQ_b <= 1;
                     RD_b <= 1;
                     nextM <= 1;
-                    M1_b <= 0;       
                 end        
                 else if(M3 & T1) begin
                     DATA_OUT <= SR1_OUT;
+                    dout_flag <= 1;
                 end  
                 else if(M3 & T4) begin
                     IORQ_b <= 1;
                     WR_b <= 1;
                     setM1 <= 1;
-                    M1_b <= 0;                
                 end  
             end
 //    /////////////////////
