@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Tue Feb 24 19:32:57 2026
-| Host         : 0cbe47aa6fae running 64-bit Ubuntu 22.04.4 LTS
+| Date         : Fri Feb 27 19:18:27 2026
+| Host         : de310536375a running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file z80_top_with_mem_timing_summary_routed.rpt -pb z80_top_with_mem_timing_summary_routed.pb -rpx z80_top_with_mem_timing_summary_routed.rpx -warn_on_violation
 | Design       : z80_top_with_mem
 | Device       : 7s50-csga324
@@ -40,7 +40,11 @@ Timing Summary Report
 | ------------------
 ------------------------------------------------------------------------------------------------
 
-No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  200         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
 
 
@@ -48,12 +52,12 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (0)
+1. checking no_clock (200)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (0)
-5. checking no_input_delay (0)
-6. checking no_output_delay (0)
+4. checking unconstrained_internal_endpoints (396)
+5. checking no_input_delay (10)
+6. checking no_output_delay (30)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -61,9 +65,13 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (0)
-------------------------
- There are 0 register/latch pins with no clock.
+1. checking no_clock (200)
+--------------------------
+ There are 134 register/latch pins with no clock driven by root clock pin: CLK_b (HIGH)
+
+ There are 2 register/latch pins with no clock driven by root clock pin: memory_/counter_reg/Q (HIGH)
+
+ There are 64 register/latch pins with no clock driven by root clock pin: z80_top_/execute_/counter_reg/Q (HIGH)
 
 
 2. checking constant_clock (0)
@@ -76,23 +84,23 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (0)
-------------------------------------------------
- There are 0 pins that are not constrained for maximum delay.
+4. checking unconstrained_internal_endpoints (396)
+--------------------------------------------------
+ There are 396 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
-5. checking no_input_delay (0)
-------------------------------
- There are 0 input ports with no input delay specified.
+5. checking no_input_delay (10)
+-------------------------------
+ There are 10 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (0)
--------------------------------
- There are 0 ports with no output delay specified.
+6. checking no_output_delay (30)
+--------------------------------
+ There are 30 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -137,7 +145,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-         NA           NA                     NA                   NA           NA           NA                     NA                   NA           NA           NA                      NA                    NA  
+        inf        0.000                      0                  426          inf        0.000                      0                  426           NA           NA                      NA                    NA  
 
 
 There are no user specified timing constraints.
@@ -192,11 +200,478 @@ Path Group    From Clock    To Clock
 
 Path Group    From Clock    To Clock    
 ----------    ----------    --------    
+(none)                                    
 
 
 ------------------------------------------------------------------------------------------------
 | Timing Details
 | --------------
 ------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay           426 Endpoints
+Min Delay           426 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/RD_b_reg/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.085ns  (logic 1.966ns (17.731%)  route 9.120ns (82.269%))
+  Logic Levels:           5  (IBUF=1 LUT3=1 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 f  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 f  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.760     8.230    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X9Y64          LUT6 (Prop_lut6_I3_O)        0.124     8.354 r  z80_top_/sequencer_/MREQ_b_i_14/O
+                         net (fo=2, routed)           0.734     9.088    z80_top_/execute_/RD_b_i_5
+    SLICE_X9Y63          LUT3 (Prop_lut3_I0_O)        0.124     9.212 r  z80_top_/execute_/RD_b_i_7/O
+                         net (fo=1, routed)           0.809    10.021    z80_top_/sequencer_/RD_b_reg
+    SLICE_X8Y63          LUT6 (Prop_lut6_I1_O)        0.124    10.145 r  z80_top_/sequencer_/RD_b_i_5/O
+                         net (fo=1, routed)           0.816    10.961    z80_top_/sequencer__n_52
+    SLICE_X6Y64          LUT6 (Prop_lut6_I4_O)        0.124    11.085 r  z80_top_/RD_b_i_1/O
+                         net (fo=1, routed)           0.000    11.085    z80_top_/execute_/RD_b_reg_1
+    SLICE_X6Y64          FDRE                                         r  z80_top_/execute_/RD_b_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 memory_/RAM/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram/CLKARDCLK
+                            (rising edge-triggered cell RAMB18E1)
+  Destination:            D[0]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.925ns  (logic 5.824ns (53.304%)  route 5.102ns (46.696%))
+  Logic Levels:           3  (LUT5=1 OBUFT=1 RAMB18E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X0Y28         RAMB18E1                     0.000     0.000 r  memory_/RAM/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram/CLKARDCLK
+    RAMB18_X0Y28         RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[0])
+                                                      2.454     2.454 r  memory_/RAM/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram/DOADO[0]
+                         net (fo=1, routed)           1.400     3.854    z80_top_/execute_/douta[0]
+    SLICE_X2Y72          LUT5 (Prop_lut5_I3_O)        0.146     4.000 r  z80_top_/execute_/D_IOBUF[0]_inst_i_1/O
+                         net (fo=1, routed)           3.702     7.702    D_IOBUF[0]_inst/I
+    C9                   OBUFT (Prop_obuft_I_O)       3.224    10.925 r  D_IOBUF[0]_inst/OBUFT/O
+                         net (fo=1, unset)            0.000    10.925    D[0]
+    C9                                                                r  D[0] (INOUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/PC_reg[12]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.694ns  (logic 1.966ns (18.379%)  route 8.729ns (81.621%))
+  Logic Levels:           5  (IBUF=1 LUT5=1 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 r  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 r  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.050     7.520    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X2Y64          LUT6 (Prop_lut6_I4_O)        0.124     7.644 r  z80_top_/sequencer_/PC[15]_i_26/O
+                         net (fo=1, routed)           0.425     8.069    z80_top_/sequencer_/PC[15]_i_26_n_0
+    SLICE_X2Y65          LUT6 (Prop_lut6_I5_O)        0.124     8.193 r  z80_top_/sequencer_/PC[15]_i_21/O
+                         net (fo=1, routed)           0.466     8.659    z80_top_/sequencer_/PC[15]_i_21_n_0
+    SLICE_X2Y65          LUT5 (Prop_lut5_I3_O)        0.124     8.783 r  z80_top_/sequencer_/PC[15]_i_10/O
+                         net (fo=16, routed)          1.788    10.570    z80_top_/sequencer_/PC[15]_i_10_n_0
+    SLICE_X2Y71          LUT6 (Prop_lut6_I4_O)        0.124    10.694 r  z80_top_/sequencer_/PC[12]_i_1/O
+                         net (fo=1, routed)           0.000    10.694    z80_top_/execute_/PC_reg[15]_3[12]
+    SLICE_X2Y71          FDRE                                         r  z80_top_/execute_/PC_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/PC_reg[8]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.675ns  (logic 1.966ns (18.412%)  route 8.710ns (81.588%))
+  Logic Levels:           5  (IBUF=1 LUT5=1 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 r  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 r  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.050     7.520    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X2Y64          LUT6 (Prop_lut6_I4_O)        0.124     7.644 r  z80_top_/sequencer_/PC[15]_i_26/O
+                         net (fo=1, routed)           0.425     8.069    z80_top_/sequencer_/PC[15]_i_26_n_0
+    SLICE_X2Y65          LUT6 (Prop_lut6_I5_O)        0.124     8.193 r  z80_top_/sequencer_/PC[15]_i_21/O
+                         net (fo=1, routed)           0.466     8.659    z80_top_/sequencer_/PC[15]_i_21_n_0
+    SLICE_X2Y65          LUT5 (Prop_lut5_I3_O)        0.124     8.783 r  z80_top_/sequencer_/PC[15]_i_10/O
+                         net (fo=16, routed)          1.769    10.551    z80_top_/sequencer_/PC[15]_i_10_n_0
+    SLICE_X3Y70          LUT6 (Prop_lut6_I4_O)        0.124    10.675 r  z80_top_/sequencer_/PC[8]_i_1/O
+                         net (fo=1, routed)           0.000    10.675    z80_top_/execute_/PC_reg[15]_3[8]
+    SLICE_X3Y70          FDRE                                         r  z80_top_/execute_/PC_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 memory_/RAM/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E1)
+  Destination:            D[7]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.672ns  (logic 5.595ns (52.423%)  route 5.077ns (47.577%))
+  Logic Levels:           3  (LUT5=1 OBUFT=1 RAMB18E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X0Y28         RAMB18E1                     0.000     0.000 r  memory_/RAM/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram/CLKBWRCLK
+    RAMB18_X0Y28         RAMB18E1 (Prop_ramb18e1_CLKBWRCLK_DOBDO[9])
+                                                      2.454     2.454 r  memory_/RAM/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.WIDE_PRIM18.ram/DOBDO[9]
+                         net (fo=1, routed)           1.583     4.037    z80_top_/execute_/douta[7]
+    SLICE_X0Y72          LUT5 (Prop_lut5_I3_O)        0.124     4.161 r  z80_top_/execute_/D_IOBUF[7]_inst_i_1/O
+                         net (fo=1, routed)           3.494     7.655    D_IOBUF[7]_inst/I
+    C10                  OBUFT (Prop_obuft_I_O)       3.017    10.672 r  D_IOBUF[7]_inst/OBUFT/O
+                         net (fo=1, unset)            0.000    10.672    D[7]
+    C10                                                               r  D[7] (INOUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/PC_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.582ns  (logic 1.966ns (18.574%)  route 8.617ns (81.426%))
+  Logic Levels:           5  (IBUF=1 LUT5=1 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 r  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 r  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.050     7.520    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X2Y64          LUT6 (Prop_lut6_I4_O)        0.124     7.644 r  z80_top_/sequencer_/PC[15]_i_26/O
+                         net (fo=1, routed)           0.425     8.069    z80_top_/sequencer_/PC[15]_i_26_n_0
+    SLICE_X2Y65          LUT6 (Prop_lut6_I5_O)        0.124     8.193 r  z80_top_/sequencer_/PC[15]_i_21/O
+                         net (fo=1, routed)           0.466     8.659    z80_top_/sequencer_/PC[15]_i_21_n_0
+    SLICE_X2Y65          LUT5 (Prop_lut5_I3_O)        0.124     8.783 r  z80_top_/sequencer_/PC[15]_i_10/O
+                         net (fo=16, routed)          1.676    10.458    z80_top_/sequencer_/PC[15]_i_10_n_0
+    SLICE_X1Y68          LUT6 (Prop_lut6_I4_O)        0.124    10.582 r  z80_top_/sequencer_/PC[2]_i_1/O
+                         net (fo=1, routed)           0.000    10.582    z80_top_/execute_/PC_reg[15]_3[2]
+    SLICE_X1Y68          FDRE                                         r  z80_top_/execute_/PC_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/MREQ_b_reg/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.518ns  (logic 1.966ns (18.688%)  route 8.552ns (81.312%))
+  Logic Levels:           5  (IBUF=1 LUT6=4)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 f  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 f  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.760     8.230    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X9Y64          LUT6 (Prop_lut6_I3_O)        0.124     8.354 r  z80_top_/sequencer_/MREQ_b_i_14/O
+                         net (fo=2, routed)           0.830     9.184    z80_top_/sequencer_/M2_reg_3
+    SLICE_X8Y63          LUT6 (Prop_lut6_I0_O)        0.124     9.308 r  z80_top_/sequencer_/MREQ_b_i_11/O
+                         net (fo=1, routed)           0.161     9.469    z80_top_/sequencer_/MREQ_b_i_11_n_0
+    SLICE_X8Y63          LUT6 (Prop_lut6_I2_O)        0.124     9.593 r  z80_top_/sequencer_/MREQ_b_i_5/O
+                         net (fo=1, routed)           0.801    10.394    z80_top_/sequencer__n_53
+    SLICE_X8Y64          LUT6 (Prop_lut6_I4_O)        0.124    10.518 r  z80_top_/MREQ_b_i_1/O
+                         net (fo=1, routed)           0.000    10.518    z80_top_/execute_/MREQ_b_reg_1
+    SLICE_X8Y64          FDRE                                         r  z80_top_/execute_/MREQ_b_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/PC_reg[13]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.464ns  (logic 1.966ns (18.783%)  route 8.499ns (81.217%))
+  Logic Levels:           5  (IBUF=1 LUT5=1 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 r  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 r  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.050     7.520    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X2Y64          LUT6 (Prop_lut6_I4_O)        0.124     7.644 r  z80_top_/sequencer_/PC[15]_i_26/O
+                         net (fo=1, routed)           0.425     8.069    z80_top_/sequencer_/PC[15]_i_26_n_0
+    SLICE_X2Y65          LUT6 (Prop_lut6_I5_O)        0.124     8.193 r  z80_top_/sequencer_/PC[15]_i_21/O
+                         net (fo=1, routed)           0.466     8.659    z80_top_/sequencer_/PC[15]_i_21_n_0
+    SLICE_X2Y65          LUT5 (Prop_lut5_I3_O)        0.124     8.783 r  z80_top_/sequencer_/PC[15]_i_10/O
+                         net (fo=16, routed)          1.558    10.340    z80_top_/sequencer_/PC[15]_i_10_n_0
+    SLICE_X3Y71          LUT6 (Prop_lut6_I4_O)        0.124    10.464 r  z80_top_/sequencer_/PC[13]_i_1/O
+                         net (fo=1, routed)           0.000    10.464    z80_top_/execute_/PC_reg[15]_3[13]
+    SLICE_X3Y71          FDRE                                         r  z80_top_/execute_/PC_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/PC_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.457ns  (logic 1.966ns (18.796%)  route 8.492ns (81.204%))
+  Logic Levels:           5  (IBUF=1 LUT5=1 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 r  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 r  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.050     7.520    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X2Y64          LUT6 (Prop_lut6_I4_O)        0.124     7.644 r  z80_top_/sequencer_/PC[15]_i_26/O
+                         net (fo=1, routed)           0.425     8.069    z80_top_/sequencer_/PC[15]_i_26_n_0
+    SLICE_X2Y65          LUT6 (Prop_lut6_I5_O)        0.124     8.193 r  z80_top_/sequencer_/PC[15]_i_21/O
+                         net (fo=1, routed)           0.466     8.659    z80_top_/sequencer_/PC[15]_i_21_n_0
+    SLICE_X2Y65          LUT5 (Prop_lut5_I3_O)        0.124     8.783 r  z80_top_/sequencer_/PC[15]_i_10/O
+                         net (fo=16, routed)          1.551    10.333    z80_top_/sequencer_/PC[15]_i_10_n_0
+    SLICE_X2Y70          LUT6 (Prop_lut6_I4_O)        0.124    10.457 r  z80_top_/sequencer_/PC[7]_i_1/O
+                         net (fo=1, routed)           0.000    10.457    z80_top_/execute_/PC_reg[15]_3[7]
+    SLICE_X2Y70          FDRE                                         r  z80_top_/execute_/PC_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 RESET_b
+                            (input port)
+  Destination:            z80_top_/execute_/PC_reg[15]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.442ns  (logic 1.966ns (18.823%)  route 8.477ns (81.177%))
+  Logic Levels:           5  (IBUF=1 LUT5=1 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    C4                                                0.000     0.000 r  RESET_b (IN)
+                         net (fo=0)                   0.000     0.000    RESET_b
+    C4                   IBUF (Prop_ibuf_I_O)         1.470     1.470 r  RESET_b_IBUF_inst/O
+                         net (fo=156, routed)         6.050     7.520    z80_top_/sequencer_/RESET_b_IBUF
+    SLICE_X2Y64          LUT6 (Prop_lut6_I4_O)        0.124     7.644 r  z80_top_/sequencer_/PC[15]_i_26/O
+                         net (fo=1, routed)           0.425     8.069    z80_top_/sequencer_/PC[15]_i_26_n_0
+    SLICE_X2Y65          LUT6 (Prop_lut6_I5_O)        0.124     8.193 r  z80_top_/sequencer_/PC[15]_i_21/O
+                         net (fo=1, routed)           0.466     8.659    z80_top_/sequencer_/PC[15]_i_21_n_0
+    SLICE_X2Y65          LUT5 (Prop_lut5_I3_O)        0.124     8.783 r  z80_top_/sequencer_/PC[15]_i_10/O
+                         net (fo=16, routed)          1.536    10.318    z80_top_/sequencer_/PC[15]_i_10_n_0
+    SLICE_X0Y71          LUT6 (Prop_lut6_I4_O)        0.124    10.442 r  z80_top_/sequencer_/PC[15]_i_2/O
+                         net (fo=1, routed)           0.000    10.442    z80_top_/execute_/PC_reg[15]_3[15]
+    SLICE_X0Y71          FDRE                                         r  z80_top_/execute_/PC_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 z80_top_/execute_/DR_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/execute_/DR_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.321ns  (logic 0.186ns (57.984%)  route 0.135ns (42.016%))
+  Logic Levels:           2  (FDRE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y68          FDRE                         0.000     0.000 r  z80_top_/execute_/DR_reg[2]/C
+    SLICE_X9Y68          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  z80_top_/execute_/DR_reg[2]/Q
+                         net (fo=73, routed)          0.135     0.276    z80_top_/execute_/DR_reg_n_0_[2]
+    SLICE_X9Y68          LUT4 (Prop_lut4_I0_O)        0.045     0.321 r  z80_top_/execute_/DR[2]_i_1/O
+                         net (fo=1, routed)           0.000     0.321    z80_top_/execute_/DR[2]_i_1_n_0
+    SLICE_X9Y68          FDRE                                         r  z80_top_/execute_/DR_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/execute_/DR_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/execute_/reg_file_/L_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.330ns  (logic 0.186ns (56.344%)  route 0.144ns (43.656%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y68          FDRE                         0.000     0.000 r  z80_top_/execute_/DR_reg[0]/C
+    SLICE_X9Y68          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  z80_top_/execute_/DR_reg[0]/Q
+                         net (fo=73, routed)          0.144     0.285    z80_top_/execute_/reg_file_/A_reg[0]_1
+    SLICE_X11Y69         LUT6 (Prop_lut6_I1_O)        0.045     0.330 r  z80_top_/execute_/reg_file_/L[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.330    z80_top_/execute_/reg_file_/L[0]_i_1_n_0
+    SLICE_X11Y69         FDRE                                         r  z80_top_/execute_/reg_file_/L_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/execute_/SR1_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/execute_/SR1_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.338ns  (logic 0.209ns (61.881%)  route 0.129ns (38.119%))
+  Logic Levels:           2  (FDRE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y65          FDRE                         0.000     0.000 r  z80_top_/execute_/SR1_reg[1]/C
+    SLICE_X8Y65          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  z80_top_/execute_/SR1_reg[1]/Q
+                         net (fo=17, routed)          0.129     0.293    z80_top_/execute_/SR1_reg_n_0_[1]
+    SLICE_X8Y65          LUT4 (Prop_lut4_I3_O)        0.045     0.338 r  z80_top_/execute_/SR1[1]_i_1/O
+                         net (fo=1, routed)           0.000     0.338    z80_top_/execute_/SR1[1]_i_1_n_0
+    SLICE_X8Y65          FDRE                                         r  z80_top_/execute_/SR1_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/sequencer_/reset_flag_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/sequencer_/T4_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.340ns  (logic 0.186ns (54.683%)  route 0.154ns (45.317%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y64          FDRE                         0.000     0.000 r  z80_top_/sequencer_/reset_flag_reg/C
+    SLICE_X9Y64          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  z80_top_/sequencer_/reset_flag_reg/Q
+                         net (fo=5, routed)           0.154     0.295    z80_top_/sequencer_/reset_flag
+    SLICE_X10Y64         LUT6 (Prop_lut6_I2_O)        0.045     0.340 r  z80_top_/sequencer_/T4_i_1/O
+                         net (fo=1, routed)           0.000     0.340    z80_top_/sequencer_/T4_i_1_n_0
+    SLICE_X10Y64         FDRE                                         r  z80_top_/sequencer_/T4_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 memory_/counter_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            memory_/counter_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.341ns  (logic 0.186ns (54.623%)  route 0.155ns (45.377%))
+  Logic Levels:           2  (FDRE=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y71          FDRE                         0.000     0.000 r  memory_/counter_reg/C
+    SLICE_X9Y71          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  memory_/counter_reg/Q
+                         net (fo=3, routed)           0.155     0.296    memory_/counter
+    SLICE_X9Y71          LUT2 (Prop_lut2_I1_O)        0.045     0.341 r  memory_/counter_i_1__1/O
+                         net (fo=1, routed)           0.000     0.341    memory_/counter_i_1__1_n_0
+    SLICE_X9Y71          FDRE                                         r  memory_/counter_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/sequencer_/reset_flag_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/sequencer_/T3_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.342ns  (logic 0.186ns (54.363%)  route 0.156ns (45.637%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y64          FDRE                         0.000     0.000 r  z80_top_/sequencer_/reset_flag_reg/C
+    SLICE_X9Y64          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  z80_top_/sequencer_/reset_flag_reg/Q
+                         net (fo=5, routed)           0.156     0.297    z80_top_/sequencer_/reset_flag
+    SLICE_X10Y64         LUT6 (Prop_lut6_I2_O)        0.045     0.342 r  z80_top_/sequencer_/T3_i_1/O
+                         net (fo=1, routed)           0.000     0.342    z80_top_/sequencer_/T3_i_1_n_0
+    SLICE_X10Y64         FDRE                                         r  z80_top_/sequencer_/T3_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/execute_/counter_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/execute_/DATA_OUT_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.343ns  (logic 0.186ns (54.285%)  route 0.157ns (45.715%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y67          FDRE                         0.000     0.000 r  z80_top_/execute_/counter_reg/C
+    SLICE_X1Y67          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  z80_top_/execute_/counter_reg/Q
+                         net (fo=87, routed)          0.157     0.298    z80_top_/sequencer_/DATA_OUT_reg[7]
+    SLICE_X0Y67          LUT6 (Prop_lut6_I0_O)        0.045     0.343 r  z80_top_/sequencer_/DATA_OUT[2]_i_1/O
+                         net (fo=1, routed)           0.000     0.343    z80_top_/execute_/DATA_OUT_reg[7]_1[2]
+    SLICE_X0Y67          FDRE                                         r  z80_top_/execute_/DATA_OUT_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/execute_/operandA_reg[5]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/execute_/REG_IN_reg[5]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.349ns  (logic 0.209ns (59.918%)  route 0.140ns (40.082%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X12Y69         FDRE                         0.000     0.000 r  z80_top_/execute_/operandA_reg[5]/C
+    SLICE_X12Y69         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  z80_top_/execute_/operandA_reg[5]/Q
+                         net (fo=5, routed)           0.140     0.304    z80_top_/execute_/operandA[5]
+    SLICE_X13Y67         LUT6 (Prop_lut6_I1_O)        0.045     0.349 r  z80_top_/execute_/REG_IN[5]_i_1/O
+                         net (fo=1, routed)           0.000     0.349    z80_top_/execute_/REG_IN[5]_i_1_n_0
+    SLICE_X13Y67         FDRE                                         r  z80_top_/execute_/REG_IN_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/execute_/operandB_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/execute_/REG_IN_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.350ns  (logic 0.209ns (59.665%)  route 0.141ns (40.335%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X12Y68         FDRE                         0.000     0.000 r  z80_top_/execute_/operandB_reg[2]/C
+    SLICE_X12Y68         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  z80_top_/execute_/operandB_reg[2]/Q
+                         net (fo=4, routed)           0.141     0.305    z80_top_/execute_/operandB[2]
+    SLICE_X13Y67         LUT6 (Prop_lut6_I0_O)        0.045     0.350 r  z80_top_/execute_/REG_IN[2]_i_1/O
+                         net (fo=1, routed)           0.000     0.350    z80_top_/execute_/REG_IN[2]_i_1_n_0
+    SLICE_X13Y67         FDRE                                         r  z80_top_/execute_/REG_IN_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 z80_top_/execute_/next_PC_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            z80_top_/execute_/PC_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.352ns  (logic 0.209ns (59.346%)  route 0.143ns (40.654%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y68          FDRE                         0.000     0.000 r  z80_top_/execute_/next_PC_reg[0]/C
+    SLICE_X2Y68          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  z80_top_/execute_/next_PC_reg[0]/Q
+                         net (fo=1, routed)           0.143     0.307    z80_top_/sequencer_/PC_reg[7][0]
+    SLICE_X2Y69          LUT6 (Prop_lut6_I2_O)        0.045     0.352 r  z80_top_/sequencer_/PC[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.352    z80_top_/execute_/PC_reg[15]_3[0]
+    SLICE_X2Y69          FDRE                                         r  z80_top_/execute_/PC_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
 
 

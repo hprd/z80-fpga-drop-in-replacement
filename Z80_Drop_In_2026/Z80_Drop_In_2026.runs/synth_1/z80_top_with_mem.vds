@@ -3,16 +3,16 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Tue Feb 24 19:30:13 2026
-# Process ID: 2001
+# Start of session at: Fri Feb 27 19:15:24 2026
+# Process ID: 16634
 # Current directory: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1
 # Command line: vivado -log z80_top_with_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source z80_top_with_mem.tcl
 # Log file: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/z80_top_with_mem.vds
 # Journal file: /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/vivado.jou
-# Running On: 0cbe47aa6fae, OS: Linux, CPU Frequency: 2502.057 MHz, CPU Physical cores: 1, Host memory: 3059 MB
+# Running On: de310536375a, OS: Linux, CPU Frequency: 2502.057 MHz, CPU Physical cores: 1, Host memory: 3059 MB
 #-----------------------------------------------------------
 source z80_top_with_mem.tcl -notrace
-create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1676.148 ; gain = 52.145 ; free physical = 631 ; free virtual = 2528
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1675.762 ; gain = 17.156 ; free physical = 581 ; free virtual = 1552
 Command: read_checkpoint -auto_incremental -incremental /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/utils_1/imports/synth_1/ALU.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/utils_1/imports/synth_1/ALU.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -20,67 +20,58 @@ Command: synth_design -top z80_top_with_mem -part xc7s50csga324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
-INFO: [Vivado_Tcl 4-1810] synth_design options have changed between reference and incremental; A full resynthesis will be run
 INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2046
+INFO: [Synth 8-7075] Helper process launched with PID 16812
 INFO: [Synth 8-11241] undeclared symbol 'a1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:23]
 INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:36]
 INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq_ena', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:38]
 WARNING: [Synth 8-10940] macro 'HALT' is redefined [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v:22]
 WARNING: [Synth 8-10940] macro 'HALT' is redefined [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_defines.v:62]
 WARNING: [Synth 8-10940] macro 'HALT' is redefined [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/pla_defines.v:22]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'use_ixiy' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:66]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_halt' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:67]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_cb' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:68]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_ed' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:69]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_alu' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:70]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'HALT_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:71]
-INFO: [Synth 8-11241] undeclared symbol 'in_intr', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:36]
-INFO: [Synth 8-11241] undeclared symbol 'T1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:38]
-INFO: [Synth 8-11241] undeclared symbol 'latch_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:39]
-INFO: [Synth 8-11241] undeclared symbol 'mwait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:40]
-INFO: [Synth 8-11241] undeclared symbol 'M1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:41]
-INFO: [Synth 8-11241] undeclared symbol 'busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:42]
-INFO: [Synth 8-11241] undeclared symbol 'setM1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:43]
-INFO: [Synth 8-11241] undeclared symbol 'hold_clk_iorq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:44]
-INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:45]
-INFO: [Synth 8-11241] undeclared symbol 'iorq_Tw', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:46]
-INFO: [Synth 8-11241] undeclared symbol 'busack', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:47]
-INFO: [Synth 8-11241] undeclared symbol 'pin_control_oe', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:48]
-INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:49]
-INFO: [Synth 8-11241] undeclared symbol 'table_xx', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:55]
-INFO: [Synth 8-11241] undeclared symbol 'nextM', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:73]
-INFO: [Synth 8-11241] undeclared symbol 'M2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:77]
-INFO: [Synth 8-11241] undeclared symbol 'M3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:78]
-INFO: [Synth 8-11241] undeclared symbol 'M4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:79]
-INFO: [Synth 8-11241] undeclared symbol 'M5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:80]
-INFO: [Synth 8-11241] undeclared symbol 'T2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:82]
-INFO: [Synth 8-11241] undeclared symbol 'T3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:83]
-INFO: [Synth 8-11241] undeclared symbol 'T4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:84]
-INFO: [Synth 8-11241] undeclared symbol 'T5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:85]
-INFO: [Synth 8-11241] undeclared symbol 'T6', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:86]
-INFO: [Synth 8-11241] undeclared symbol 'use_ixiy', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:96]
-INFO: [Synth 8-11241] undeclared symbol 'in_halt', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:97]
-INFO: [Synth 8-11241] undeclared symbol 'in_alu', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:98]
-INFO: [Synth 8-11241] undeclared symbol 'table_cb', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:99]
-INFO: [Synth 8-11241] undeclared symbol 'table_ed', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:100]
-INFO: [Synth 8-11241] undeclared symbol 'timings_en', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:129]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'use_ixiy' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:67]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_halt' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:68]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_cb' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:69]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'table_ed' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:70]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'in_alu' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:71]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'HALT_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:72]
+INFO: [Synth 8-11241] undeclared symbol 'in_intr', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:37]
+INFO: [Synth 8-11241] undeclared symbol 'T1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:39]
+INFO: [Synth 8-11241] undeclared symbol 'latch_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:40]
+INFO: [Synth 8-11241] undeclared symbol 'mwait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:41]
+INFO: [Synth 8-11241] undeclared symbol 'M1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:42]
+INFO: [Synth 8-11241] undeclared symbol 'busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:43]
+INFO: [Synth 8-11241] undeclared symbol 'setM1', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:44]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_iorq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:45]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_wait', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:46]
+INFO: [Synth 8-11241] undeclared symbol 'iorq_Tw', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:47]
+INFO: [Synth 8-11241] undeclared symbol 'busack', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:48]
+INFO: [Synth 8-11241] undeclared symbol 'pin_control_oe', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:49]
+INFO: [Synth 8-11241] undeclared symbol 'hold_clk_busrq', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:50]
+INFO: [Synth 8-11241] undeclared symbol 'table_xx', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:56]
+INFO: [Synth 8-11241] undeclared symbol 'nextM', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:74]
+INFO: [Synth 8-11241] undeclared symbol 'M2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:78]
+INFO: [Synth 8-11241] undeclared symbol 'M3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:79]
+INFO: [Synth 8-11241] undeclared symbol 'M4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:80]
+INFO: [Synth 8-11241] undeclared symbol 'M5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:81]
+INFO: [Synth 8-11241] undeclared symbol 'T2', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:83]
+INFO: [Synth 8-11241] undeclared symbol 'T3', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:84]
+INFO: [Synth 8-11241] undeclared symbol 'T4', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:85]
+INFO: [Synth 8-11241] undeclared symbol 'T5', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:86]
+INFO: [Synth 8-11241] undeclared symbol 'T6', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:87]
+INFO: [Synth 8-11241] undeclared symbol 'use_ixiy', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:97]
+INFO: [Synth 8-11241] undeclared symbol 'in_halt', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:98]
+INFO: [Synth 8-11241] undeclared symbol 'in_alu', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:99]
+INFO: [Synth 8-11241] undeclared symbol 'table_cb', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:100]
+INFO: [Synth 8-11241] undeclared symbol 'table_ed', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:101]
+INFO: [Synth 8-11241] undeclared symbol 'timings_en', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:131]
 INFO: [Synth 8-11241] undeclared symbol 'clk_pos', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v:19]
 INFO: [Synth 8-11241] undeclared symbol 'clk_neg', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v:47]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'RESET_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:25]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'MREQ_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:27]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'RD_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:28]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'WR_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:29]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'M1_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:34]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'IOREQ_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:35]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'RFSH_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:36]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'HALT_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:37]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'BUSACK_b' is not allowed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:38]
-INFO: [Synth 8-11241] undeclared symbol 'IORQ_b', assumed default net type 'wire' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:56]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2446.691 ; gain = 380.863 ; free physical = 73 ; free virtual = 1605
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2447.434 ; gain = 381.875 ; free physical = 94 ; free virtual = 649
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'z80_top_with_mem' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:3]
 INFO: [Synth 8-6157] synthesizing module 'z80_top' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:3]
@@ -151,42 +142,40 @@ WARNING: [Synth 8-567] referenced signal 'outi_h_c_flag' should be on the sensit
 WARNING: [Synth 8-567] referenced signal 'out_pv_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
 WARNING: [Synth 8-567] referenced signal 'outd_h_c_flag' should be on the sensitivity list [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:133]
 INFO: [Synth 8-6155] done synthesizing module 'ALU_Core' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:4]
-INFO: [Synth 8-6157] synthesizing module 'condition_check' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:467]
-INFO: [Synth 8-6155] done synthesizing module 'condition_check' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:467]
-WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:311]
-WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:327]
-WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:353]
-WARNING: [Synth 8-6090] variable 'REG_IN' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:374]
-WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:375]
-WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:399]
-WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:411]
-WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:430]
-WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:439]
-WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:453]
+INFO: [Synth 8-6157] synthesizing module 'condition_check' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:468]
+INFO: [Synth 8-6155] done synthesizing module 'condition_check' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:468]
+WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:318]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:334]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:357]
+WARNING: [Synth 8-6090] variable 'REG_IN' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:378]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:379]
+WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:402]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:414]
+WARNING: [Synth 8-6090] variable 'nextM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:432]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:441]
+WARNING: [Synth 8-6090] variable 'setM1' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:454]
 INFO: [Synth 8-6155] done synthesizing module 'execute' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:5]
 INFO: [Synth 8-6157] synthesizing module 'sequencer' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'sequencer' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/sequencer.v:3]
-WARNING: [Synth 8-7071] port 'M6' of module 'sequencer' is unconnected for instance 'sequencer_' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:110]
-WARNING: [Synth 8-7023] instance 'sequencer_' of module 'sequencer' has 20 connections declared, but only 19 given [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:110]
+WARNING: [Synth 8-7071] port 'M6' of module 'sequencer' is unconnected for instance 'sequencer_' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:112]
+WARNING: [Synth 8-7023] instance 'sequencer_' of module 'sequencer' has 20 connections declared, but only 19 given [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:112]
 INFO: [Synth 8-6155] done synthesizing module 'z80_top' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:3]
 INFO: [Synth 8-6157] synthesizing module 'memory' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v:3]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/.Xil/Vivado-2001-0cbe47aa6fae/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/.Xil/Vivado-2001-0cbe47aa6fae/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/.Xil/Vivado-16634-de310536375a/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/.Xil/Vivado-16634-de310536375a/realtime/blk_mem_gen_0_stub.v:6]
 WARNING: [Synth 8-689] width (16) of port connection 'addra' does not match port width (8) of module 'blk_mem_gen_0' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v:20]
 INFO: [Synth 8-6155] done synthesizing module 'memory' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/memory.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'z80_top_with_mem' (0#1) [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:3]
-WARNING: [Synth 8-6014] Unused sequential element hl_latched_reg was removed.  [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:212]
-WARNING: [Synth 8-6014] Unused sequential element r_latched_reg was removed.  [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:213]
-WARNING: [Synth 8-3848] Net accum in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:101]
-WARNING: [Synth 8-3848] Net EXTOGGLE_DEHL in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:98]
-WARNING: [Synth 8-3848] Net EXXTOGGLE in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:99]
+WARNING: [Synth 8-6014] Unused sequential element hl_latched_reg was removed.  [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:215]
+WARNING: [Synth 8-6014] Unused sequential element r_latched_reg was removed.  [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:216]
+WARNING: [Synth 8-3848] Net accum in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:102]
+WARNING: [Synth 8-3848] Net EXTOGGLE_DEHL in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:99]
+WARNING: [Synth 8-3848] Net EXXTOGGLE in module/entity execute does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/execute.v:100]
 WARNING: [Synth 8-3848] Net BUSACK_b in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:20]
-WARNING: [Synth 8-3848] Net in_intr in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:36]
-WARNING: [Synth 8-3848] Net mwait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:40]
-WARNING: [Synth 8-3848] Net latch_wait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:39]
-WARNING: [Synth 8-3848] Net busrq in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:42]
-WARNING: [Synth 8-3848] Net IOREQ_b in module/entity z80_top_with_mem does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:15]
-WARNING: [Synth 8-3848] Net ADDRESS_BUS in module/entity z80_top_with_mem does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top_with_mem.v:21]
+WARNING: [Synth 8-3848] Net in_intr in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:37]
+WARNING: [Synth 8-3848] Net mwait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:41]
+WARNING: [Synth 8-3848] Net latch_wait in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:40]
+WARNING: [Synth 8-3848] Net busrq in module/entity z80_top does not have driver. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/z80_top.v:43]
 WARNING: [Synth 8-7129] Port ADDR[15] in module memory is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR[14] in module memory is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR[13] in module memory is either unconnected or has no load
@@ -289,75 +278,60 @@ WARNING: [Synth 8-7129] Port pla[7] in module execute is either unconnected or h
 WARNING: [Synth 8-7129] Port pla[6] in module execute is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2548.352 ; gain = 482.523 ; free physical = 69 ; free virtual = 1277
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2550.062 ; gain = 484.504 ; free physical = 75 ; free virtual = 275
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2563.688 ; gain = 497.859 ; free physical = 62 ; free virtual = 1272
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2565.414 ; gain = 499.855 ; free physical = 73 ; free virtual = 276
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2563.688 ; gain = 497.859 ; free physical = 62 ; free virtual = 1272
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2565.414 ; gain = 499.855 ; free physical = 73 ; free virtual = 276
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2564.418 ; gain = 0.055 ; free physical = 115 ; free virtual = 1270
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2566.148 ; gain = 0.059 ; free physical = 60 ; free virtual = 273
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'memory_/RAM'
 Finished Parsing XDC File [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'memory_/RAM'
+Parsing XDC File [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/constrs_1/new/PCB_Breakout_Constraints.xdc]
+WARNING: [Vivado 12-507] No nets matched 'CLK_b_IBUF'. [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/constrs_1/new/PCB_Breakout_Constraints.xdc:4]
+Finished Parsing XDC File [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/constrs_1/new/PCB_Breakout_Constraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/constrs_1/new/PCB_Breakout_Constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/z80_top_with_mem_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/constrs_1/new/PCB_Breakout_Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/z80_top_with_mem_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/z80_top_with_mem_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2677.883 ; gain = 0.000 ; free physical = 110 ; free virtual = 1267
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2684.723 ; gain = 0.000 ; free physical = 75 ; free virtual = 252
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2678.176 ; gain = 0.277 ; free physical = 105 ; free virtual = 1266
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2684.844 ; gain = 0.105 ; free physical = 70 ; free virtual = 252
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2678.699 ; gain = 612.871 ; free physical = 119 ; free virtual = 1265
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2685.398 ; gain = 619.840 ; free physical = 67 ; free virtual = 237
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2678.699 ; gain = 612.871 ; free physical = 118 ; free virtual = 1264
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2685.398 ; gain = 619.840 ; free physical = 65 ; free virtual = 237
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for memory_/RAM. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2678.699 ; gain = 612.871 ; free physical = 117 ; free virtual = 1263
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2685.398 ; gain = 619.840 ; free physical = 63 ; free virtual = 237
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Preparing Guide Design
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2678.699 ; gain = 612.871 ; free physical = 118 ; free virtual = 1266
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2678.699 ; gain = 612.871 ; free physical = 118 ; free virtual = 1266
----------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'a2_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:25]
-WARNING: [Synth 8-327] inferring latch for variable 'iorq_Tw_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:25]
-WARNING: [Synth 8-327] inferring latch for variable 'hold_clk_wait_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:36]
-WARNING: [Synth 8-327] inferring latch for variable 'hold_clk_busrq_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:38]
 WARNING: [Synth 8-327] inferring latch for variable 'TEMP_reg' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/ALU.v:136]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2678.699 ; gain = 612.871 ; free physical = 103 ; free virtual = 1260
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 2685.398 ; gain = 619.840 ; free physical = 63 ; free virtual = 236
 ---------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : synth_design options have changed between reference and incremental
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -388,7 +362,7 @@ Detailed RTL Component Info :
 	                7 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 30    
+	                1 Bit    Registers := 35    
 +---Muxes : 
 	   2 Input   16 Bit        Muxes := 39    
 	  16 Input   16 Bit        Muxes := 3     
@@ -402,13 +376,13 @@ Detailed RTL Component Info :
 	  54 Input    6 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 5     
 	   5 Input    3 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 283   
+	   2 Input    1 Bit        Muxes := 286   
 	  16 Input    1 Bit        Muxes := 12    
 	  54 Input    1 Bit        Muxes := 1     
-	   4 Input    1 Bit        Muxes := 8     
-	   5 Input    1 Bit        Muxes := 4     
-	   7 Input    1 Bit        Muxes := 4     
-	   6 Input    1 Bit        Muxes := 7     
+	   4 Input    1 Bit        Muxes := 9     
+	   5 Input    1 Bit        Muxes := 9     
+	   7 Input    1 Bit        Muxes := 3     
+	   6 Input    1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -425,16 +399,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'z80_top_/clk_delay_/a2_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:56]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:56]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:56]
-WARNING: [Synth 8-3332] Sequential element (z80_top_/clk_delay_/a2_reg__0) is unused and will be removed from module z80_top_with_mem.
-WARNING: [Synth 8-3332] Sequential element (z80_top_/clk_delay_/iorq_Tw_reg__0) is unused and will be removed from module z80_top_with_mem.
-WARNING: [Synth 8-3332] Sequential element (z80_top_/clk_delay_/hold_clk_wait_reg__0) is unused and will be removed from module z80_top_with_mem.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'z80_top_/clk_delay_/hold_clk_busrq_reg/Q' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:55]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:55]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/sources_1/new/clk_delay.v:55]
-WARNING: [Synth 8-3332] Sequential element (z80_top_/clk_delay_/hold_clk_busrq_reg__0) is unused and will be removed from module z80_top_with_mem.
 WARNING: [Synth 8-3332] Sequential element (TEMP_reg[7]) is unused and will be removed from module ALU_Core.
 WARNING: [Synth 8-3332] Sequential element (TEMP_reg[6]) is unused and will be removed from module ALU_Core.
 WARNING: [Synth 8-3332] Sequential element (TEMP_reg[5]) is unused and will be removed from module ALU_Core.
@@ -444,25 +408,25 @@ WARNING: [Synth 8-3332] Sequential element (TEMP_reg[2]) is unused and will be r
 WARNING: [Synth 8-3332] Sequential element (TEMP_reg[1]) is unused and will be removed from module ALU_Core.
 WARNING: [Synth 8-3332] Sequential element (TEMP_reg[0]) is unused and will be removed from module ALU_Core.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 2678.699 ; gain = 612.871 ; free physical = 70 ; free virtual = 1229
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 2685.398 ; gain = 619.840 ; free physical = 60 ; free virtual = 226
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 123 ; free virtual = 1213
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 113 ; free virtual = 200
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 123 ; free virtual = 1214
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 113 ; free virtual = 200
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 123 ; free virtual = 1214
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 110 ; free virtual = 200
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -480,37 +444,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 109 ; free virtual = 1212
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 99 ; free virtual = 198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 109 ; free virtual = 1212
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 99 ; free virtual = 198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 109 ; free virtual = 1212
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 99 ; free virtual = 198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 109 ; free virtual = 1212
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 99 ; free virtual = 198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 109 ; free virtual = 1212
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 99 ; free virtual = 198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 109 ; free virtual = 1212
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 99 ; free virtual = 198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -528,34 +492,45 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |blk_mem_gen |     1|
-|2     |LUT2        |     8|
-|3     |LUT6        |    16|
-|4     |FDRE        |     1|
-|5     |OBUF        |     6|
-|6     |OBUFT       |    18|
+|2     |BUFG        |     2|
+|3     |CARRY4      |     7|
+|4     |LUT1        |     3|
+|5     |LUT2        |    51|
+|6     |LUT3        |    23|
+|7     |LUT4        |    66|
+|8     |LUT5        |    52|
+|9     |LUT6        |   300|
+|10    |MUXF7       |     8|
+|11    |FDRE        |   190|
+|12    |IBUF        |     3|
+|13    |IOBUF       |     8|
+|14    |OBUF        |    23|
+|15    |OBUFT       |     1|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 109 ; free virtual = 1212
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 98 ; free virtual = 198
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 6 critical warnings and 89 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 2731.285 ; gain = 550.445 ; free physical = 109 ; free virtual = 1212
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2731.285 ; gain = 665.457 ; free physical = 108 ; free virtual = 1212
+Synthesis finished with 0 errors, 0 critical warnings and 54 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 2737.340 ; gain = 551.797 ; free physical = 96 ; free virtual = 198
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2737.340 ; gain = 671.781 ; free physical = 94 ; free virtual = 198
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2731.285 ; gain = 0.000 ; free physical = 100 ; free virtual = 1211
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2737.340 ; gain = 0.000 ; free physical = 85 ; free virtual = 202
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2731.285 ; gain = 0.000 ; free physical = 430 ; free virtual = 1576
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2737.340 ; gain = 0.000 ; free physical = 415 ; free virtual = 602
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
 
-Synth Design complete | Checksum: 803a80d8
+Synth Design complete | Checksum: 4af999d9
 INFO: [Common 17-83] Releasing license: Synthesis
-76 Infos, 218 Warnings, 6 Critical Warnings and 0 Errors encountered.
+80 Infos, 201 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:48 . Memory (MB): peak = 2731.285 ; gain = 1017.676 ; free physical = 429 ; free virtual = 1576
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2183.477; main = 1634.512; forked = 557.355
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4390.395; main = 2706.934; forked = 1684.234
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:06 . Memory (MB): peak = 2737.340 ; gain = 1024.082 ; free physical = 405 ; free virtual = 602
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2007.062; main = 1600.463; forked = 443.921
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4392.805; main = 2709.289; forked = 1683.516
 INFO: [Common 17-1381] The checkpoint '/home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.runs/synth_1/z80_top_with_mem.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file z80_top_with_mem_utilization_synth.rpt -pb z80_top_with_mem_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 24 19:31:22 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 27 19:16:58 2026...

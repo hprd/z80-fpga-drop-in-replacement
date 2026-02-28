@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -124,6 +125,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/constrs_1/new/PCB_Breakout_Constraints.xdc
+set_property used_in_implementation false [get_files /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/constrs_1/new/PCB_Breakout_Constraints.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/user/Z80_Drop_In_2026/Z80_Drop_In_2026.srcs/utils_1/imports/synth_1/ALU.dcp

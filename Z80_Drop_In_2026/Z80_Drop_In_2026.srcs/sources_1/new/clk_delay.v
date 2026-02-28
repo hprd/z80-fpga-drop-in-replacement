@@ -40,14 +40,6 @@ module clk_delay(
     assign busack = b1 & hold_clk_busrq;
     assign pin_control_oe = !hold_clk_busrq & nreset;
 
-    always @(nreset) begin
-        if(!nreset) begin
-            a2 <= 0;
-            iorq_Tw <= 0;
-            hold_clk_wait <= 0;
-            hold_clk_busrq <= 0;
-        end
-    end
     
     always @(posedge CLK_b) begin
         if(`POS_EDGE) begin
