@@ -45843,7 +45843,7 @@
 				)
 			)
 		)
-		(property "Footprint" "D16"
+		(property "Footprint" "CD74AC109M96:CD74AC109M96"
 			(at 264.16 311.15 0)
 			(effects
 				(font
