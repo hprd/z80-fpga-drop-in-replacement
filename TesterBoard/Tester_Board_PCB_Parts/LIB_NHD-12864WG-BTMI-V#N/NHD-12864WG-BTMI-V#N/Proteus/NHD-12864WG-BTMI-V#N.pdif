@@ -1,0 +1,283 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "NHD-12864WG-BTMI-V#N"
+   (description "LCD MOD GRAPH 128X64 WH TRANSM")
+   (family "ANA")
+   (package "NHD12864WGBTMIVN")
+   (attribute "Datasheet Link" "http://www.newhavendisplay.com/specs/NHD-12864WG-BTMI-VN.pdf")
+   (attribute "Geometry.Height" "8.9mm")
+   (attribute "Manufacturer_Name" "Newhaven Display")
+   (attribute "Manufacturer_Part_Number" "NHD-12864WG-BTMI-V#N")
+   (attribute "Mouser Part Number" "763-12864WG-BTMI-VN")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Newhaven-Display/NHD-12864WG-BTMI-VN?qs=Vb5qD4CGh4lOc3Gh14yA5A%3D%3D")
+   (attribute "Arrow Part Number" "")
+   (attribute "Arrow Price/Stock" "")
+   (gate
+    (symbol "NHD-12864WG-BTMI-V#N")
+    (pin "VDD" 1 PS)
+    (pin "VSS" 2 PS)
+    (pin "V0" 3 PS)
+    (pin "DB0" 4 PS)
+    (pin "DB1" 5 PS)
+    (pin "DB2" 6 PS)
+    (pin "DB3" 7 PS)
+    (pin "DB4" 8 PS)
+    (pin "DB5" 9 PS)
+    (pin "DB6" 10 PS)
+    (pin "DB7" 11 PS)
+    (pin "CS1" 12 PS)
+    (pin "CS2" 13 PS)
+    (pin "$RST$" 14 PS)
+    (pin "R/$W$" 15 PS)
+    (pin "D/$I$" 16 PS)
+    (pin "E" 17 PS)
+    (pin "VEE" 18 PS)
+    (pin "A" 19 PS)
+    (pin "K" 20 PS)
+    (pin "MH1" MH1 PS)
+    (pin "MH2" MH2 PS)
+    (pin "MH3" MH3 PS)
+    (pin "MH4" MH4 PS)
+   )
+  )
+  (symbol "NHD-12864WG-BTMI-V#N"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 900 100) (pt 900 -2200) (pt 200 -2200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -600) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -700) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -800) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -900) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1000) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1600) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1700) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1800) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -1900) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -2000) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -2100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "NHD12864WGBTMIVN"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -13.37 50.2)
+      (pt 61.63 50.2)
+      (pt 61.63 -2.5)
+      (pt -13.37 -2.5)
+      (pt -13.37 50.2))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -14.27 52.7)
+      (pt 62.73 52.7)
+      (pt 62.73 -4.1)
+      (pt -14.27 -4.1)
+      (pt -14.27 52.7))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -13.37 50.2)
+      (pt -13.37 -2.5)
+      (pt 61.73 -2.5)
+      (pt 61.73 7.62)
+      (pt 61.73 50.2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -7.62 50.2)
+      (pt 55.88 50.2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -0.1 -3)
+      (arc (pt -0.100 -3.000) (pt -0.100 -3.100) (pt 0.100 -2.900) (start 180.0) (sweep 180.0))
+      (pt 0.1 -3)
+      (arc (pt 0.100 -3.000) (pt -0.100 -3.100) (pt 0.100 -2.900) (start 180.0) (sweep .0))
+      (pt -0.1 -3))))
+   (leg 1 (pt 0.000 0.000) (padstack 1))
+   (leg 2 (pt 2.540 0.000) (padstack 0))
+   (leg 3 (pt 5.080 0.000) (padstack 0))
+   (leg 4 (pt 7.620 0.000) (padstack 0))
+   (leg 5 (pt 10.160 0.000) (padstack 0))
+   (leg 6 (pt 12.700 0.000) (padstack 0))
+   (leg 7 (pt 15.240 0.000) (padstack 0))
+   (leg 8 (pt 17.780 0.000) (padstack 0))
+   (leg 9 (pt 20.320 0.000) (padstack 0))
+   (leg 10 (pt 22.860 0.000) (padstack 0))
+   (leg 11 (pt 25.400 0.000) (padstack 0))
+   (leg 12 (pt 27.940 0.000) (padstack 0))
+   (leg 13 (pt 30.480 0.000) (padstack 0))
+   (leg 14 (pt 33.020 0.000) (padstack 0))
+   (leg 15 (pt 35.560 0.000) (padstack 0))
+   (leg 16 (pt 38.100 0.000) (padstack 0))
+   (leg 17 (pt 40.640 0.000) (padstack 0))
+   (leg 18 (pt 43.180 0.000) (padstack 0))
+   (leg 19 (pt 45.720 0.000) (padstack 0))
+   (leg 20 (pt 48.260 0.000) (padstack 0))
+   (leg MH1 (pt -10.870 0.000) (padstack 21))
+   (leg MH2 (pt -10.870 49.700) (padstack 22))
+   (leg MH3 (pt 59.130 49.700) (padstack 23))
+   (leg MH4 (pt 59.130 0.000) (padstack 24))
+   (padstack 0
+    (hole 1)
+    (plated true)
+    (pad (layer TCOP) (round 1.800))
+    (pad (layer INNER) (round 1.800))
+    (pad (layer BCOP) (round 1.800))
+   )
+   (padstack 1
+    (hole 1)
+    (plated true)
+    (pad (layer TCOP) (square 1.800))
+    (pad (layer INNER) (round 1.800))
+    (pad (layer BCOP) (square 1.800))
+   )
+   (padstack 21
+    (hole 2.5)
+    (plated true)
+    (pad (layer TCOP) (round 4.000))
+    (pad (layer INNER) (round 4.000))
+    (pad (layer BCOP) (round 4.000))
+   )
+   (padstack 22
+    (hole 2.5)
+    (plated true)
+    (pad (layer TCOP) (round 3.750))
+    (pad (layer INNER) (round 3.750))
+    (pad (layer BCOP) (round 3.750))
+   )
+   (padstack 23
+    (hole 2.5)
+    (plated true)
+    (pad (layer TCOP) (round 4.000))
+    (pad (layer INNER) (round 4.000))
+    (pad (layer BCOP) (round 4.000))
+   )
+   (padstack 24
+    (hole 2.5)
+    (plated true)
+    (pad (layer TCOP) (round 4.000))
+    (pad (layer INNER) (round 4.000))
+    (pad (layer BCOP) (round 4.000))
+   )
+   (model "NHD-12864WG-BTMI-V#N.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

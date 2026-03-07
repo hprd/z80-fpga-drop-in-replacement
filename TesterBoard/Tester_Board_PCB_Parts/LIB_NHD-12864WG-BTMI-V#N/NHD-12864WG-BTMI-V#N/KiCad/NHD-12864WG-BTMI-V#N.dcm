@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NHD-12864WG-BTMI-V#N
+D LCD MOD GRAPH 128X64 WH TRANSM
+K
+F http://www.newhavendisplay.com/specs/NHD-12864WG-BTMI-VN.pdf
+$ENDCMP
+#
+#End Doc Library

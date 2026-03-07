@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'NHD_12864WG_BTMI_V#N'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Newhaven Display", "NHD-12864WG-BTMI-V#N" (!) = "", "NHD12864WGBTMIVN", "Other", "763-12864WG-BTMI-VN", "https://www.mouser.co.uk/ProductDetail/Newhaven-Display/NHD-12864WG-BTMI-VN?qs=Vb5qD4CGh4lOc3Gh14yA5A%3D%3D", "", "", "LCD MOD GRAPH 128X64 WH TRANSM", "http://www.newhavendisplay.com/specs/NHD-12864WG-BTMI-VN.pdf", "8.9 mm"
+END_PART
+
+END.

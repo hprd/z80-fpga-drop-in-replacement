@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "NHD-12864WG-BTMI-V_N"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2022-02-02-15:41:35)
+    (mountForm default
+        (footprintRef "NHD12864WGBTMIVN")
+        (spec "System")
+    )
+)
