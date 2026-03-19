@@ -6572,10 +6572,6 @@
 		(uuid "367d3801-cd97-4483-9da4-d804cf837896")
 	)
 	(no_connect
-		(at 36.83 186.69)
-		(uuid "36930855-e930-4f5b-89bd-de6b140bb99f")
-	)
-	(no_connect
 		(at 102.87 121.92)
 		(uuid "3db751c0-7fcb-449a-aef0-4c3bafe0089d")
 	)
@@ -6608,12 +6604,12 @@
 		(uuid "ad828aa2-02eb-479d-bdaa-2f131ab06443")
 	)
 	(no_connect
-		(at 175.26 193.04)
-		(uuid "bf04384b-31f3-4aec-bf87-b366538ed43f")
+		(at 40.64 172.72)
+		(uuid "af9380e2-cf18-4c64-ac6a-1820ffa887d4")
 	)
 	(no_connect
-		(at 102.87 129.54)
-		(uuid "db48f12f-db05-471c-8398-c9109870e836")
+		(at 175.26 193.04)
+		(uuid "bf04384b-31f3-4aec-bf87-b366538ed43f")
 	)
 	(no_connect
 		(at 40.64 190.5)
@@ -7769,28 +7765,6 @@
 			)
 		)
 	)
-	(global_label "Buttons_Enable"
-		(shape input)
-		(at 25.4 172.72 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2de1b590-1fb2-424c-93f4-df86b475dbb0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 7.9009 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Address8"
 		(shape input)
 		(at 102.87 96.52 180)
@@ -7831,28 +7805,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "{slash}Buttons_Enable"
-		(shape input)
-		(at 40.64 172.72 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "35a6caf8-99af-4ff1-913b-8c2855bf6e60")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.4696 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -11615,6 +11567,73 @@
 			(project ""
 				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6/3cbfe4a7-b38f-43f7-b38e-5a686bf242d5"
 					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 25.4 172.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "296ab0d3-df48-4f51-a3dd-e150332b93ad")
+		(property "Reference" "#PWR079"
+			(at 29.21 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 21.59 172.7199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 25.4 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 25.4 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c141c5e2-4218-4b03-b913-73926a4a4941")
+		)
+		(instances
+			(project "Tester"
+				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6/3cbfe4a7-b38f-43f7-b38e-5a686bf242d5"
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)
