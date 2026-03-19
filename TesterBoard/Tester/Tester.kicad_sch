@@ -4573,6 +4573,16 @@
 		)
 		(uuid "fd063f88-661a-4608-a9f5-e2337d3c36bb")
 	)
+	(text "Power Barrel Connector"
+		(exclude_from_sim no)
+		(at 26.924 67.564 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "01c617e5-19ce-42d7-b45f-99c7079c8611")
+	)
 	(text "Tester Board"
 		(exclude_from_sim no)
 		(at 192.786 189.738 0)
@@ -4582,6 +4592,16 @@
 			)
 		)
 		(uuid "1e6a789c-4182-49b4-b4d2-a28c1ce36f8a")
+	)
+	(text "Linear Voltage Regulator"
+		(exclude_from_sim no)
+		(at 58.928 31.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4b978a9c-c084-419f-abcd-f1737531e588")
 	)
 	(text "Reset Circuit"
 		(exclude_from_sim no)
@@ -4632,6 +4652,16 @@
 			)
 		)
 		(uuid "9d0084f8-1843-4a26-9aa8-bb0fe5966c56")
+	)
+	(text "LEDs"
+		(exclude_from_sim no)
+		(at 156.21 53.594 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cbfbc232-ca1a-4303-909b-1ffc5dcd0753")
 	)
 	(text "External Power Pins"
 		(exclude_from_sim no)

@@ -179,7 +179,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "048ca39a-ddf1-43a3-a85a-c32d56a8af27")
-		(at 92.554801 139.8)
+		(at -63.575199 180.23)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C7"
@@ -1307,7 +1307,7 @@
 	(footprint "Z80_Tester_Footprints:XTAL_ACH-4.000MHZ-EK"
 		(layer "F.Cu")
 		(uuid "072f9bee-e16c-46d4-b95e-8088af1cee16")
-		(at 236.495 54.7)
+		(at 312.96 40.98)
 		(property "Reference" "Y1"
 			(at -3.175 -8.255 0)
 			(layer "F.SilkS")
@@ -1640,7 +1640,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "08f83c45-1b3b-42ee-aaf7-38d3ed9bdafc")
-		(at 103.764403 139.8)
+		(at -52.365597 180.23)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C13"
@@ -3127,7 +3127,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "0f0c581e-6707-456a-af7f-c50895841663")
-		(at 103.764403 134.25)
+		(at -52.365597 174.68)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C12"
@@ -5001,7 +5001,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "141bfc3e-87e0-4c93-87bb-f11482a7834f")
-		(at 214.5 65.8)
+		(at 269.56 -27.1)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP5"
@@ -5510,7 +5510,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "19278de3-93e3-4bba-8965-a345391aebb4")
-		(at 234.38 36.25)
+		(at 178.5 -30.74)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D29"
@@ -6867,7 +6867,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "20005a20-e7f5-4442-a5df-7a5270eef187")
-		(at 218.55 65.8)
+		(at 283.63 -28.6)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP10"
@@ -7289,7 +7289,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "237d3024-8382-4a85-bad1-c9d1a16e8f61")
-		(at 214.5 57.7)
+		(at 275.01 -10.01)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP3"
@@ -7439,7 +7439,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "23c1d04c-7f4b-4f85-956c-7688083e3fe7")
-		(at 103.764403 128.7)
+		(at -52.365597 169.13)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C11"
@@ -8567,7 +8567,7 @@
 	(footprint "Package_DIP:DIP-14_W7.62mm_Socket"
 		(layer "F.Cu")
 		(uuid "27726833-07dd-47cd-b57c-0d709a75ec4b")
-		(at 45.8 128.05)
+		(at -110.33 168.48)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils), Socket")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil Socket")
 		(property "Reference" "U3"
@@ -9035,7 +9035,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "2a0a83a6-05fc-4771-8d41-9cf4f0bb45ba")
-		(at 218.55 61.75)
+		(at 266.88 -19.56)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP9"
@@ -9518,7 +9518,7 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "30bd6208-6bc9-4853-8d4e-496caa57f3f1")
-		(at 233.4 86.7)
+		(at 239.73 83.105)
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "J7"
@@ -10144,7 +10144,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "37202629-7d70-49e7-8578-e2728c4e08ba")
-		(at 226.65 61.75)
+		(at 285.23 -19.56)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP19"
@@ -10294,7 +10294,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "3d91cf3a-aebb-4c72-8ee7-844c47b6c07f")
-		(at 226.88 43.8)
+		(at 171 -23.19)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D33"
@@ -11069,7 +11069,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "418604ff-0877-4bb4-b676-8872a24247b4")
-		(at 226.65 57.7)
+		(at 244.83 -11.58)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP18"
@@ -13435,7 +13435,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "64bbb40f-0409-419a-96c6-10ebe3663144")
-		(at 226.88 36.25)
+		(at 171 -30.74)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D28"
@@ -13664,7 +13664,7 @@
 	(footprint "Package_DIP:DIP-16_W7.62mm_Socket"
 		(layer "F.Cu")
 		(uuid "65984277-5169-46e2-9ca5-9ee0dabfc9b5")
-		(at 81.05 128.05)
+		(at -75.08 168.48)
 		(descr "16-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils), Socket")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil Socket")
 		(property "Reference" "U8"
@@ -14166,7 +14166,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "68ac9d7b-807e-45aa-99dc-1e484443a8ee")
-		(at 218.55 53.65)
+		(at 272.58 -20.23)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP7"
@@ -14181,7 +14181,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 -2.05 0)
+			(at -0.05 -2.47 0)
 			(layer "F.Fab")
 			(uuid "13b067ad-4eaf-4e01-a16c-7affda6e438f")
 			(effects
@@ -15783,7 +15783,7 @@
 	(footprint "Z80_Tester_Footprints:NHD12864WGBTMIVN"
 		(layer "F.Cu")
 		(uuid "7f09a754-43ab-4fbe-857b-bd36703c4490")
-		(at 57.695 122.225)
+		(at -110.73 71.8)
 		(descr "NHD-12864WG-BTMI-V#N-2")
 		(tags "Display")
 		(property "Reference" "DS1"
@@ -16403,7 +16403,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "815663ef-db6f-4ef8-adeb-ebc5ab673d1e")
-		(at 214.5 53.65)
+		(at 269.82 -12.77)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP2"
@@ -18621,7 +18621,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "83badd92-2189-4da8-85a6-93dde269ab6f")
-		(at 92.554801 134.25)
+		(at -63.575199 174.68)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C6"
@@ -19749,7 +19749,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "83c0b99b-8f4c-4ad6-822c-43faddfbc90a")
-		(at 98.159602 134.25)
+		(at -57.970398 174.68)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C9"
@@ -20877,7 +20877,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "8483dc1b-4abc-4778-b3d3-e46a49d7160d")
-		(at 218.55 49.6)
+		(at 229.67 -18.2)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP6"
@@ -21027,7 +21027,7 @@
 	(footprint "ECE445L:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "8666bb19-3ae2-41a3-8340-8f089a3b931e")
-		(at 203.38 96.4)
+		(at 311.1 82.01)
 		(descr "Resistor, Axial_DIN0204 series, Axial, Horizontal, pin pitch=7.62mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0204 series Axial Horizontal pin pitch 7.62mm 0.167W length 3.6mm diameter 1.6mm")
 		(property "Reference" "R50"
@@ -21571,7 +21571,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "87a2a1c2-29ac-4e31-92b1-1b125184eca2")
-		(at 222.6 49.6)
+		(at 224.01 -18.76)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP11"
@@ -22815,7 +22815,7 @@
 	(footprint "Button_Switch_THT:SW_PUSH_6mm"
 		(layer "F.Cu")
 		(uuid "8bd03af8-abff-432c-a16a-ab93d55ec6f7")
-		(at 229.4 103.3)
+		(at 318.77 70.42)
 		(descr "Generic 6mm SW tactile push button")
 		(tags "tact sw push 6mm")
 		(property "Reference" "SW1"
@@ -23174,7 +23174,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "8cb56ad1-6018-41c8-995d-99b3505cc4ca")
-		(at 222.6 61.75)
+		(at 282.88 -11.18)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP14"
@@ -23324,7 +23324,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "912c262d-a99b-44b7-b603-b30ee26f5ed0")
-		(at 98.159602 128.7)
+		(at -57.970398 169.13)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C8"
@@ -24724,7 +24724,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "9267dbdb-3b4d-4251-a615-c50fd8bfae34")
-		(at 226.65 53.65)
+		(at 244.83 -15.63)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP17"
@@ -24874,7 +24874,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "93204773-a998-41d4-ab0c-c86712cd2f95")
-		(at 222.6 53.65)
+		(at 240.78 -15.63)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP12"
@@ -25568,7 +25568,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "97385e6c-f602-4e21-bd37-400f5830c4d0")
-		(at 211.88 43.8)
+		(at 156 -23.19)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D31"
@@ -27197,7 +27197,7 @@
 	(footprint "Z80_Tester_Footprints:MODULE_LCD-16X2"
 		(layer "F.Cu")
 		(uuid "9cab63a7-75b3-4a35-8b6a-89feaeb0462c")
-		(at 85.175 51.25)
+		(at -86.4225 -12.03)
 		(property "Reference" "U6"
 			(at -37.075 -19.885 0)
 			(layer "F.SilkS")
@@ -29012,7 +29012,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "a17fc255-f4ff-451d-8bbf-0a24f100ceef")
-		(at 226.65 49.6)
+		(at 216.95 -19.33)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP16"
@@ -29162,7 +29162,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "a248a344-0a49-435a-a9a0-f64d27e212b9")
-		(at 222.6 57.7)
+		(at 240.78 -11.58)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP13"
@@ -29312,7 +29312,7 @@
 	(footprint "Package_DIP:DIP-14_W7.62mm_Socket"
 		(layer "F.Cu")
 		(uuid "a483d70e-c822-41a8-9601-b8dafdca7770")
-		(at 69.3 128.05)
+		(at -86.83 168.48)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils), Socket")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil Socket")
 		(property "Reference" "U11"
@@ -30678,7 +30678,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "a8b4da40-ef8e-426a-b15d-de73275a0d76")
-		(at 204.38 43.8)
+		(at 148.5 -23.19)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D30"
@@ -32065,7 +32065,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "ad9a8125-4973-4d9d-a5cd-a3475ffc2e4c")
-		(at 234.38 43.8)
+		(at 178.5 -23.19)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D34"
@@ -32572,7 +32572,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "b4ec8c53-cdfe-4a6e-94e0-0f3102554cf4")
-		(at 98.159602 139.8)
+		(at -57.970398 180.23)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C10"
@@ -33700,7 +33700,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "b682ab47-ed38-4717-a542-a8b7f81969de")
-		(at 92.554801 128.7)
+		(at -63.575199 169.13)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor")
 		(property "Reference" "C3"
@@ -34828,7 +34828,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "c0f3cfc9-2fa4-4e1c-bc76-c8777370ce2c")
-		(at 214.5 61.75)
+		(at 278.94 -21.9)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP4"
@@ -35921,7 +35921,7 @@
 		(descr "Resistor, Axial_DIN0204 series, Axial, Horizontal, pin pitch=7.62mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0204 series Axial Horizontal pin pitch 7.62mm 0.167W length 3.6mm diameter 1.6mm")
 		(property "Reference" "R4"
-			(at 3.81 -1.92 0)
+			(at -52.07 -68.91 0)
 			(layer "F.SilkS")
 			(uuid "795abfe5-9e28-4dff-b1c8-981eefc63d88")
 			(effects
@@ -36189,7 +36189,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "c6f8baa8-e183-4e82-8fdc-ea75377c7c1d")
-		(at 222.6 65.8)
+		(at 275.93 -28.69)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP15"
@@ -36339,7 +36339,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "c8bdefed-9448-4787-b2ad-c091261c09d4")
-		(at 219.38 43.8)
+		(at 163.5 -23.19)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D32"
@@ -37466,7 +37466,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "d786dc24-6710-4201-9dc0-f667f2541178")
-		(at 218.55 57.7)
+		(at 278.94 -16.79)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP8"
@@ -37481,7 +37481,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 -2.05 0)
+			(at -0.01 -2.2 0)
 			(layer "F.Fab")
 			(uuid "2bbe3865-f6eb-4e87-b725-f6c348d0f49f")
 			(effects
@@ -39148,7 +39148,7 @@
 	(footprint "Connector_Pin:Pin_D1.0mm_L10.0mm"
 		(layer "F.Cu")
 		(uuid "e613481a-39b2-4fe9-8cd8-039e90751014")
-		(at 214.5 49.6)
+		(at 218.54 -7.32)
 		(descr "solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm")
 		(tags "solder Pin_ press fit")
 		(property "Reference" "TP1"
@@ -39298,7 +39298,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "e7e886a5-1e86-40d6-a5f8-b7d81079cba0")
-		(at 204.38 36.25)
+		(at 148.5 -30.74)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D25"
@@ -39799,7 +39799,7 @@
 	(footprint "Package_DIP:DIP-14_W7.62mm_Socket"
 		(layer "F.Cu")
 		(uuid "e9442c12-5724-46d7-9734-4d2a84b14003")
-		(at 57.55 128.05)
+		(at -98.58 168.48)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils), Socket")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil Socket")
 		(property "Reference" "U4"
@@ -40646,7 +40646,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "f2b7c1d5-635d-4d71-b53c-817189a2d7a5")
-		(at 211.88 36.25)
+		(at 156 -30.74)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D26"
@@ -41234,7 +41234,7 @@
 	(footprint "ECE445L:LED_D5.0mm"
 		(layer "F.Cu")
 		(uuid "ff7e357d-5f07-4343-adcc-5bad2fde173f")
-		(at 219.38 36.25)
+		(at 163.5 -30.74)
 		(descr "LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf")
 		(tags "LED diameter 5.0mm 2 pins")
 		(property "Reference" "D27"
