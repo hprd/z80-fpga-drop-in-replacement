@@ -7219,6 +7219,16 @@
 		)
 		(uuid "4df28108-7f0f-4e87-92e3-fa3bfdca4bef")
 	)
+	(text "SRAM"
+		(exclude_from_sim no)
+		(at 95.25 17.018 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "616a0d13-f11f-4adf-b1fe-d7e05a9aca5e")
+	)
 	(text "1602 LCD"
 		(exclude_from_sim no)
 		(at 222.504 36.068 0)
@@ -11919,10 +11929,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "39c5367e-96fc-46c2-bb25-68ae36c837ca")
 		(property "Reference" "R3"
-			(at 172.72 118.11 90)
+			(at 172.72 126.746 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11930,7 +11939,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 172.72 120.65 90)
+			(at 172.72 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
