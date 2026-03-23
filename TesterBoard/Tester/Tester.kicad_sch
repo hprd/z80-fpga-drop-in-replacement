@@ -3404,6 +3404,74 @@
 				)
 			)
 		)
+		(symbol "ECE445L:MountingHole"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ECE445L:MountingHole_4_40"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Drill hole for 4-40 screw"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_1_1"
+				(pin power_in non_logic
+					(at 0 0 180)
+					(length 3.81)
+					(name "Hole"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Regulator_Linear:L7805"
 			(pin_names
 				(offset 0.254)
@@ -4202,6 +4270,10 @@
 		(uuid "fff9ec47-7ffc-488c-b8a6-d19bfb5591c9")
 	)
 	(no_connect
+		(at 204.47 114.3)
+		(uuid "3215f1f9-df47-4cea-a0b9-09726a5a8e27")
+	)
+	(no_connect
 		(at 48.26 165.1)
 		(uuid "3e843b06-f4ed-42c1-8ebd-f24bbab81083")
 	)
@@ -4210,8 +4282,20 @@
 		(uuid "630f16aa-74d5-43c3-b886-2a087d18b519")
 	)
 	(no_connect
+		(at 204.47 129.54)
+		(uuid "83a923c9-1548-42b8-9230-920e3b001216")
+	)
+	(no_connect
+		(at 204.47 119.38)
+		(uuid "bf8e453e-8faa-4bff-9302-7ea373eb1be0")
+	)
+	(no_connect
 		(at 48.26 132.08)
 		(uuid "ed6c2528-42a4-40d8-90a2-0352d8af4d2d")
+	)
+	(no_connect
+		(at 204.47 124.46)
+		(uuid "efb8aa33-bf1a-46e9-8d35-9cf1d51064d9")
 	)
 	(wire
 		(pts
@@ -8187,6 +8271,71 @@
 		)
 	)
 	(symbol
+		(lib_id "ECE445L:MountingHole")
+		(at 204.47 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "252b328d-033e-4e07-a871-2740b16c463a")
+		(property "Reference" "H4"
+			(at 200.66 127.635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 204.47 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ECE445L:MountingHole_4_40"
+			(at 204.47 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Drill hole for 4-40 screw"
+			(at 204.47 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "df59bc43-2dd2-4673-8ce9-efd66ef85ec1")
+		)
+		(instances
+			(project "Tester"
+				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 100.33 157.48 0)
 		(unit 1)
@@ -9460,6 +9609,71 @@
 		)
 	)
 	(symbol
+		(lib_id "ECE445L:MountingHole")
+		(at 204.47 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4cd7f4cb-cc7a-4499-bf7c-6d539b7c7d37")
+		(property "Reference" "H3"
+			(at 200.66 122.555 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 204.47 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ECE445L:MountingHole_4_40"
+			(at 204.47 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Drill hole for 4-40 screw"
+			(at 204.47 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ef0e899f-6035-4a10-9d56-65ad01c6befd")
+		)
+		(instances
+			(project "Tester"
+				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 161.29 114.3 180)
 		(unit 1)
@@ -10123,6 +10337,71 @@
 			(project "Tester"
 				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ECE445L:MountingHole")
+		(at 204.47 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "61e09a7d-f5ad-40f0-a9f2-ab5344db3a19")
+		(property "Reference" "H1"
+			(at 200.66 112.395 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 204.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ECE445L:MountingHole_4_40"
+			(at 204.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Drill hole for 4-40 screw"
+			(at 204.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee7bdf8a-fc8e-4293-8494-30c28d787fad")
+		)
+		(instances
+			(project "Tester"
+				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -11853,6 +12132,71 @@
 			(project "Tester"
 				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6"
 					(reference "D31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ECE445L:MountingHole")
+		(at 204.47 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b0b47ab6-064a-4214-b485-dc695079a433")
+		(property "Reference" "H2"
+			(at 200.66 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 204.47 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ECE445L:MountingHole_4_40"
+			(at 204.47 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Drill hole for 4-40 screw"
+			(at 204.47 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1187819b-b2a9-4e9c-9078-d6f7cf9b7a75")
+		)
+		(instances
+			(project "Tester"
+				(path "/806dc3e0-8575-4e5d-8446-51f379cb8ec6"
+					(reference "H2")
 					(unit 1)
 				)
 			)
