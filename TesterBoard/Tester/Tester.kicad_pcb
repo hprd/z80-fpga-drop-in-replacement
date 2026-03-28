@@ -42236,6 +42236,58 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "Buttons IO Port:\n2: Read Buttons"
+		(at 80.5 99.5 270)
+		(layer "B.SilkS")
+		(uuid "3413ba4c-8cfa-451c-b00f-13197fd760d5")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "12863 IO Ports:\n1: Left Side CMD\n9: Left Side DATA\n17: Right Side CMD\n25: Right Side DATA"
+		(at 169 139 0)
+		(layer "B.SilkS")
+		(uuid "401aa40a-b258-4600-bf16-8b513b10f43c")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "1602 IO Ports:\n0: CMD\n8: DATA"
+		(at 52 77 -90)
+		(layer "B.SilkS")
+		(uuid "447e826b-bac5-4c7a-8e76-502e5f72531a")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "ECE Senior Design 2026 - IH04\nNeeraj Anantha\nDaniel McIver\nMoid Meghani\nHirsch Prasad\nPranav Tenneti"
+		(at 161.5 108.5 -90)
+		(layer "B.SilkS")
+		(uuid "466f6d2e-e61d-4eb1-adb1-b0bf320f8791")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom mirror)
+		)
+	)
 	(gr_text "Reset"
 		(at 100.83 56.25 0)
 		(layer "B.SilkS")
