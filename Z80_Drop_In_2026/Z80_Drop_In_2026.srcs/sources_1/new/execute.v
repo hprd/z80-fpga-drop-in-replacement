@@ -12,8 +12,7 @@ module execute
     output reg nextM,                   // Last M cycle of any instruction
     output reg setM1,                   // Last T clock of any instruction
     output reg [15:0] ADDRESS_BUS,         // Memory address for Mem Reads/Writes
-    output reg MREQ_b,   
-    output reg IORQ_b,               
+    output reg MREQ_b,                  
     output reg RD_b,
     output reg WR_b,
     output reg M1_b,
@@ -26,7 +25,6 @@ module execute
     output in_alu,
     output reg [7:0] opcode,
     output HALT_b,
-    output reg dout_flag,
     
     //----------------------------------------------------------
     // Inputs from the instruction decode PLA
@@ -104,7 +102,6 @@ wire rsel3 = op3 ^ (op4 & op5);
     
 reg_file reg_file_(
     .clk(counter),
-    .rst(RESET_b),
     .SR1(SR1),
     .SR2(SR2),
     .DR(DR),
@@ -148,24 +145,244 @@ condition_check condition_check_(
 localparam REG_HL = 4'd10;  //Register File HL parameter
 reg [15:0] hl_latched;
 reg [7:0]  r_latched;
-reg [7:0] IO_ADDRESS;   
+
+reg [7:0] djnz_e;       //djnz registers
+reg djnz_branch;
+
+reg [7:0] jr_e;         //JR registers
+reg jr_branch;
+//template
+    //always @(posedge CLK_b) begin
+    //    if() begin
+    //        if(`POS_EDGE) begin
+        
+    //        end
+    //        else if (`NEG_EDGE) begin
+        
+    //        end
+    //        else begin end
+    //    end
+    //end
 
 
+///////////////////////
+////Opcode Fetch Logic
+///////////////////////
+
+//    always @(posedge CLK_b) begin
+//        if(`POS_EDGE) begin
+//            if(M1 & T1) begin
+//                ADDRESS_BUS <= PC;
+//                RFSH_b <= 1;
+//                WR_b <= 1;
+//            end
+//            else if(M1 & T2) begin
+//                opcode <= DATA_IN;
+//                MREQ_b <= 1;
+//                RD_b <= 1;
+//                M1_b <= 1;
+//            end
+//            else if(M1 & T4) begin
+//                ADDRESS_BUS <= PC;
+//            end
+//        end
+//        else if (`NEG_EDGE) begin
+//            nextM = 0;                          
+//            setM1 = 0;  
+//            if(M1 & T1) begin
+//                MREQ_b <= 0;
+//                RD_b <= 0;
+//            end
+//            else if(M1 & T4) begin
+//                nextM <= 1;
+//            end    
+//        end
+//        else begin end
+//    end
+
+
+///////////////////////
+////Opcode Execute Logic
+///////////////////////
+
+//    /////////////////////
+//    //LD r , n (8-bit Immediate Register Load)
+//    /////////////////////
+    
+//    always @(posedge CLK_b) begin
+//        if(`LD_r_n) begin
+//            if(`POS_EDGE) begin
+//                if(M1 & T3) begin
+//                    PC <= PC + 1;
+//                end
+//                else if (M2 & T2) begin  
+//                    DR <= {1'b0, opcode[5:3]};
+//                    LD_REG <= 1;
+//                    PC <= PC + 1;
+//                end            
+//                else if(M2 & T3) begin
+//                    LD_REG <= 0;
+//                    ADDRESS_BUS <= PC;
+//                end        
+//            end
+//            else if (`NEG_EDGE) begin
+//                if(M2 & T1) begin
+//                    MREQ_b <= 0;
+//                    RD_b <= 0;
+//                end
+//                else if(M2 & T2) begin
+//                    REG_IN <= DATA_IN;
+//                end
+//                else if(M2 & T3) begin
+//                    MREQ_b <= 1;
+//                    RD_b <= 1;
+//                    setM1 <= 1;
+//                    M1_b <= 0;       
+//                end        
+//            end
+//            else begin end
+//        end
+//    end
+
+//    /////////////////////
+//    //ALU a, r
+//    /////////////////////
+    
+//    always @(posedge CLK_b) begin
+//        if(`ALU_A_r) begin
+//            if(`POS_EDGE) begin
+//                if (M1 & T3) begin 
+//                    operandA <= SR2_OUT;
+//                    operandB <= SR1_OUT;
+//                    LD_REG <= 1;
+//                    DR <= 14'h7;              
+//                    PC <= PC + 1;
+//                    if (`ADD_OP) begin // add a, r
+//                        ALU_OP <= `ALU_ADD_8BIT;
+//                    end     
+//                end            
+//                else if (M1 & T4) begin
+//                    in_alu <= 0;
+//                    LD_REG <= 0;
+//                end                         
+//            end
+//            else if (`NEG_EDGE) begin
+//                if (M1 & T3) begin
+//                    in_alu <= 1;
+//                    SR1 <= opcode[2:0];
+//                    SR2 <= 4'h7;                
+//                end           
+//                else if (M1 & T4) begin
+//                    if (`ADD_OP) begin // add a, r
+//                        REG_IN <= ALU_OUT;
+//                        flag <= FLAG_OUT;
+//                    end    
+//                    else begin REG_IN = accum; end
+//                    setM1 <= 1;
+//                    M1_b <= 0;
+//                end        
+//            end
+//            else begin end
+//        end
+//    end
+
+//    /////////////////////
+//    //JP cc , nn
+//    /////////////////////
+    
+//    always @(posedge CLK_b) begin
+//        if(`JP_cc_nn) begin
+//            if(`POS_EDGE) begin
+//                if(M1 & T3) begin
+//                    PC <= PC + 1;
+//                end
+//                else if(M2 & T3) begin
+//                    ADDRESS_BUS <= PC;
+//                end 
+//                else if (M3 & T2) begin  
+//                    if(~check_out) begin
+//                        PC <= PC + 1;
+//                    end
+//                end            
+//                else if(M3 & T3) begin
+//                    ADDRESS_BUS <= PC;
+//                end                
+//            end
+//            else if (`NEG_EDGE) begin
+//                if(M1 & T3) begin
+//                    condition_in <= opcode[5:3];
+//                end
+//                else if(M2 & T1) begin
+//                    MREQ_b <= 0;
+//                    RD_b <= 0;
+//                end
+//                else if(M2 & T2) begin
+//                    if(check_out) begin
+//                        next_PC <= DATA_IN;
+//                    end
+//                    PC <= PC + 1;
+//                end
+//                else if(M2 & T3) begin
+//                    MREQ_b <= 1;
+//                    RD_b <= 1;
+//                    nextM <= 1;
+//                end    
+//                else if(M3 & T1) begin
+//                    MREQ_b <= 0;
+//                    RD_b <= 0;
+//                end
+//                else if(M3 & T3) begin
+//                    if(check_out) begin
+//                        PC <= next_PC + (DATA_IN << 8);
+//                    end
+//                    MREQ_b <= 1;
+//                    RD_b <= 1;
+//                    setM1 <= 1;
+//                    M1_b <= 0;
+//                end               
+//            end
+//            else begin end
+//        end
+//    end
+
+
+//    /////////////////////
+//    //HALT
+//    /////////////////////
     reg halt_flag = 0;
     
+//    always @(posedge CLK_b) begin
+//        if(`HALT) begin
+//            if(`POS_EDGE) begin
+//                if(M1 & T3) begin
+//                    if(~NMI_b) begin
+//                        PC <= PC + 1;
+//                        halt_flag <= 1;
+//                    end
+//                end
+//                if(M1 & T4) begin
+//                    HALT_b <= 0;
+//                end                
+//            end
+//            else if (`NEG_EDGE) begin
+//                if(M1 & T3) begin
+//                    if(~NMI_b) begin
+//                        HALT_b <= 0;
+//                    end
+//                end 
+//                if(M1 & T4) begin
+//                    setM1 <= 1;
+//                    if(halt_flag) begin
+//                        halt_flag <= 1;
+//                        HALT_b <= 1;
+//                    end
+//                end         
+//            end
+//            else begin end
+//        end
+//    end
+
     always @(posedge CLK_b) begin
-        if(!RESET_b) begin
-            PC <= 0;
-            ADDRESS_BUS <= 0;         // Memory address for Mem Reads/Writes
-            MREQ_b <= 1;
-            IORQ_b <= 1;               
-            RD_b <= 1;
-            WR_b <= 1;
-            M1_b <= 0;
-            RFSH_b <= 1;
-            DATA_OUT <= 0;
-            dout_flag <= 1;
-        end
         if(`POS_EDGE) begin
 //    /////////////////////
 //    //OPCODE FETCH
@@ -188,19 +405,18 @@ reg [7:0] IO_ADDRESS;
 //    //LD r , n (8-bit Immediate Register Load)
 //    /////////////////////
             if(`LD_r_n) begin
-               if(M1 & T3) begin
-                   PC <= PC + 1;
-                end
-                else if (M2 & T2) begin  
-                    DR <= {1'b0, opcode[5:3]};
-                    LD_REG <= 1;
-                    PC <= PC + 1;
-                end            
-               else if(M2 & T3) begin
-                    LD_REG <= 0;
-                    ADDRESS_BUS <= PC;
-                    M1_b <= 0;
-                end        
+                    if(M1 & T3) begin
+                        PC <= PC + 1;
+                    end
+                    else if (M2 & T2) begin  
+                        DR <= {1'b0, opcode[5:3]};
+                        LD_REG <= 1;
+                        PC <= PC + 1;
+                    end            
+                    else if(M2 & T3) begin
+                        LD_REG <= 0;
+                        ADDRESS_BUS <= PC;
+                    end        
             end
 //    /////////////////////
 //    //LD hl , r (8-bit Load into Memory from Register)
@@ -216,10 +432,14 @@ reg [7:0] IO_ADDRESS;
                     r_latched <= SR1_OUT[7:0];      //Source register
                     PC <= PC + 1;
                     ADDRESS_BUS <= SR2_OUT;      //Address on the bus
+                    //DATA_OUT <= SR1_OUT[7:0];          //register as data to write
                 end
+               // else if(M2 & T1)begin
+                    //ADDRESS_BUS <= hl_latched;      //Address on the bus
+                    //DATA_OUT <= r_latched;          //register as data to write
+                //end
                 else if(M2 & T3)begin
                     ADDRESS_BUS <= PC;
-                    M1_b <= 0;       
                 end 
             end   
 //    /////////////////////
@@ -234,15 +454,11 @@ reg [7:0] IO_ADDRESS;
                     PC <= PC + 1;
                     if (`ADD_OP) begin // add a, r
                         ALU_OP <= `ALU_ADD_8BIT;
-                    end
-                    if (`XOR_OP) begin  // xor a, r
-                        ALU_OP <= `ALU_XOR_8BIT;
                     end     
                 end            
                 else if (M1 & T4) begin
                     in_alu <= 0;
                     LD_REG <= 0;
-                    M1_b <= 0;       
                 end                         
             end
 //    /////////////////////
@@ -262,32 +478,98 @@ reg [7:0] IO_ADDRESS;
                 end            
                 else if(M3 & T3) begin
                     ADDRESS_BUS <= PC;
-                    M1_b <= 0;       
                 end                
             end
 //    /////////////////////
-//    //OUT (n), A  (Output Accumulator A to I/O Address n)
-//    /////////////////////         
-            if(`OUT_n_A) begin
-                if(M1 & T3) begin
-                    PC <= PC + 1;
-                end       
-                else if(M2 & T3) begin
-                   ADDRESS_BUS <= {SR1_OUT, IO_ADDRESS};
+//    //DJNZ e  (Conditional Jump, register value B determines branching)
+//    /////////////////////  
+            if(`DJNZ_e)begin
+                if (M1 & T3) begin
+                    operandA <= SR1_OUT;            //B register value
+                    operandB <= 16'd1;
+                    ALU_OP   <= `ALU_DEC_8BIT;
+                    DR       <= 4'd0;               //REG_B = 0
+                    LD_REG   <= 1;
+                    PC       <= PC + 1;
                 end
-                else if(M3 & T1) begin
-                    IORQ_b <= 0;
-                    WR_b <= 0;
-                end   
-                else if(M3 & T3) begin
-                    PC <= PC + 1;
+                else if (M1 & T4) begin
+                    LD_REG <= 0;
                 end
-                else if(M3 & T4) begin
-                    ADDRESS_BUS <= PC;
-                    dout_flag <= 1;
-                    M1_b <= 0;       
-                end            
+                else if (M1 & T5) begin
+                    ADDRESS_BUS <= PC;          // put PC on bus ready for M2 fetch
+                end
+                else if (M2 & T2) begin
+                    djnz_e <= DATA_IN;                      //djnz e value
+                    djnz_branch <= (ALU_OUT[7:0] != 8'd0);  //branch if B-1 is not 0
+                end
+                else if (M2 & T3) begin
+                    if (!djnz_branch) begin     
+                        ADDRESS_BUS <= PC;      //not branching, set address to next instruction
+                    end
+                end
+                else if (M3 & T5) begin
+                    // PC is already pointing past the displacement byte
+                    // add sign-extended e, sequencer will start M1 fetch from here
+                    PC <= PC + {{8{djnz_e[7]}}, djnz_e};
+                    ADDRESS_BUS <= PC + {{8{djnz_e[7]}}, djnz_e};
+                end
             end
+//    /////////////////////
+//    //JR ss, e  (Conditional Jump based on conditions to e. Used for:   JR NZ,  e   JR Z, e   JR NC, e   JR C, e - specific condition found in opcode[4:3])
+//    /////////////////////         
+            if(`JR_ss_e)
+            begin
+                if (M1 & T3) begin
+                    PC <= PC + 1;
+                end
+                // M1 T4: normal, ADDRESS_BUS already set by opcode fetch logic
+                else if (M2 & T2) begin
+                    jr_e      <= DATA_IN;
+                    jr_branch <= check_out;     // condition_in set on neg edge T3
+                end
+                else if (M2 & T3) begin
+                    if (!jr_branch) begin
+                        ADDRESS_BUS <= PC;      // fall-through: fetch next instruction
+                    end
+                end
+                else if (M3 & T5) begin
+                    PC <= PC + {{8{jr_e[7]}}, jr_e};
+                    ADDRESS_BUS <= PC + {{8{jr_e[7]}}, jr_e};
+                end
+            end
+//    /////////////////////
+//    //DEC r (8-bit register decrement)
+//    /////////////////////
+            if(`DEC_r)begin
+                if(M1 & T3)begin
+                    operandA <= SR1_OUT;            //operand A is target register
+                    operandB <= 16'd1;              //operand B is 1
+                    ALU_OP <= 7'd10;                //Set ALU operation to decrement, ALU OP for it is 10
+                    LD_REG <=1;                     //Load register
+                    DR <= {1'b0, opcode[5:3]};      //set destination register
+                    PC <= PC + 1;                   
+                end
+                else if(M1 & T4)begin
+                    LD_REG <= 0;
+                end
+            end           
+//    /////////////////////
+//    //DEC hl (8-bit register decrement in memory at HL)
+//    /////////////////////
+            if(`DEC_hl)begin
+                if(M1 & T3)begin
+                    PC <= PC + 1;                   
+                end
+                else if(M1 & T4)begin
+                    ADDRESS_BUS <= SR2_OUT;
+                end
+                else if(M1 & T3)begin
+                    ADDRESS_BUS <= SR2_OUT;
+                end
+                else if(M3 & T3)begin
+                    ADDRESS_BUS <= PC;
+                end
+            end  
 //    /////////////////////
 //    //HALT
 //    /////////////////////            
@@ -302,6 +584,7 @@ reg [7:0] IO_ADDRESS;
                     HALT_b <= 0;
                 end                
             end
+                           
         end
   
         else if(`NEG_EDGE) begin
@@ -332,6 +615,7 @@ reg [7:0] IO_ADDRESS;
                     MREQ_b <= 1;
                     RD_b <= 1;
                     setM1 <= 1;
+                    M1_b <= 0;       
                 end        
             end
 //    /////////////////////
@@ -354,6 +638,8 @@ reg [7:0] IO_ADDRESS;
                 else if(M2 & T3)begin               //deassert WR (WR goes high on rising edge of T3)
                     WR_b <= 1;
                     MREQ_b <=1;
+                    M1_b <=0;
+                    
                     setM1 <=1;
                 end
             end   
@@ -370,13 +656,10 @@ reg [7:0] IO_ADDRESS;
                     if (`ADD_OP) begin // add a, r
                         REG_IN <= ALU_OUT;
                         flag <= FLAG_OUT;
-                    end
-                    else if (`XOR_OP) begin // add a, r
-                        REG_IN <= ALU_OUT;
-                        flag <= FLAG_OUT;
-                    end        
+                    end    
                     else begin REG_IN = accum; end
                     setM1 <= 1;
+                    M1_b <= 0;
                 end        
             end
 //    /////////////////////
@@ -412,35 +695,127 @@ reg [7:0] IO_ADDRESS;
                     MREQ_b <= 1;
                     RD_b <= 1;
                     setM1 <= 1;
+                    M1_b <= 0;
                 end               
             end
 //    /////////////////////
-//    //OUT (n), A  (Output Accumulator A to I/O Address n)
-//    /////////////////////    
-            if (`OUT_n_A) begin
-                if(M2 & T1) begin
+//    //JR ss, e  (Conditional Jump based on conditions to e. Used for:   JR NZ,  e   JR Z, e   JR NC, e   JR C, e - specific condition found in opcode[4:3])
+//    /////////////////////         
+            if(`JR_ss_e)
+            begin
+                if (M1 & T3) begin
+                    condition_in <= {1'b0, opcode[4:3]};  // NZ=000,Z=001,NC=010,C=011
+                end
+                else if (M2 & T1) begin
                     MREQ_b <= 0;
-                    RD_b <= 0;
+                    RD_b   <= 0;
+                end
+                else if (M2 & T2) begin
+                    PC <= PC + 1;               // advance PC past displacement byte
+                end
+                else if (M2 & T3) begin
+                    MREQ_b <= 1;
+                    RD_b   <= 1;
+                    if (jr_branch) begin
+                        nextM <= 1;             // enter M3 for branch delay
+                    end
+                    else begin
+                        setM1 <= 1;
+                        M1_b  <= 0;
+                    end
+                end
+                else if (M3 & T5) begin
+                    setM1 <= 1;
+                    M1_b  <= 0;
+                end
+            end
+//    /////////////////////
+//    //DJNZ e  (Conditional Jump, register value B determines branching)
+//    /////////////////////  
+            if(`DJNZ_e)begin
+                if (M1 & T3) begin
+                    SR1 <= 4'd0;                // REG_B = 0, settle before T4 pos edge
+                end
+                else if (M1 & T4) begin
+                    REG_IN <= ALU_OUT;          // write B-1 back to reg file
+                    flag   <= FLAG_OUT;
+                end
+                // M1 T5: extra internal T-state, no bus activity
+                else if (M2 & T1) begin
+                    MREQ_b <= 0;
+                    RD_b   <= 0;
+                end
+                else if (M2 & T2) begin
+                    PC <= PC + 1;               // advance PC past displacement byte
+                end
+                else if (M2 & T3) begin
+                    MREQ_b <= 1;                //done reading
+                    RD_b   <= 1;
+                    if (djnz_branch) begin      //if branch, set next M
+                        nextM <= 1;             // enter M3 for branch delay slots
+                    end
+                    else begin                  //otherwise we are done
+                        setM1 <= 1;
+                        M1_b  <= 0;
+                    end
+                end
+                // M3 T1-T5: pure internal, no bus activity
+                else if (M3 & T5) begin
+                    setM1 <= 1;
+                    M1_b  <= 0;
+                end
+            end
+//    /////////////////////
+//    //DEC r (8-bit register decrement)
+//    /////////////////////
+            if(`DEC_r)begin
+                if(M1 & T3)begin
+                    SR1 <= {1'b0, opcode[5:3]};                  
+                end
+                else if(M1 & T4)begin
+                    REG_IN <= ALU_OUT;
+                    flag <= FLAG_OUT;
+                    setM1 <= 1;
+                    M1_b <= 0;
+                end
+            end  
+//    /////////////////////
+//    //DEC hl (8-bit register decrement in memory at HL)
+//    /////////////////////
+            if(`DEC_hl)begin
+                if(M1 & T3)begin
+                    SR2 <= REG_HL;                  //prepare HL for address                   
+                end
+                else if(M2 & T1)begin
+                    MREQ_b <= 0;
+                    RD_b   <= 0;                // start memory read
                 end
                 else if(M2 & T2) begin
-                    IO_ADDRESS <= DATA_IN;
-                    SR1 <= 4'h7;
+                    // DATA_IN holds the byte read from (HL)
+                    operandA <= {8'd0, DATA_IN};
+                    operandB <= 16'd1;
+                    ALU_OP   <= `ALU_DEC_8BIT;
                 end
                 else if(M2 & T3) begin
                     MREQ_b <= 1;
-                    RD_b <= 1;
-                    nextM <= 1;
-                end        
-                else if(M3 & T1) begin
-                    DATA_OUT <= SR1_OUT;
-                    dout_flag <= 1;
-                end  
-                else if(M3 & T4) begin
-                    IORQ_b <= 1;
-                    WR_b <= 1;
-                    setM1 <= 1;
-                end  
-            end
+                    RD_b   <= 1;
+                    nextM  <= 1;                // advance to M3
+                end
+                else if(M3 & T1) begin          //memory write
+                    MREQ_b   <= 0;
+                    DATA_OUT <= ALU_OUT[7:0];   // decremented value to write
+                end
+                else if(M3 & T2) begin
+                    WR_b <= 0;
+                    flag <= FLAG_OUT;
+                end
+                else if(M3 & T3) begin
+                    WR_b   <= 1;
+                    MREQ_b <= 1;
+                    setM1  <= 1;
+                    M1_b   <= 0;
+                end
+            end   
 //    /////////////////////
 //    //HALT
 //    /////////////////////
